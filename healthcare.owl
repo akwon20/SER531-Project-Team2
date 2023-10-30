@@ -52,9 +52,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimer -->
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimers -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimer">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimers">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDisease"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers"/>
