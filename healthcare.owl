@@ -52,12 +52,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimer -->
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimers -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimer">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimers">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDisease"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers&apos;"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers"/>
     </owl:ObjectProperty>
     
 
@@ -376,6 +376,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Asthma -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Asthma">
@@ -564,14 +572,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Weights">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers&apos; -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers&apos;">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
     </owl:Class>
     
 
