@@ -1,0 +1,235 @@
+<http://www.semanticweb.org/ontologies/healthcare/#hasAPHigh> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/ontologies/healthcare/#hasBooldWork> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAPHigh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAPHigh> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ontologies/healthcare/#BloodWork> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAPHigh> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ontologies/healthcare/#APHigh> .
+
+<http://www.semanticweb.org/ontologies/healthcare/#hasAPLow> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/ontologies/healthcare/#hasBooldWork> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAPLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAPLow> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ontologies/healthcare/#BloodWork> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAPLow> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ontologies/healthcare/#APLow> .
+
+<http://www.semanticweb.org/ontologies/healthcare/#hasAlcohol> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/ontologies/healthcare/#hasBehaviorTraits> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAlcohol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAlcohol> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ontologies/healthcare/#BehaviorTraits> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAlcohol> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ontologies/healthcare/#Alcohol> .
+
+<http://www.semanticweb.org/ontologies/healthcare/#hasAlzheimers> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/ontologies/healthcare/#hasDisease> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAlzheimers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAlzheimers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/ontologies/healthcare/#Diseases> .
+<http://www.semanticweb.org/ontologies/healthcare/#hasAlzheimers> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/ontologies/healthcare/#Alzheimers> .
+
+<http://www.semanticweb.org/healthcare#hasAsthma> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#isDiagnosed> .
+<http://www.semanticweb.org/healthcare#hasAsthma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasAsthma> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+<http://www.semanticweb.org/healthcare#hasAsthma> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Asthma> .
+
+<http://www.semanticweb.org/healthcare#hasBehaviorTraits> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasTraits> .
+<http://www.semanticweb.org/healthcare#hasBehaviorTraits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasBehaviorTraits> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#Traits> .
+<http://www.semanticweb.org/healthcare#hasBehaviorTraits> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#BehaviorTraits> .
+
+<http://www.semanticweb.org/healthcare#hasBooldWork> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasPhysicalTraits> .
+<http://www.semanticweb.org/healthcare#hasBooldWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasBooldWork> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+<http://www.semanticweb.org/healthcare#hasBooldWork> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#BloodWork> .
+
+<http://www.semanticweb.org/healthcare#hasCardiovascular> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasDisease> .
+<http://www.semanticweb.org/healthcare#hasCardiovascular> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasCardiovascular> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#Diseases> .
+<http://www.semanticweb.org/healthcare#hasCardiovascular> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Cardiovascular> .
+
+<http://www.semanticweb.org/healthcare#hasCholesterol> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasBooldWork> .
+<http://www.semanticweb.org/healthcare#hasCholesterol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasCholesterol> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#BloodWork> .
+<http://www.semanticweb.org/healthcare#hasCholesterol> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Cholesterol> .
+
+<http://www.semanticweb.org/healthcare#hasCopd> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#isDiagnosed> .
+<http://www.semanticweb.org/healthcare#hasCopd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasCopd> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+<http://www.semanticweb.org/healthcare#hasCopd> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Copd> .
+
+<http://www.semanticweb.org/healthcare#hasCovid> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasDisease> .
+<http://www.semanticweb.org/healthcare#hasCovid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasCovid> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#Diseases> .
+<http://www.semanticweb.org/healthcare#hasCovid> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#COVID19> .
+
+<http://www.semanticweb.org/healthcare#hasDiabetes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#isDiagnosed> .
+<http://www.semanticweb.org/healthcare#hasDiabetes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasDiabetes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+<http://www.semanticweb.org/healthcare#hasDiabetes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Diabetes> .
+
+<http://www.semanticweb.org/healthcare#hasDisease> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasDisease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasDisease> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#Patients> .
+<http://www.semanticweb.org/healthcare#hasDisease> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Diseases> .
+
+<http://www.semanticweb.org/healthcare#hasGender> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasPhysicalTraits> .
+<http://www.semanticweb.org/healthcare#hasGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasGender> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+<http://www.semanticweb.org/healthcare#hasGender> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Gender> .
+
+<http://www.semanticweb.org/healthcare#hasGlucose> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasBooldWork> .
+<http://www.semanticweb.org/healthcare#hasGlucose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasGlucose> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#BloodWork> .
+<http://www.semanticweb.org/healthcare#hasGlucose> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Glucose> .
+
+<http://www.semanticweb.org/healthcare#hasHypertension> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#isDiagnosed> .
+<http://www.semanticweb.org/healthcare#hasHypertension> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasHypertension> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+<http://www.semanticweb.org/healthcare#hasHypertension> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Hypertension> .
+
+<http://www.semanticweb.org/healthcare#hasInmsupr> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#isDiagnosed> .
+<http://www.semanticweb.org/healthcare#hasInmsupr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasInmsupr> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+<http://www.semanticweb.org/healthcare#hasInmsupr> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Inmsupr> .
+
+<http://www.semanticweb.org/healthcare#hasObesity> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#isDiagnosed> .
+<http://www.semanticweb.org/healthcare#hasObesity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasObesity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+<http://www.semanticweb.org/healthcare#hasObesity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Diabetes> .
+
+<http://www.semanticweb.org/healthcare#hasPhysicalActivity> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasBehaviorTraits> .
+<http://www.semanticweb.org/healthcare#hasPhysicalActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasPhysicalActivity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#BehaviorTraits> .
+<http://www.semanticweb.org/healthcare#hasPhysicalActivity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#PhysicalActivity> .
+
+<http://www.semanticweb.org/healthcare#hasPhysicalTraits> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasTraits> .
+<http://www.semanticweb.org/healthcare#hasPhysicalTraits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasPhysicalTraits> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#Traits> .
+<http://www.semanticweb.org/healthcare#hasPhysicalTraits> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+
+<http://www.semanticweb.org/healthcare#hasPneumonia> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#isDiagnosed> .
+<http://www.semanticweb.org/healthcare#hasPneumonia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasPneumonia> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+<http://www.semanticweb.org/healthcare#hasPneumonia> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Pneumonia> .
+
+<http://www.semanticweb.org/healthcare#hasRenalChronic> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#isDiagnosed> .
+<http://www.semanticweb.org/healthcare#hasRenalChronic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasRenalChronic> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+<http://www.semanticweb.org/healthcare#hasRenalChronic> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#RenalChronic> .
+
+<http://www.semanticweb.org/healthcare#hasSmoke> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasBehaviorTraits> .
+<http://www.semanticweb.org/healthcare#hasSmoke> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasSmoke> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#BehaviorTraits> .
+<http://www.semanticweb.org/healthcare#hasSmoke> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Smoking> .
+
+<http://www.semanticweb.org/healthcare#hasTraits> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasTraits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#hasTraits> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#Patients> .
+<http://www.semanticweb.org/healthcare#hasTraits> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Traits> .
+
+<http://www.semanticweb.org/healthcare#isDiagnosed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/healthcare#isDiagnosed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#isDiagnosed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#Patients> .
+<http://www.semanticweb.org/healthcare#isDiagnosed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#isPregnancy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/healthcare#hasPhysicalTraits> .
+<http://www.semanticweb.org/healthcare#isPregnancy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/healthcare#isPregnancy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+<http://www.semanticweb.org/healthcare#isPregnancy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/healthcare#Pregnancy> .
+
+<http://www.semanticweb.org/healthcare#hasAge> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://www.semanticweb.org/healthcare#hasAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/healthcare#hasAge> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+<http://www.semanticweb.org/healthcare#hasAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+<http://www.semanticweb.org/healthcare#hasHeight> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://www.semanticweb.org/healthcare#hasHeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/healthcare#hasHeight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+<http://www.semanticweb.org/healthcare#hasHeight> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+<http://www.semanticweb.org/healthcare#hasWeight> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://www.semanticweb.org/healthcare#hasWeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/healthcare#hasWeight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+<http://www.semanticweb.org/healthcare#hasWeight> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+
+<http://www.semanticweb.org/healthcare#hasName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://www.semanticweb.org/healthcare#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/healthcare#hasName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/healthcare#Patients> .
+<http://www.semanticweb.org/healthcare#hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<http://www.semanticweb.org/healthcare#APHigh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#APHigh> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#BloodWork> .
+
+<http://www.semanticweb.org/healthcare#APLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#APLow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#BloodWork> .
+
+<http://www.semanticweb.org/healthcare#Age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Age> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+
+<http://www.semanticweb.org/healthcare#Alcohol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Alcohol> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#BehaviorTraits> .
+
+<http://www.semanticweb.org/healthcare#Alzheimers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Alzheimers> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#Diseases> .
+
+<http://www.semanticweb.org/healthcare#Asthma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Asthma> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#BehaviorTraits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#BehaviorTraits> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#Traits> .
+
+<http://www.semanticweb.org/healthcare#BloodWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#BloodWork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+
+<http://www.semanticweb.org/healthcare#COVID19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#COVID19> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#Diseases> .
+
+<http://www.semanticweb.org/healthcare#Cardiovascular> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Cardiovascular> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#Diseases> .
+
+<http://www.semanticweb.org/healthcare#Cholesterol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Cholesterol> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#BloodWork> .
+
+<http://www.semanticweb.org/healthcare#Copd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Copd> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#Diabetes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Diabetes> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#Diseases> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+
+<http://www.semanticweb.org/healthcare#DiseasesHistroy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+
+<http://www.semanticweb.org/healthcare#Gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Gender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+
+<http://www.semanticweb.org/healthcare#Glucose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Glucose> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#BloodWork> .
+
+<http://www.semanticweb.org/healthcare#Heights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Heights> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+
+<http://www.semanticweb.org/healthcare#Hypertension> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Hypertension> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#Inmsupr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Inmsupr> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#Obesity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Obesity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#Patients> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+
+<http://www.semanticweb.org/healthcare#PhysicalActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#PhysicalActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#BehaviorTraits> .
+
+<http://www.semanticweb.org/healthcare#PhysicalTraits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#PhysicalTraits> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#Traits> .
+
+<http://www.semanticweb.org/healthcare#Pneumonia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Pneumonia> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#Pregnancy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Pregnancy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
+
+<http://www.semanticweb.org/healthcare#RenalChronic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#RenalChronic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#DiseasesHistroy> .
+
+<http://www.semanticweb.org/healthcare#Smoking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Smoking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#BehaviorTraits> .
+
+<http://www.semanticweb.org/healthcare#Traits> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+
+<http://www.semanticweb.org/healthcare#Weights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/healthcare#Weights> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/healthcare#PhysicalTraits> .
