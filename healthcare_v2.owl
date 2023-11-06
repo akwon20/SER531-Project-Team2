@@ -26,9 +26,6 @@
         <Class IRI="#Alcohol"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Alzheimers"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Asthma"/>
     </Declaration>
     <Declaration>
@@ -328,10 +325,6 @@
     <SubClassOf>
         <Class IRI="#Alcohol"/>
         <Class IRI="#BehaviorTraits"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Alzheimers"/>
-        <Class IRI="#Diseases"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Asthma"/>
@@ -725,10 +718,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAlcohol"/>
         <Class IRI="#Alcohol"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAlzheimers"/>
-        <Class IRI="#Alzheimers"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAsthma"/>
