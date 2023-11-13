@@ -1,5 +1,7 @@
 package JavaStardogClient;
 
+import Frontend.GUI;
+
 import com.complexible.common.rdf.query.resultio.TextTableQueryResultWriter;
 import com.complexible.stardog.StardogException;
 import com.complexible.stardog.api.*;
@@ -41,6 +43,8 @@ public class App {
     private static final IRI IncredibleHulk = Values.iri(NS, "incredibleHulk");
 
     public static void main(String[] args) {
+        GUI testFrame = new GUI();
+        
         createAdminConnection();
         ConnectionConfiguration connectionConfig = ConnectionConfiguration
                 .to(to)
