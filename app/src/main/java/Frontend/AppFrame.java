@@ -68,6 +68,7 @@ public class AppFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CAC Risk Analyzer");
 
+        jlabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlabelTitle.setText("CAC Risk Analyzer");
         jlabelTitle.setAlignmentY(0.0F);
 
@@ -84,6 +85,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         button2.setLabel("button2");
 
+        jlabelPhysical.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlabelPhysical.setText("Physical Info");
 
         jlabelBehavioral.setText("Behavioral Info");
@@ -172,10 +174,6 @@ public class AppFrame extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jlabelTitle)
-                                .addGap(22, 22, 22))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -186,20 +184,22 @@ public class AppFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel9)
-                                    .addComponent(jLabel10)
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel12)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel14)
                                     .addComponent(jLabel15)
-                                    .addComponent(jLabel16))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel10))
+                                .addGap(0, 69, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(122, 122, 122))
+                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)))
+                .addGap(53, 53, 53))
+            .addComponent(jlabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
