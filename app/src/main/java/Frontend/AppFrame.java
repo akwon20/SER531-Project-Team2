@@ -95,22 +95,31 @@ public class AppFrame extends javax.swing.JFrame {
         jLabel1.setText("Trait");
         jLabel1.setOpaque(true);
 
+        jLabel2.setLabelFor(checkboxAge);
         jLabel2.setText("Age");
 
+        jLabel3.setLabelFor(checkboxGender);
         jLabel3.setText("Gender");
 
+        jLabel4.setLabelFor(checkboxPregnant);
         jLabel4.setText("Pregnant");
 
+        jLabel5.setLabelFor(checkboxHeight);
         jLabel5.setText("Height");
 
+        jLabel6.setLabelFor(checkboxWeight);
         jLabel6.setText("Weight");
 
+        jLabel7.setLabelFor(checkboxBPHigh);
         jLabel7.setText("Blood Pressure (High)");
 
+        jLabel8.setLabelFor(checkboxBPLow);
         jLabel8.setText("Blood Perssure (Low)");
 
+        jLabel9.setLabelFor(checkboxCholesterol);
         jLabel9.setText("Cholesterol");
 
+        jLabel10.setLabelFor(checkboxGlucose);
         jLabel10.setText("Glucose");
 
         jLabel11.setText("Nicotine Use");
