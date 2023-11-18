@@ -113,9 +113,9 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="button2" min="-2" max="-2" attributes="0"/>
+              <Component id="buttonCancel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="button1" min="-2" max="-2" attributes="0"/>
+              <Component id="buttonSubmit" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
           </Group>
           <Component id="jlabelTitle" alignment="0" max="32767" attributes="0"/>
@@ -230,8 +230,8 @@
                       <Component id="checkboxAlzheimers" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="449" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="button1" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="button2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonSubmit" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonCancel" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -266,17 +266,17 @@
         <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
       </AccessibilityProperties>
     </Component>
-    <Component class="java.awt.Button" name="button1">
+    <Component class="java.awt.Button" name="buttonSubmit">
       <Properties>
-        <Property name="label" type="java.lang.String" value="button1"/>
+        <Property name="label" type="java.lang.String" value="Submit"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSubmitActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.Button" name="button2">
+    <Component class="java.awt.Button" name="buttonCancel">
       <Properties>
-        <Property name="label" type="java.lang.String" value="button2"/>
+        <Property name="label" type="java.lang.String" value="Cancel"/>
       </Properties>
     </Component>
     <Component class="java.awt.Checkbox" name="checkboxGender">
