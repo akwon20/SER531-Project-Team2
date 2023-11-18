@@ -60,22 +60,22 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="checkbox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox6" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox7" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxGender" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxHeight" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxWeight" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxBPHigh" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxBPLow" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxCholesterol" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox8" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox9" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox10" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox11" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxNicotine" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxAlcohol" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxPhysical" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox12" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox13" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkbox14" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxCOVID" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxCVD" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkboxAlzheimers" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -95,37 +95,37 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="checkboxAge" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox1" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxGender" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox2" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxPregnant" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox3" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxHeight" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox4" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxWeight" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox5" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxBPHigh" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox6" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxBPLow" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox7" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxCholesterol" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox8" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxGlucose" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="label3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox9" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxNicotine" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox10" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxAlcohol" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox11" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxPhysical" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="label4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox12" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxCOVID" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox13" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxCVD" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="checkbox14" min="-2" max="-2" attributes="0"/>
+              <Component id="checkboxAlzheimers" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="474" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="button1" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -181,37 +181,37 @@
         <Property name="label" type="java.lang.String" value="button2"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox1">
+    <Component class="java.awt.Checkbox" name="checkboxGender">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox1"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox2">
+    <Component class="java.awt.Checkbox" name="checkboxPregnant">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox2"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox3">
+    <Component class="java.awt.Checkbox" name="checkboxHeight">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox3"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox4">
+    <Component class="java.awt.Checkbox" name="checkboxWeight">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox4"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox5">
+    <Component class="java.awt.Checkbox" name="checkboxBPHigh">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox5"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox6">
+    <Component class="java.awt.Checkbox" name="checkboxBPLow">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox6"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox7">
+    <Component class="java.awt.Checkbox" name="checkboxCholesterol">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox7"/>
       </Properties>
@@ -221,22 +221,22 @@
         <Property name="text" type="java.lang.String" value="label3"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox8">
+    <Component class="java.awt.Checkbox" name="checkboxGlucose">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox8"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox9">
+    <Component class="java.awt.Checkbox" name="checkboxNicotine">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox9"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox10">
+    <Component class="java.awt.Checkbox" name="checkboxAlcohol">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox10"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox11">
+    <Component class="java.awt.Checkbox" name="checkboxPhysical">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox11"/>
       </Properties>
@@ -246,17 +246,17 @@
         <Property name="text" type="java.lang.String" value="label4"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox12">
+    <Component class="java.awt.Checkbox" name="checkboxCOVID">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox12"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox13">
+    <Component class="java.awt.Checkbox" name="checkboxCVD">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox13"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Checkbox" name="checkbox14">
+    <Component class="java.awt.Checkbox" name="checkboxAlzheimers">
       <Properties>
         <Property name="label" type="java.lang.String" value="checkbox14"/>
       </Properties>
