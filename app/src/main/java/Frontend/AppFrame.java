@@ -26,7 +26,7 @@ public class AppFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jlabelTitle = new javax.swing.JLabel();
         checkboxAll = new java.awt.Checkbox();
         checkboxAge = new java.awt.Checkbox();
         button1 = new java.awt.Button();
@@ -52,8 +52,8 @@ public class AppFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CAC Risk Analyzer");
 
-        jLabel1.setText("CAC Risk Analyzer");
-        jLabel1.setAlignmentY(0.0F);
+        jlabelTitle.setText("CAC Risk Analyzer");
+        jlabelTitle.setAlignmentY(0.0F);
 
         checkboxAll.setName(""); // NOI18N
 
@@ -88,7 +88,7 @@ public class AppFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(132, 132, 132)
-                        .addComponent(jLabel1))
+                        .addComponent(jlabelTitle))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +123,7 @@ public class AppFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jlabelTitle)
                 .addGap(8, 8, 8)
                 .addComponent(checkboxAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -233,9 +233,9 @@ public class AppFrame extends javax.swing.JFrame {
     private java.awt.Checkbox checkboxPhysical;
     private java.awt.Checkbox checkboxPregnant;
     private java.awt.Checkbox checkboxWeight;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jlabelBehavioral;
     private javax.swing.JLabel jlabelDisease;
     private javax.swing.JLabel jlabelPhysical;
+    private javax.swing.JLabel jlabelTitle;
     // End of variables declaration//GEN-END:variables
 }
