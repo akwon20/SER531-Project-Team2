@@ -32,31 +32,45 @@
               <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="checkboxAll" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="checkboxAge" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxGender" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxHeight" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxWeight" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxBPHigh" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxBPLow" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxCholesterol" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxNicotine" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxAlcohol" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxPhysical" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxCOVID" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxCVD" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="checkboxAlzheimers" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlabelPhysical" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlabelBehavioral" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlabelDisease" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="jlabelDisease" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jlabelPhysical" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jlabelBehavioral" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="checkboxAll" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxAge" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxGender" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxHeight" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxWeight" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxBPHigh" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxBPLow" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxCholesterol" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxNicotine" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxAlcohol" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxPhysical" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxCOVID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxCVD" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="checkboxAlzheimers" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -67,7 +81,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Component id="checkboxAll" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jlabelPhysical" min="-2" max="-2" attributes="0"/>
@@ -89,9 +103,9 @@
               <Component id="checkboxCholesterol" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="checkboxGlucose" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-              <Component id="jlabelBehavioral" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlabelBehavioral" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Component id="checkboxNicotine" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="checkboxAlcohol" min="-2" max="-2" attributes="0"/>
@@ -105,7 +119,7 @@
               <Component id="checkboxCVD" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="checkboxAlzheimers" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="447" max="32767" attributes="0"/>
+              <EmptySpace pref="449" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="button1" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="button2" alignment="1" min="-2" max="-2" attributes="0"/>
