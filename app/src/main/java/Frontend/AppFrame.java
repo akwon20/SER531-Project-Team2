@@ -46,25 +46,25 @@ public class AppFrame extends javax.swing.JFrame {
         checkboxCOVID = new java.awt.Checkbox();
         checkboxCVD = new java.awt.Checkbox();
         checkboxAlzheimers = new java.awt.Checkbox();
-        jlabelPhysical = new javax.swing.JLabel();
+        jlabelPhysicalInfo = new javax.swing.JLabel();
         jlabelBehavioral = new javax.swing.JLabel();
         jlabelDisease = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        jlabelTrait = new javax.swing.JLabel();
+        jlabelAge = new javax.swing.JLabel();
+        jlabelGender = new javax.swing.JLabel();
+        jlabelPregnant = new javax.swing.JLabel();
+        jlabelHeight = new javax.swing.JLabel();
+        jlabelWeight = new javax.swing.JLabel();
+        jlabelBPHigh = new javax.swing.JLabel();
+        jlabelBPLow = new javax.swing.JLabel();
+        jlabelCholesterol = new javax.swing.JLabel();
+        jlabelGlucose = new javax.swing.JLabel();
+        jlabelNicotine = new javax.swing.JLabel();
+        jlabelAlcohol = new javax.swing.JLabel();
+        jlabelPhysicalActivity = new javax.swing.JLabel();
+        jlabelCOVID = new javax.swing.JLabel();
+        jlabelCVD = new javax.swing.JLabel();
+        jlabelAlzheimers = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -88,56 +88,56 @@ public class AppFrame extends javax.swing.JFrame {
 
         button2.setLabel("button2");
 
-        jlabelPhysical.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlabelPhysical.setText("Physical Info");
+        jlabelPhysicalInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabelPhysicalInfo.setText("Physical Info");
 
         jlabelBehavioral.setText("Behavioral Info");
 
         jlabelDisease.setText("Target Diseases");
 
-        jLabel1.setBackground(new java.awt.Color(119, 119, 119));
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Trait");
-        jLabel1.setOpaque(true);
+        jlabelTrait.setBackground(new java.awt.Color(119, 119, 119));
+        jlabelTrait.setForeground(new java.awt.Color(255, 255, 255));
+        jlabelTrait.setText("Trait");
+        jlabelTrait.setOpaque(true);
 
-        jLabel2.setLabelFor(checkboxAge);
-        jLabel2.setText("Age");
+        jlabelAge.setLabelFor(checkboxAge);
+        jlabelAge.setText("Age");
 
-        jLabel3.setLabelFor(checkboxGender);
-        jLabel3.setText("Gender");
+        jlabelGender.setLabelFor(checkboxGender);
+        jlabelGender.setText("Gender");
 
-        jLabel4.setLabelFor(checkboxPregnant);
-        jLabel4.setText("Pregnant");
+        jlabelPregnant.setLabelFor(checkboxPregnant);
+        jlabelPregnant.setText("Pregnant");
 
-        jLabel5.setLabelFor(checkboxHeight);
-        jLabel5.setText("Height");
+        jlabelHeight.setLabelFor(checkboxHeight);
+        jlabelHeight.setText("Height");
 
-        jLabel6.setLabelFor(checkboxWeight);
-        jLabel6.setText("Weight");
+        jlabelWeight.setLabelFor(checkboxWeight);
+        jlabelWeight.setText("Weight");
 
-        jLabel7.setLabelFor(checkboxBPHigh);
-        jLabel7.setText("Blood Pressure (High)");
+        jlabelBPHigh.setLabelFor(checkboxBPHigh);
+        jlabelBPHigh.setText("Blood Pressure (High)");
 
-        jLabel8.setLabelFor(checkboxBPLow);
-        jLabel8.setText("Blood Perssure (Low)");
+        jlabelBPLow.setLabelFor(checkboxBPLow);
+        jlabelBPLow.setText("Blood Perssure (Low)");
 
-        jLabel9.setLabelFor(checkboxCholesterol);
-        jLabel9.setText("Cholesterol");
+        jlabelCholesterol.setLabelFor(checkboxCholesterol);
+        jlabelCholesterol.setText("Cholesterol");
 
-        jLabel10.setLabelFor(checkboxGlucose);
-        jLabel10.setText("Glucose");
+        jlabelGlucose.setLabelFor(checkboxGlucose);
+        jlabelGlucose.setText("Glucose");
 
-        jLabel11.setText("Nicotine Use");
+        jlabelNicotine.setText("Nicotine Use");
 
-        jLabel12.setText("Alcohol Use");
+        jlabelAlcohol.setText("Alcohol Use");
 
-        jLabel13.setText("Physical Activity (days/week)");
+        jlabelPhysicalActivity.setText("Physical Activity (days/week)");
 
-        jLabel14.setText("COVID-19");
+        jlabelCOVID.setText("COVID-19");
 
-        jLabel15.setText("Cardiovascular Disease");
+        jlabelCVD.setText("Cardiovascular Disease");
 
-        jLabel16.setText("Alzheimer's Disease");
+        jlabelAlzheimers.setText("Alzheimer's Disease");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,7 +151,7 @@ public class AppFrame extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jlabelDisease)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jlabelPhysical)
+                                    .addComponent(jlabelPhysicalInfo)
                                     .addGap(12, 12, 12))
                                 .addComponent(jlabelBehavioral, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(layout.createSequentialGroup()
@@ -176,24 +176,24 @@ public class AppFrame extends javax.swing.JFrame {
                                 .addGap(32, 32, 32)))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jlabelTrait, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3))
+                                    .addComponent(jlabelAge)
+                                    .addComponent(jlabelHeight)
+                                    .addComponent(jlabelWeight)
+                                    .addComponent(jlabelBPHigh)
+                                    .addComponent(jlabelBPLow)
+                                    .addComponent(jlabelCholesterol)
+                                    .addComponent(jlabelNicotine)
+                                    .addComponent(jlabelAlcohol)
+                                    .addComponent(jlabelPhysicalActivity)
+                                    .addComponent(jlabelCOVID)
+                                    .addComponent(jlabelCVD)
+                                    .addComponent(jlabelAlzheimers)
+                                    .addComponent(jlabelGlucose)
+                                    .addComponent(jlabelPregnant)
+                                    .addComponent(jlabelGender))
                                 .addGap(0, 69, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -212,22 +212,22 @@ public class AppFrame extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(checkboxAll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jlabelTrait))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jlabelPhysical)
+                        .addComponent(jlabelPhysicalInfo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(checkboxAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(jlabelAge)
                                 .addGap(13, 13, 13)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(checkboxGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
+                            .addComponent(jlabelGender))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -236,51 +236,51 @@ public class AppFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
+                                            .addComponent(jlabelHeight)
                                             .addComponent(checkboxHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(checkboxWeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(jlabelWeight, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(checkboxBPHigh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4)))
-                    .addComponent(jLabel7))
+                            .addComponent(jlabelPregnant)))
+                    .addComponent(jlabelBPHigh))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkboxBPLow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(jlabelBPLow))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkboxCholesterol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addComponent(jlabelCholesterol))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkboxGlucose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                    .addComponent(jlabelGlucose))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlabelBehavioral)
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkboxNicotine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
+                    .addComponent(jlabelNicotine))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkboxAlcohol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
+                    .addComponent(jlabelAlcohol))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkboxPhysical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
+                    .addComponent(jlabelPhysicalActivity))
                 .addGap(13, 13, 13)
                 .addComponent(jlabelDisease)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkboxCOVID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
+                    .addComponent(jlabelCOVID))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkboxCVD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
+                    .addComponent(jlabelCVD))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -290,7 +290,7 @@ public class AppFrame extends javax.swing.JFrame {
                             .addComponent(button1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel16)
+                        .addComponent(jlabelAlzheimers)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -360,25 +360,25 @@ public class AppFrame extends javax.swing.JFrame {
     private java.awt.Checkbox checkboxPregnant;
     private java.awt.Checkbox checkboxWeight;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jlabelAge;
+    private javax.swing.JLabel jlabelAlcohol;
+    private javax.swing.JLabel jlabelAlzheimers;
+    private javax.swing.JLabel jlabelBPHigh;
+    private javax.swing.JLabel jlabelBPLow;
     private javax.swing.JLabel jlabelBehavioral;
+    private javax.swing.JLabel jlabelCOVID;
+    private javax.swing.JLabel jlabelCVD;
+    private javax.swing.JLabel jlabelCholesterol;
     private javax.swing.JLabel jlabelDisease;
-    private javax.swing.JLabel jlabelPhysical;
+    private javax.swing.JLabel jlabelGender;
+    private javax.swing.JLabel jlabelGlucose;
+    private javax.swing.JLabel jlabelHeight;
+    private javax.swing.JLabel jlabelNicotine;
+    private javax.swing.JLabel jlabelPhysicalActivity;
+    private javax.swing.JLabel jlabelPhysicalInfo;
+    private javax.swing.JLabel jlabelPregnant;
     private javax.swing.JLabel jlabelTitle;
+    private javax.swing.JLabel jlabelTrait;
+    private javax.swing.JLabel jlabelWeight;
     // End of variables declaration//GEN-END:variables
 }
