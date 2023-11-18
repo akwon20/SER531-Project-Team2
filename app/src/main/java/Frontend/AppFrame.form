@@ -42,75 +42,70 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="jlabelDisease" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jlabelPhysicalInfo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jlabelBehavioral" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="jlabelDisease" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jlabelPhysicalInfo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jlabelBehavioral" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="checkboxAll" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxAge" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxGender" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxHeight" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxWeight" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxBPHigh" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxBPLow" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxCholesterol" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxNicotine" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxAlcohol" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxPhysical" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxCOVID" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxCVD" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="checkboxAlzheimers" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="checkboxAll" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxAge" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxGender" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxHeight" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxWeight" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxBPHigh" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxBPLow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxCholesterol" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxNicotine" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxAlcohol" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxPhysical" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxCOVID" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxCVD" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="checkboxAlzheimers" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jlabelTrait" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jlabelAge" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelHeight" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelWeight" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelBPHigh" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelBPLow" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelCholesterol" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelNicotine" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelAlcohol" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelPhysicalActivity" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelCOVID" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelCVD" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelAlzheimers" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlabelGender" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="69" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="button2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="button1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jlabelAge" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelHeight" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelWeight" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelBPHigh" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelBPLow" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelCholesterol" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelNicotine" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelAlcohol" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelPhysicalActivity" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelCOVID" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelCVD" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelAlzheimers" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelGender" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jlabelTrait" min="-2" pref="195" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jlabelInput" pref="85" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="button2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Component id="button1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
           </Group>
           <Component id="jlabelTitle" alignment="0" max="32767" attributes="0"/>
       </Group>
@@ -123,7 +118,10 @@
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="checkboxAll" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlabelTrait" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jlabelTrait" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlabelInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -423,6 +421,18 @@
     <Component class="javax.swing.JLabel" name="jlabelAlzheimers">
       <Properties>
         <Property name="text" type="java.lang.String" value="Alzheimer&apos;s Disease"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlabelInput">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="77" green="77" red="77" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Trait"/>
+        <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
   </SubComponents>
