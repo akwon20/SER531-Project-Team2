@@ -78,31 +78,32 @@
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jlabelTrait" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
-                          <Component id="jlabelAge" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelGender" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelHeight" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelWeight" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelBPHigh" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelBPLow" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelCholesterol" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelNicotine" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelAlcohol" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelCOVID" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelCVD" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelAlzheimers" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="buttonSubmit" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Component id="buttonCancel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jlabelPhysicalActivity" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                  <Component id="jlabelTrait" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
+                  <Component id="jlabelAge" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelGender" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelHeight" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelWeight" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelBPHigh" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelBPLow" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelCholesterol" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelNicotine" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelAlcohol" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelCOVID" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelCVD" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelAlzheimers" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelGlucose" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="buttonSubmit" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="buttonCancel" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jlabelPhysicalActivity" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jlabelPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jlabelInput" pref="99" max="32767" attributes="0"/>
@@ -132,11 +133,10 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jlabelPregnant" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="checkbox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -179,7 +179,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="checkbox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="textField1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="textField2" min="-2" max="-2" attributes="0"/>
@@ -212,7 +212,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="checkboxBPLow" min="-2" max="-2" attributes="0"/>
                   <Component id="textField4" min="-2" max="-2" attributes="0"/>
@@ -278,7 +278,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jlabelAlzheimers" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="buttonCancel" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="buttonSubmit" alignment="1" min="-2" max="-2" attributes="0"/>
