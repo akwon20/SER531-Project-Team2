@@ -100,8 +100,10 @@ public class AppFrame extends javax.swing.JFrame {
             }
         });
 
+        buttonCancel.setActionCommand("Clear");
         buttonCancel.setBackground(new java.awt.Color(255, 102, 102));
-        buttonCancel.setLabel("Cancel");
+        buttonCancel.setLabel("Clear");
+        buttonCancel.setMinimumSize(new java.awt.Dimension(60, 24));
 
         jlabelPhysicalInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlabelPhysicalInfo.setText("Physical Info");

@@ -325,10 +325,14 @@
     </Component>
     <Component class="java.awt.Button" name="buttonCancel">
       <Properties>
+        <Property name="actionCommand" type="java.lang.String" value="Clear"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="ff" type="rgb"/>
         </Property>
-        <Property name="label" type="java.lang.String" value="Cancel"/>
+        <Property name="label" type="java.lang.String" value="Clear"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[60, 24]"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="java.awt.Checkbox" name="checkboxGender">
