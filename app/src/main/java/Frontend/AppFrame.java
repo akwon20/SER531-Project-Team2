@@ -161,13 +161,25 @@ public class AppFrame extends javax.swing.JFrame {
 
         dropdownGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
 
+        textField1.setBackground(new java.awt.Color(255, 255, 255));
         textField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
+        textField2.setBackground(new java.awt.Color(255, 255, 255));
+
+        textField3.setBackground(new java.awt.Color(255, 255, 255));
         textField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textField3ActionPerformed(evt);
             }
         });
+
+        textField4.setBackground(new java.awt.Color(255, 255, 255));
+
+        textField5.setBackground(new java.awt.Color(255, 255, 255));
+
+        textField6.setBackground(new java.awt.Color(255, 255, 255));
+
+        textField7.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
