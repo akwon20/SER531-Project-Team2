@@ -164,7 +164,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         dropdownAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        dropdownGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+        dropdownGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
         textField1.setBackground(new java.awt.Color(255, 255, 255));
         textField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
