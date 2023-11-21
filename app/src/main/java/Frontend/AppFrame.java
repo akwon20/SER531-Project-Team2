@@ -14,6 +14,7 @@ public class AppFrame extends javax.swing.JFrame {
      * Creates new form AppFrame
      */
     public AppFrame() {
+        System.out.println("AppFrame() Constructor called!");
         initComponents();
     }
 
@@ -393,6 +394,7 @@ public class AppFrame extends javax.swing.JFrame {
 
     private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
         // TODO add your handling code here:
+        System.out.println("Submit button pressed!");
     }//GEN-LAST:event_buttonSubmitActionPerformed
 
     private void textField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField3ActionPerformed
