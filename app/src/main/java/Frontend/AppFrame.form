@@ -156,30 +156,39 @@
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jlabelPhysicalInfo" min="-2" max="-2" attributes="0"/>
+              <Component id="jlabelPhysicalInfo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="checkboxAge" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="checkboxAge" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="checkboxGender" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jlabelGender" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="dropdownGender" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="jlabelAge" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="dropdownAge" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                          <Component id="checkboxGender" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jlabelGender" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="dropdownGender" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="jlabelAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="dropdownAge" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="checkbox1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Component id="textField1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="textField2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="textField3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="checkboxPregnant" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -193,39 +202,32 @@
                                   </Group>
                                   <Component id="jlabelWeight" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="checkboxBPHigh" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jlabelPregnant" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="checkbox1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                              <Component id="textField1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textField3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jlabelPregnant" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="checkboxBPHigh" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlabelBPHigh" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jlabelBPHigh" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="checkboxBPLow" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlabelBPLow" min="-2" max="-2" attributes="0"/>
                   <Component id="textField4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelBPLow" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="checkboxCholesterol" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlabelCholesterol" min="-2" max="-2" attributes="0"/>
                   <Component id="textField5" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlabelCholesterol" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="checkboxGlucose" min="-2" max="-2" attributes="0"/>
                           <Component id="jlabelGlucose" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -312,6 +314,9 @@
     </Component>
     <Component class="java.awt.Button" name="buttonSubmit">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="ff" red="66" type="rgb"/>
+        </Property>
         <Property name="label" type="java.lang.String" value="Submit"/>
       </Properties>
       <Events>
@@ -320,6 +325,9 @@
     </Component>
     <Component class="java.awt.Button" name="buttonCancel">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="ff" type="rgb"/>
+        </Property>
         <Property name="label" type="java.lang.String" value="Cancel"/>
       </Properties>
     </Component>
