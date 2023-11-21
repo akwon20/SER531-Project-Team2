@@ -47,6 +47,8 @@ public class App {
 //        GUI testFrame = new GUI();
         AppFrame testFrame = new AppFrame();
         
+        testFrame.setVisible(true);
+        
         createAdminConnection();
         ConnectionConfiguration connectionConfig = ConnectionConfiguration
                 .to(to)
