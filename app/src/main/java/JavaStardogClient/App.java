@@ -44,7 +44,6 @@ public class App {
     private static final IRI IncredibleHulk = Values.iri(NS, "incredibleHulk");
 
     public static void main(String[] args) {
-//        GUI testFrame = new GUI();
         AppFrame testFrame = new AppFrame();
         
         testFrame.setVisible(true);
