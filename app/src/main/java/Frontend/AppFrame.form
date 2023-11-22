@@ -227,7 +227,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jCheckBoxAge" min="-2" max="-2" attributes="0"/>
@@ -239,80 +239,68 @@
                                   <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                                   <Component id="jLabelGender" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jCheckBoxHeight" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jCheckBoxPregnant" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                                   <Component id="jLabelPregnant" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="pregnantBoolCheckbox" max="32767" attributes="0"/>
-                                          <Component id="jTextFieldHeight" pref="79" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
-                                      <Component id="jComboBoxGender" min="-2" pref="79" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxAge" min="-2" pref="79" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jComboBoxAge" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                              <Component id="jComboBoxGender" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                              <Component id="pregnantBoolCheckbox" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabelHeight" alignment="1" min="-2" pref="125" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jCheckBoxGlucose" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="jLabelGlucose" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jCheckBoxCholesterol" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="jLabelCholesterol" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jCheckBoxBPLow" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="jLabelBPLow" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jCheckBoxWeight" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="jLabelWeight" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jCheckBoxBPHigh" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
-                                      <Component id="jLabelBPHigh" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jCheckBoxHeight" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jLabelHeight" min="-2" pref="125" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jCheckBoxGlucose" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="jLabelGlucose" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jCheckBoxCholesterol" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="jLabelCholesterol" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jCheckBoxBPLow" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="jLabelBPLow" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jCheckBoxWeight" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="jLabelWeight" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jCheckBoxBPHigh" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
+                                  <Component id="jLabelBPHigh" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="204" pref="204" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                          <Component id="jTextFieldBPHeight" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                                          <Component id="jTextFieldWeight" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                              <Component id="jTextFieldBPHeight" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldWeight" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jTextFieldBPLow" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jTextFieldBPLow" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldCholesterol" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jTextFieldCholesterol" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldGlucose" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextFieldGlucose" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                              <Component id="jTextFieldHeight" min="-2" pref="79" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -324,31 +312,29 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                                  <Component id="jCheckBoxAge" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jComboBoxAge" min="-2" pref="23" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="jCheckBoxAge" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                          <Component id="jLabelAge" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBoxAge" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBoxGender" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBoxGender" min="-2" pref="23" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jCheckBoxGender" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           <Component id="jLabelGender" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jComboBoxGender" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -356,26 +342,32 @@
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Component id="jCheckBoxPregnant" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="pregnantBoolCheckbox" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Component id="jLabelPregnant" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="pregnantBoolCheckbox" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBoxHeight" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelHeight" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jCheckBoxHeight" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextFieldHeight" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Component id="jLabelHeight" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTextFieldHeight" min="-2" pref="23" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
