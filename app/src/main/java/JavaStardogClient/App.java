@@ -1,6 +1,5 @@
 package JavaStardogClient;
 
-import Frontend.GUI;
 import Frontend.AppFrame;
 
 import com.complexible.common.rdf.query.resultio.TextTableQueryResultWriter;

@@ -299,12 +299,10 @@ public class AppFrame extends javax.swing.JFrame {
                         .addComponent(pregnantBoolCheckbox)))
                 .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelPhysicalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPhysicalLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBoxHeight))
+                            .addComponent(jCheckBoxHeight, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanelPhysicalLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextFieldHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(4, 4, 4)))
                         .addGap(1, 1, 1)
@@ -545,11 +543,6 @@ public class AppFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Submit button pressed!");
-    }//GEN-LAST:event_buttonSubmitActionPerformed
-
     private void jCheckBoxAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxAgeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxAgeActionPerformed
@@ -569,6 +562,11 @@ public class AppFrame extends javax.swing.JFrame {
     private void jTextFieldBPLowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBPLowActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBPLowActionPerformed
+
+    private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Submit button pressed!");
+    }//GEN-LAST:event_buttonSubmitActionPerformed
 
     /**
      * @param args the command line arguments
