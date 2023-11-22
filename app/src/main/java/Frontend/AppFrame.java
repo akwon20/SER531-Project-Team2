@@ -60,12 +60,12 @@ public class AppFrame extends javax.swing.JFrame {
         jComboBoxAge = new javax.swing.JComboBox<>();
         jComboBoxGender = new javax.swing.JComboBox<>();
         pregnantBoolCheckbox = new javax.swing.JCheckBox();
-        jTextFieldWeight = new javax.swing.JTextField();
         jTextFieldHeight = new javax.swing.JTextField();
         jTextFieldBPHeight = new javax.swing.JTextField();
         jTextFieldBPLow = new javax.swing.JTextField();
         jTextFieldCholesterol = new javax.swing.JTextField();
         jTextFieldGlucose = new javax.swing.JTextField();
+        jComboBoxWeight = new javax.swing.JComboBox<>();
         jPanelBehavior = new javax.swing.JPanel();
         jCheckBoxNicotine = new javax.swing.JCheckBox();
         jCheckBoxAlcohol = new javax.swing.JCheckBox();
@@ -165,7 +165,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         jLabelHeight.setText("Height");
 
-        jLabelWeight.setText("Weight");
+        jLabelWeight.setText("Weight (lbs)");
 
         jLabelBPHigh.setText("Blood Pressure (High)");
 
@@ -175,13 +175,11 @@ public class AppFrame extends javax.swing.JFrame {
 
         jLabelGlucose.setText("Glucose");
 
-        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-12", "13-17", "18-25", "26-30", "31-40", "41-50", "51-60", "61-65", "65+" }));
+        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-12", "13-17", "18-25", "26-30", "31-40", "41-50", "51-60", "61-65", "65 <" }));
 
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
         pregnantBoolCheckbox.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        jTextFieldWeight.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jTextFieldHeight.setToolTipText("");
         jTextFieldHeight.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -198,6 +196,8 @@ public class AppFrame extends javax.swing.JFrame {
         jTextFieldCholesterol.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jTextFieldGlucose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jComboBoxWeight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "125 >", "125 - 150", "150 - 175", "175 - 200", "200 <" }));
 
         javax.swing.GroupLayout jPanelPhysicalLayout = new javax.swing.GroupLayout(jPanelPhysical);
         jPanelPhysical.setLayout(jPanelPhysicalLayout);
@@ -221,10 +221,10 @@ public class AppFrame extends javax.swing.JFrame {
                                 .addGap(71, 71, 71)
                                 .addComponent(jLabelPregnant, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pregnantBoolCheckbox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxAge, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBoxGender, javax.swing.GroupLayout.Alignment.TRAILING, 0, 112, Short.MAX_VALUE)))
+                        .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxGender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxAge, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
                     .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                         .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelPhysicalLayout.createSequentialGroup()
@@ -252,18 +252,23 @@ public class AppFrame extends javax.swing.JFrame {
                                 .addComponent(jCheckBoxBPHigh)
                                 .addGap(71, 71, 71)
                                 .addComponent(jLabelBPHigh)))
-                        .addGap(204, 204, 204)
-                        .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelPhysicalLayout.createSequentialGroup()
+                                .addGap(237, 237, 237)
+                                .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextFieldBPHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextFieldWeight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jTextFieldBPLow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextFieldCholesterol, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jTextFieldGlucose, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextFieldHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jTextFieldBPHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jTextFieldBPLow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jTextFieldCholesterol, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTextFieldGlucose, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextFieldHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pregnantBoolCheckbox, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPhysicalLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
+                                .addComponent(jComboBoxWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))))
         );
         jPanelPhysicalLayout.setVerticalGroup(
             jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,16 +306,14 @@ public class AppFrame extends javax.swing.JFrame {
                     .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBoxHeight, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelPhysicalLayout.createSequentialGroup()
+                                .addComponent(jCheckBoxHeight)
+                                .addGap(6, 6, 6)
+                                .addComponent(jCheckBoxWeight))
                             .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                                 .addComponent(jTextFieldHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4)))
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelPhysicalLayout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addComponent(jCheckBoxWeight))
-                            .addComponent(jTextFieldWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBoxWeight))))
                     .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jLabelHeight)
@@ -394,17 +397,12 @@ public class AppFrame extends javax.swing.JFrame {
                     .addComponent(jLabelNicotine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelPhysical, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelAlcohol, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                 .addGroup(jPanelBehaviorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelBehaviorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelBehaviorLayout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldPhysical, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelBehaviorLayout.createSequentialGroup()
-                            .addGap(133, 133, 133)
-                            .addComponent(alcoholBoolCheckbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBehaviorLayout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(nicotineBoolCheckbox, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jTextFieldPhysical, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBehaviorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(alcoholBoolCheckbox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                        .addComponent(nicotineBoolCheckbox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanelBehaviorLayout.setVerticalGroup(
             jPanelBehaviorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -489,28 +487,23 @@ public class AppFrame extends javax.swing.JFrame {
                 .addComponent(jlabelTrait, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlabelInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanelBehavior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanelPhysical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlabelPhysicalInfo))))
-                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(165, 165, 165))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlabelBehavioral)
                     .addComponent(jlabelDisease)
-                    .addComponent(jPanelDisease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(143, 143, 143))
+                    .addComponent(jPanelDisease, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanelPhysical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlabelPhysicalInfo)))
+                    .addComponent(jPanelBehavior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -627,6 +620,7 @@ public class AppFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBoxAge;
     private javax.swing.JComboBox<String> jComboBoxGender;
+    private javax.swing.JComboBox<String> jComboBoxWeight;
     private javax.swing.JLabel jLabelAge;
     private javax.swing.JLabel jLabelAlcohol;
     private javax.swing.JLabel jLabelAlzheimers;
@@ -652,7 +646,6 @@ public class AppFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldGlucose;
     private javax.swing.JTextField jTextFieldHeight;
     private javax.swing.JTextField jTextFieldPhysical;
-    private javax.swing.JTextField jTextFieldWeight;
     private javax.swing.JLabel jlabelBehavioral;
     private javax.swing.JLabel jlabelDisease;
     private javax.swing.JLabel jlabelInput;

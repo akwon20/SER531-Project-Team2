@@ -50,21 +50,10 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jlabelInput" max="32767" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanelBehavior" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanelPhysical" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlabelPhysicalInfo" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanelButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
@@ -72,13 +61,16 @@
                   <Component id="jlabelBehavioral" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jlabelDisease" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanelDisease" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jPanelPhysical" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlabelPhysicalInfo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="jPanelBehavior" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jPanelButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -246,13 +238,13 @@
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="pregnantBoolCheckbox" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
-                              <Component id="jComboBoxAge" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jComboBoxGender" alignment="1" pref="112" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jComboBoxGender" alignment="1" min="-2" pref="112" max="-2" attributes="0"/>
+                              <Component id="jComboBoxAge" alignment="1" min="-2" pref="112" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jCheckBoxHeight" min="-2" max="-2" attributes="0"/>
@@ -286,22 +278,29 @@
                                   <Component id="jLabelBPHigh" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="237" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                              <Component id="jTextFieldBPHeight" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldWeight" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                                  <Component id="jTextFieldBPHeight" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                                                  <Component id="jTextFieldBPLow" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jTextFieldCholesterol" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jTextFieldBPLow" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldGlucose" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jTextFieldCholesterol" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldHeight" min="-2" pref="79" max="-2" attributes="0"/>
+                                      <Component id="pregnantBoolCheckbox" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jTextFieldGlucose" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextFieldHeight" min="-2" pref="79" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="216" max="32767" attributes="0"/>
+                                  <Component id="jComboBoxWeight" min="-2" pref="112" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -356,19 +355,16 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jCheckBoxHeight" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="jTextFieldHeight" min="-2" pref="23" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxHeight" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   <Component id="jCheckBoxWeight" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextFieldWeight" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldHeight" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jComboBoxWeight" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -490,7 +486,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelWeight">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Weight"/>
+            <Property name="text" type="java.lang.String" value="Weight (lbs)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelBPHigh">
@@ -525,7 +521,7 @@
                 <StringItem index="5" value="41-50"/>
                 <StringItem index="6" value="51-60"/>
                 <StringItem index="7" value="61-65"/>
-                <StringItem index="8" value="65+"/>
+                <StringItem index="8" value="65 &lt;"/>
               </StringArray>
             </Property>
           </Properties>
@@ -549,15 +545,6 @@
         <Component class="javax.swing.JCheckBox" name="pregnantBoolCheckbox">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldWeight">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldHeight">
@@ -609,6 +596,22 @@
             </Property>
           </Properties>
         </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxWeight">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="125 &gt;"/>
+                <StringItem index="1" value="125 - 150"/>
+                <StringItem index="2" value="150 - 175"/>
+                <StringItem index="3" value="175 - 200"/>
+                <StringItem index="4" value="200 &lt;"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanelBehavior">
@@ -629,20 +632,12 @@
                       <Component id="jLabelPhysical" alignment="1" max="32767" attributes="0"/>
                       <Component id="jLabelAlcohol" alignment="0" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace pref="160" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jTextFieldPhysical" min="-2" pref="79" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-                              <Component id="alcoholBoolCheckbox" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
-                          <Component id="nicotineBoolCheckbox" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="jTextFieldPhysical" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="alcoholBoolCheckbox" alignment="1" pref="79" max="32767" attributes="0"/>
+                          <Component id="nicotineBoolCheckbox" alignment="1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
