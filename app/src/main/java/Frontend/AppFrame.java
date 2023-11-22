@@ -175,7 +175,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         jLabelGlucose.setText("Glucose");
 
-        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18-25", "26-30", "31-40", "41-50", "51-60", "61-65", "65+" }));
 
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
@@ -221,10 +221,10 @@ public class AppFrame extends javax.swing.JFrame {
                                 .addGap(71, 71, 71)
                                 .addComponent(jLabelPregnant, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxAge, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxGender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pregnantBoolCheckbox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pregnantBoolCheckbox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxAge, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBoxGender, javax.swing.GroupLayout.Alignment.TRAILING, 0, 112, Short.MAX_VALUE)))
                     .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                         .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanelPhysicalLayout.createSequentialGroup()
