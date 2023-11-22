@@ -175,7 +175,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         jLabelGlucose.setText("Glucose");
 
-        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18-25", "26-30", "31-40", "41-50", "51-60", "61-65", "65+" }));
+        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-12", "13-17", "18-25", "26-30", "31-40", "41-50", "51-60", "61-65", "65+" }));
 
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
@@ -227,10 +227,11 @@ public class AppFrame extends javax.swing.JFrame {
                             .addComponent(jComboBoxGender, javax.swing.GroupLayout.Alignment.TRAILING, 0, 112, Short.MAX_VALUE)))
                     .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                         .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanelPhysicalLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelPhysicalLayout.createSequentialGroup()
                                 .addComponent(jCheckBoxHeight)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabelHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9))
                             .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                                 .addComponent(jCheckBoxGlucose)
                                 .addGap(71, 71, 71)
@@ -297,20 +298,15 @@ public class AppFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pregnantBoolCheckbox)))
                 .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPhysicalLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxHeight))
                     .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                         .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelPhysicalLayout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(jLabelHeight))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPhysicalLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBoxHeight))
                             .addGroup(jPanelPhysicalLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(2, 2, 2)))
-                .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelPhysicalLayout.createSequentialGroup()
+                                .addComponent(jTextFieldHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(4, 4, 4)))
                         .addGap(1, 1, 1)
                         .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelPhysicalLayout.createSequentialGroup()
@@ -318,7 +314,9 @@ public class AppFrame extends javax.swing.JFrame {
                                 .addComponent(jCheckBoxWeight))
                             .addComponent(jTextFieldWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelPhysicalLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabelHeight)
+                        .addGap(12, 12, 12)
                         .addComponent(jLabelWeight)))
                 .addGap(1, 1, 1)
                 .addGroup(jPanelPhysicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
