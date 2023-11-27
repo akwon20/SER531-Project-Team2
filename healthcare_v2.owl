@@ -13,6 +13,7 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="healthcare" IRI="http://www.semanticweb.org/ontologies/healthcare#"/>
+    <Import>https://schema.org/</Import>
     <Declaration>
         <Class IRI="#APHigh"/>
     </Declaration>
@@ -391,6 +392,10 @@
         <Class IRI="#PreConditions"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Patients"/>
+        <Class IRI="https://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PhysicalActivity"/>
         <Class IRI="#BehaviorTraits"/>
     </SubClassOf>
@@ -405,6 +410,10 @@
     <SubClassOf>
         <Class IRI="#PreConditions"/>
         <Class IRI="#Diseases"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreConditions"/>
+        <Class IRI="https://schema.org/MedicalRiskFactor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Pregnancy"/>
@@ -437,6 +446,10 @@
     <SubClassOf>
         <Class IRI="#Topic"/>
         <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Traits"/>
+        <Class IRI="https://schema.org/MedicalRiskFactor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Weights"/>
