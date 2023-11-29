@@ -27,6 +27,20 @@ public class Source {
     
     public Source() {
         System.out.println("Soure() Constructor called!");
+        
+        ageGroup = "";
+        gender = "";
+        pregnantStatus = false;
+        height = "";
+        weightGroup = "";
+        bloodPressureHigh = "";
+        bloodPressureLow = "";
+        cholesterol = "";
+        glucose = "";
+
+        nicotineUse = false;
+        alcoholUse = false;
+        physicalActivity = "";
     }
     
     protected void setAgeGroup(String ageGroup) {
