@@ -824,7 +824,6 @@ public class AppFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBoxAllActionPerformed(java.awt.event.ActionEvent evt) {
-        
         if (jCheckBoxAll.isSelected()) {
             System.out.println("All checkbox selected!");
             for (int i = 0; i < 15; i++) {
@@ -869,6 +868,8 @@ public class AppFrame extends javax.swing.JFrame {
                 System.out.println("Checkbox " + i + " not selected!");
             }
         }
+        
+        jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_buttonSubmitActionPerformed
 
     private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {
