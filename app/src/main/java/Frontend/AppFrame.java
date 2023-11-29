@@ -893,8 +893,11 @@ public class AppFrame extends javax.swing.JFrame {
         }
     }
     
-    private void sendInputs() {
-        
+    private void sendInputs(int index) {
+        switch(index) {
+            default:
+                System.out.println("No input sent!");
+        }
     }
     
     private void clearInputCheckBoxes() {
