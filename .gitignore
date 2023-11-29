@@ -40,3 +40,6 @@ replay_pid*
 .gradle/
 build/
 out/
+
+# Ontology properties
+*.properties
