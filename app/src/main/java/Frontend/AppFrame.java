@@ -865,6 +865,9 @@ public class AppFrame extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             if (checkboxesLeftInfo[i].isSelected()) {
                 System.out.println("Checkbox " + i + " selected!");
+                if (i < 12) {
+                    sendInput(i);
+                }
             }
             else {
                 System.out.println("Checkbox " + i + " not selected!");
@@ -893,10 +896,23 @@ public class AppFrame extends javax.swing.JFrame {
         }
     }
     
-    private void sendInputs(int index) {
+    private void sendInput(int index) {
+        System.out.println("Sending input from checkbox: " + index);
+        
         switch(index) {
-            default:
-                System.out.println("No input sent!");
+            case 0 -> source.setAgeGroup((String)jComboBoxAge.getSelectedItem());
+            case 1 -> source.setGender((String)jComboBoxGender.getSelectedItem());
+            case 2 -> source.setPregnantStatus(jCheckBoxPregnant.isSelected());
+            case 3 -> source.setHeight(jTextFieldHeight.getText());
+            case 4 -> source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
+            case 5 -> source.setBloodPressureHigh(jTextFieldBPHigh.getText());
+            case 6 -> source.setBloodPressureLow(jTextFieldBPLow.getText());
+            case 7 -> source.setCholesterol(jTextFieldCholesterol.getText());
+            case 8 -> source.setGlucose(jTextFieldGlucose.getText());
+            case 9 -> source.setNicotineUse(jCheckBoxNicotine.isSelected());
+            case 10 -> source.setAlcoholUse(jCheckBoxAlcohol.isSelected());
+            case 11 -> source.setPhysicalActivity(jTextFieldPhysical.getText());
+            default -> System.out.println("No input sent!");
         }
     }
     
