@@ -9,16 +9,15 @@ import com.complexible.stardog.api.admin.AdminConnection;
 import com.complexible.stardog.api.admin.AdminConnectionConfiguration;
 import com.stardog.stark.IRI;
 import com.stardog.stark.Values;
+import com.stardog.stark.io.RDFFormats;
 import com.stardog.stark.query.SelectQueryResult;
 import com.stardog.stark.query.io.QueryResultWriters;
+import com.stardog.stark.vocabs.FOAF;
+import com.stardog.stark.vocabs.RDF;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
-import com.stardog.stark.io.*;
-import com.stardog.stark.vocabs.FOAF;
-import com.stardog.stark.vocabs.RDF;
 
 public class App {
     private static final String url = "https://sd-39a9d5fb.stardog.cloud:5820";
