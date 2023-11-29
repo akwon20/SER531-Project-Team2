@@ -891,6 +891,10 @@ public class AppFrame extends javax.swing.JFrame {
         }
     }
     
+    private void sendInputs() {
+        
+    }
+    
     private void clearInputCheckBoxes() {
         System.out.println("clearInputCheckBoxes() called!");
         
