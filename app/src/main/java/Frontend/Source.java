@@ -24,7 +24,7 @@ public class Source {
     boolean nicotineUse;
     boolean alcoholUse;
     String physicalActivity;
-    
+        
     public Source() {
         System.out.println("Soure() Constructor called!");
         
@@ -138,5 +138,21 @@ public class Source {
     protected String getPhysicalActivity() {
         return this.physicalActivity;
     }
-        
+    
+    // For Debug purposes
+    protected void printVariables() {
+        System.out.println("Age Group: " + getAgeGroup());
+        System.out.println("Gender: " + getGender());
+        System.out.println("Pregnant: " + getPregnantStatus());
+        System.out.println("Height: " + getHeight());
+        System.out.println("Weight Group: " + getWeightGroup());
+        System.out.println("Blood Pressure (High): " + getBloodPressureHigh());
+        System.out.println("Blood Pressure (Low): " + getBloodPressureLow());
+        System.out.println("Cholesterol: " + getCholesterol());
+        System.out.println("Glucose: " + getGlucose());
+        System.out.println("Nicotine Use: " + getNicotineUse());
+        System.out.println("Alcohol Use: " + getAlcoholUse());
+        System.out.println("Physical Activity: " + getPhysicalActivity());
+
+    }        
 }

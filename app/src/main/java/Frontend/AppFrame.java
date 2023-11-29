@@ -875,6 +875,7 @@ public class AppFrame extends javax.swing.JFrame {
         }
         
         jTabbedPane1.setSelectedIndex(1);
+        source.printVariables();    // Remove once debugging is finished
     }//GEN-LAST:event_buttonSubmitActionPerformed
 
     private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {
@@ -1069,7 +1070,6 @@ public class AppFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox pregnantBoolCheckbox;
     // End of variables declaration//GEN-END:variables
 
-    
     private Source source;
     
 }
