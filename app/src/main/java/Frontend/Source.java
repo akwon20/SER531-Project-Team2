@@ -10,5 +10,7 @@ package Frontend;
  * @author austinkwon
  */
 public class Source {
-    
+    public Source() {
+        System.out.println("Soure() Constructor called!");
+    }
 }
