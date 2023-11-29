@@ -45,6 +45,8 @@ public class AppFrame extends javax.swing.JFrame {
         checkboxesLeftInfo[13] = jCheckBoxCardio;
         checkboxesLeftInfo[14] = jCheckBoxAlzheimers;
         
+        this.source = new Source();
+        
     }
 
     /**
