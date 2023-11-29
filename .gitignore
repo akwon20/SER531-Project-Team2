@@ -42,4 +42,4 @@ build/
 out/
 
 # Ontology properties
-*.properties
+healthcare_v2.properties
