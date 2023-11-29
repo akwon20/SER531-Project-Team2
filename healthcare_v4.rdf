@@ -1,0 +1,717 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/healthcare/"
+     xml:base="http://www.semanticweb.org/ontologies/healthcare/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:healthcare="http://www.semanticweb.org/ontologies/healthcare#"
+     xmlns:healthcare1="http://www.semanticweb.org/healthcare#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/healthcare"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasAgeGroup -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasAgeGroup">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#AgeGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasAlzheimers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasAlzheimers">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasDisease"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Diseases"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasAsthma -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasAsthma">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPrecondition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Asthma"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasCardiovascular -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasCardiovascular">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasDisease"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Diseases"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Cardiovascular"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasClass -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasClass">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#SurveyClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasCopd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasCopd">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPrecondition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Copd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasCovid -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasCovid">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasDisease"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Diseases"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#COVID19"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasDataValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasDataValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#DataValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasDiabetes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasDiabetes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPrecondition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Diabetes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Diseases"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasGender">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasHypertension -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasHypertension">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPrecondition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Hypertension"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasInmsupr -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasInmsupr">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPrecondition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Inmsupr"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasObesity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasObesity">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPrecondition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Diabetes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasPneumonia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasPneumonia">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPrecondition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Pneumonia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasPrecondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasPrecondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasQuestion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasQuestion">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Question"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasRenalChronic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasRenalChronic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPrecondition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#RenalChronic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasSurveyProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasSurveyProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Survey"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasTopic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasTopic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#Topic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasYearEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasYearEnd">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#YearEnd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasYearStart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/healthcare#hasYearStart">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasSurveyProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/healthcare#YearStart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#class -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#class">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#SurveyClass"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#dataValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#dataValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#DataValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasAPHigh -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasAPHigh">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasBloodWork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasAPLow -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasAPLow">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasBloodWork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasAge">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPhysicalTrait"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasBehavioralTrait -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasBehavioralTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasTrait"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasBloodWork -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasBloodWork">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasTrait"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasCholestrol -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasCholestrol">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasBloodWork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasGender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasGender">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPhysicalTrait"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasGlucose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasGlucose">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasBloodWork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasHeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPhysicalTrait"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasPhysicalTrait -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasPhysicalTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasTrait"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasTrait -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#hasWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#hasWeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPhysicalTrait"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#highConfidenceLimit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#highConfidenceLimit">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Survey"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#isPregnant -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#isPregnant">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasPhysicalTrait"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#locationDesc -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#locationDesc">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#lowConfidenceLimit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#lowConfidenceLimit">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Survey"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#physicalActivity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#physicalActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasBehavioralTrait"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#question -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#question">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Question"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#smokes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#smokes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasBehavioralTrait"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#surveyInfo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#surveyInfo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#topic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#topic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Topic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#usesAlcohol -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#usesAlcohol">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#hasBehavioralTrait"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#yearEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#yearEnd">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#YearEnd"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#yearStart -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/healthcare#yearStart">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/healthcare#surveyInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/healthcare#YearStart"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#AgeGroup -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#AgeGroup">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Asthma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Asthma">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#COVID19 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#COVID19">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Cardiovascular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Cardiovascular">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Copd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Copd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#DataValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#DataValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Diabetes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Diabetes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Diseases -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Diseases"/>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Gender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Gender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Hypertension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Hypertension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Inmsupr -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Inmsupr">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Obesity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Obesity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Patients -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Patients">
+        <rdfs:subClassOf rdf:resource="https://schema.org/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Pneumonia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Pneumonia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#PreConditions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#PreConditions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#Diseases"/>
+        <rdfs:subClassOf rdf:resource="https://schema.org/MedicalRiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Question -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Question">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#RenalChronic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#RenalChronic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#PreConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Survey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Survey"/>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#SurveyClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#SurveyClass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#SurveyProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#Topic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#Topic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#YearEnd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#YearEnd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/healthcare#YearStart -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/healthcare#YearStart">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/healthcare#SurveyProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/MedicalRiskFactor -->
+
+    <owl:Class rdf:about="https://schema.org/MedicalRiskFactor"/>
+    
+
+
+    <!-- https://schema.org/Person -->
+
+    <owl:Class rdf:about="https://schema.org/Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
