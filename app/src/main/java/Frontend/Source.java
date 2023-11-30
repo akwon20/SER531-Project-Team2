@@ -16,16 +16,15 @@ public class Source {
     boolean pregnantStatus;
     int height;
     String weightGroup;
-    String bloodPressureHigh;
-    String bloodPressureLow;
-    String cholesterol;
-    String glucose;
+    int bloodPressureHigh;
+    int bloodPressureLow;
+    int cholesterol;
+    int glucose;
     
     boolean nicotineUse;
     boolean alcoholUse;
-    String physicalActivity;
+    int physicalActivity;
     
-    ErrorFrame errorFrame;
         
     public Source() {
         System.out.println("Soure() Constructor called!");
@@ -35,14 +34,14 @@ public class Source {
         pregnantStatus = false;
         height = 0;
         weightGroup = "";
-        bloodPressureHigh = "";
-        bloodPressureLow = "";
-        cholesterol = "";
-        glucose = "";
+        bloodPressureHigh = 0;
+        bloodPressureLow = 0;
+        cholesterol = 0;
+        glucose = 0;
 
         nicotineUse = false;
         alcoholUse = false;
-        physicalActivity = "";
+        physicalActivity = 0;
         
     }
     
@@ -66,19 +65,19 @@ public class Source {
         this.weightGroup = weightGroup;
     }
     
-    protected void setBloodPressureHigh(String bloodPressureHigh) {
+    protected void setBloodPressureHigh(int bloodPressureHigh) {
         this.bloodPressureHigh = bloodPressureHigh;
     }
     
-    protected void setBloodPressureLow(String bloodPressureLow) {
+    protected void setBloodPressureLow(int bloodPressureLow) {
         this.bloodPressureLow = bloodPressureLow;
     }
     
-    protected void setCholesterol(String cholesterol) {
+    protected void setCholesterol(int cholesterol) {
         this.cholesterol = cholesterol;
     }
     
-    protected void setGlucose(String glucose) {
+    protected void setGlucose(int glucose) {
         this.glucose = glucose;
     }
     
@@ -90,7 +89,7 @@ public class Source {
         this.alcoholUse = alcoholUse;
     }
     
-    protected void setPhysicalActivity(String physicalActivity) {
+    protected void setPhysicalActivity(int physicalActivity) {
         this.physicalActivity = physicalActivity;
     }
     
@@ -114,19 +113,19 @@ public class Source {
         return this.weightGroup;
     }
     
-    protected String getBloodPressureHigh() {
+    protected int getBloodPressureHigh() {
         return this.bloodPressureHigh;
     }
     
-    protected String getBloodPressureLow() {
+    protected int getBloodPressureLow() {
         return this.bloodPressureLow;
     }
     
-    protected String getCholesterol() {
+    protected int getCholesterol() {
         return this.cholesterol;
     }
     
-    protected String getGlucose() {
+    protected int getGlucose() {
         return this.glucose;
     }
     
@@ -138,7 +137,7 @@ public class Source {
         return this.alcoholUse;
     }
     
-    protected String getPhysicalActivity() {
+    protected int getPhysicalActivity() {
         return this.physicalActivity;
     }
     

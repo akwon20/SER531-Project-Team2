@@ -919,13 +919,13 @@ public class AppFrame extends javax.swing.JFrame {
             case 2 -> source.setPregnantStatus(jCheckBoxPregnant.isSelected());
             case 3 -> source.setHeight(Integer.parseInt(jTextFieldHeight.getText()));
             case 4 -> source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
-            case 5 -> source.setBloodPressureHigh(jTextFieldBPHigh.getText());
-            case 6 -> source.setBloodPressureLow(jTextFieldBPLow.getText());
-            case 7 -> source.setCholesterol(jTextFieldCholesterol.getText());
-            case 8 -> source.setGlucose(jTextFieldGlucose.getText());
+            case 5 -> source.setBloodPressureHigh(Integer.parseInt(jTextFieldBPHigh.getText()));
+            case 6 -> source.setBloodPressureLow(Integer.parseInt(jTextFieldBPLow.getText()));
+            case 7 -> source.setCholesterol(Integer.parseInt(jTextFieldCholesterol.getText()));
+            case 8 -> source.setGlucose(Integer.parseInt(jTextFieldGlucose.getText()));
             case 9 -> source.setNicotineUse(jCheckBoxNicotine.isSelected());
             case 10 -> source.setAlcoholUse(jCheckBoxAlcohol.isSelected());
-            case 11 -> source.setPhysicalActivity(jTextFieldPhysical.getText());
+            case 11 -> source.setPhysicalActivity(Integer.parseInt(jTextFieldPhysical.getText()));
             default -> System.out.println("No input sent!");
         }
     }
