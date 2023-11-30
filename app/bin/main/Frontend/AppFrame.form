@@ -522,9 +522,6 @@
                       </Border>
                     </Property>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Height"/>
-                  </AccessibilityProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldBPHigh">
                   <Properties>
@@ -534,9 +531,6 @@
                       </Border>
                     </Property>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Blood Pressure (High)"/>
-                  </AccessibilityProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldBPLow">
                   <Properties>
@@ -546,9 +540,6 @@
                       </Border>
                     </Property>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Blood Pressure (Low)"/>
-                  </AccessibilityProperties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldBPLowActionPerformed"/>
                   </Events>
@@ -561,9 +552,6 @@
                       </Border>
                     </Property>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Cholesterol"/>
-                  </AccessibilityProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldGlucose">
                   <Properties>
@@ -573,9 +561,6 @@
                       </Border>
                     </Property>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Glucose"/>
-                  </AccessibilityProperties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="jComboBoxWeight">
                   <Properties>
@@ -789,9 +774,6 @@
                           </Border>
                         </Property>
                       </Properties>
-                      <AccessibilityProperties>
-                        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Physical Activity"/>
-                      </AccessibilityProperties>
                     </Component>
                   </SubComponents>
                 </Container>

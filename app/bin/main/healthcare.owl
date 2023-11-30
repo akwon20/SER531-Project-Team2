@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29/"
+     xml:base="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-27="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-27#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAPHigh -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAPHigh">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBooldWork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#APHigh"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAPLow -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAPLow">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBooldWork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#APLow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlcohol -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlcohol">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBehaviorTraits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alcohol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAlzheimers">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDisease"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAsthma -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAsthma">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Asthma"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBehaviorTraits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBehaviorTraits">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasTraits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Traits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBooldWork -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBooldWork">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPhysicalTraits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasCardiovascular -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasCardiovascular">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDisease"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Cardiovascular"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasCholesterol -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasCholesterol">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBooldWork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Cholesterol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasCopd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasCopd">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Copd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasCovid -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasCovid">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDisease"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#COVID19"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDiabetes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDiabetes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diabetes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Patients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasGender">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPhysicalTraits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasGlucose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasGlucose">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBooldWork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Glucose"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasHypertension -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasHypertension">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Hypertension"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasInmsupr -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasInmsupr">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Inmsupr"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasObesity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasObesity">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diabetes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPhysicalActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPhysicalActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBehaviorTraits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPhysicalTraits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPhysicalTraits">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasTraits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Traits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPneumonia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPneumonia">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Pneumonia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasRenalChronic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasRenalChronic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#RenalChronic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasSmoke -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasSmoke">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasBehaviorTraits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Smoking"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasTraits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasTraits">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Patients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Traits"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isDiagnosed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Patients"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isPregnancy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#isPregnancy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasPhysicalTraits"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Pregnancy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-27#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-27#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Patients"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasAge">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasHeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#hasWeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#APHigh -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#APHigh">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#APLow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#APLow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Age -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Age">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alcohol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alcohol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Alzheimers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Asthma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Asthma">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Traits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#COVID19 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#COVID19">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Cardiovascular -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Cardiovascular">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Cholesterol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Cholesterol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Copd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Copd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diabetes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diabetes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Diseases"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Gender -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Gender">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Glucose -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Glucose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BloodWork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Heights -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Heights">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Hypertension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Hypertension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Inmsupr -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Inmsupr">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Obesity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Obesity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Patients -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Patients"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Traits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Pneumonia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Pneumonia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Pregnancy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Pregnancy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#RenalChronic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#RenalChronic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#DiseasesHistroy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Smoking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Smoking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#BehaviorTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Traits -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Traits"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Weights -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Weights">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#PhysicalTraits"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#P1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#P1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#alice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#alice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenxixu/ontologies/2023/9/untitled-ontology-29#Patients"/>
+        <untitled-ontology-27:hasName>alice</untitled-ontology-27:hasName>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

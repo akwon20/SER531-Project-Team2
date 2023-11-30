@@ -334,6 +334,8 @@ public class AppFrame extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
+        jTextFieldPhysical.getAccessibleContext().setAccessibleName("Physical Activity");
+
         buttonSubmit.setText("Submit");
         buttonSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -569,6 +571,12 @@ public class AppFrame extends javax.swing.JFrame {
                 .addComponent(jPanelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jTextFieldHeight.getAccessibleContext().setAccessibleName("Height");
+        jTextFieldBPHigh.getAccessibleContext().setAccessibleName("Blood Pressure (High)");
+        jTextFieldBPLow.getAccessibleContext().setAccessibleName("Blood Pressure (Low)");
+        jTextFieldCholesterol.getAccessibleContext().setAccessibleName("Cholesterol");
+        jTextFieldGlucose.getAccessibleContext().setAccessibleName("Glucose");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
