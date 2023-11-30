@@ -878,6 +878,7 @@ public class AppFrame extends javax.swing.JFrame {
                         sendInput(i);
                     } catch(NumberFormatException e) {
                         System.out.println("Error: Must take integers!");
+                        displayErrorWindow();
                         return;
                     }
                 }
@@ -928,6 +929,11 @@ public class AppFrame extends javax.swing.JFrame {
             case 11 -> source.setPhysicalActivity(Integer.parseInt(jTextFieldPhysical.getText()));
             default -> System.out.println("No input sent!");
         }
+    }
+    
+    private void displayErrorWindow() {
+        ErrorFrame errorFrame = new ErrorFrame();
+        errorFrame.setVisible(true);
     }
     
     private void clearInputCheckBoxes() {
