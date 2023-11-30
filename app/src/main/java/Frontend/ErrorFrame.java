@@ -22,7 +22,7 @@ public class ErrorFrame extends javax.swing.JFrame {
     
     public ErrorFrame(String message) {
         initComponents();
-        this.message = message;
+        this.jTextAreaErrorTrace.setText(message);
     }
 
     /**

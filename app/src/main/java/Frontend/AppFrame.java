@@ -878,7 +878,7 @@ public class AppFrame extends javax.swing.JFrame {
                         sendInput(i);
                     } catch(NumberFormatException e) {
                         System.out.println("Error: Must take integers!");
-                        displayErrorWindow();
+                        displayErrorWindow("Error: Text field must take integers!");
                         return;
                     }
                 }
@@ -931,8 +931,8 @@ public class AppFrame extends javax.swing.JFrame {
         }
     }
     
-    private void displayErrorWindow() {
-        ErrorFrame errorFrame = new ErrorFrame();
+    private void displayErrorWindow(String message) {
+        ErrorFrame errorFrame = new ErrorFrame(message);
         errorFrame.setVisible(true);
     }
     
