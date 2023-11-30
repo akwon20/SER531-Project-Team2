@@ -76,6 +76,7 @@ public class ErrorFrame extends javax.swing.JFrame {
 
     private void jButtonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCloseActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jButtonCloseActionPerformed
 
     /**
