@@ -870,17 +870,15 @@ public class AppFrame extends javax.swing.JFrame {
     private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
         System.out.println("Submit button clicked!");
         
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 12; i++) {
             if (checkboxesLeftInfo[i].isSelected()) {
                 System.out.println("Checkbox " + i + " selected!");
-                if (i < 12) {
-                    try {
-                        sendInput(i);
-                    } catch(NumberFormatException e) {
-                        System.out.println("Error: Must take integers!");
-                        displayErrorWindow("Error: Text field must take integers!");
-                        return;
-                    }
+                try {
+                    sendInput(i);
+                } catch(NumberFormatException e) {
+                    System.out.println("Error: Must take integers!");
+                    displayErrorWindow("Error: Text field must take integers!");
+                    return;
                 }
             }
             else {
@@ -888,20 +886,15 @@ public class AppFrame extends javax.swing.JFrame {
             }
         }
         
+        if (!checkOneDiseaseSelected()) {
+            System.out.println("Error: At least one disease must be selected!");
+            displayErrorWindow("Error: At least one disease must be selected!");
+            return;
+        }
+        
         jTabbedPane1.setSelectedIndex(1);
         source.printVariables();    // Remove once debugging is finished
     }//GEN-LAST:event_buttonSubmitActionPerformed
-
-    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("Clear button clicked!");
-        
-        jCheckBoxAll.setSelected(false);
-        
-        clearInfoCheckBoxes();
-        clearInputCheckBoxes();
-        clearInputComboBoxes();
-        clearInputTextFields();
-    }
     
     private void clearInfoCheckBoxes() {
         System.out.println("clearInfoCheckBoxes() called!");
@@ -931,9 +924,30 @@ public class AppFrame extends javax.swing.JFrame {
         }
     }
     
+    private boolean checkOneDiseaseSelected() {
+        for (int i = 12; i < 15; i++) {
+            if (checkboxesLeftInfo[i].isSelected()) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
     private void displayErrorWindow(String message) {
         ErrorFrame errorFrame = new ErrorFrame(message);
         errorFrame.setVisible(true);
+    }
+    
+    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println("Clear button clicked!");
+        
+        jCheckBoxAll.setSelected(false);
+        
+        clearInfoCheckBoxes();
+        clearInputCheckBoxes();
+        clearInputComboBoxes();
+        clearInputTextFields();
     }
     
     private void clearInputCheckBoxes() {
