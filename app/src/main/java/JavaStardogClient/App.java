@@ -43,9 +43,9 @@ public class App {
     private static final IRI IncredibleHulk = Values.iri(NS, "incredibleHulk");
 
     public static void main(String[] args) {
-        AppFrame testFrame = new AppFrame();
+        AppFrame appFrame = new AppFrame();
         
-        testFrame.setVisible(true);
+        appFrame.setVisible(true);
         
         createAdminConnection();
         ConnectionConfiguration connectionConfig = ConnectionConfiguration
