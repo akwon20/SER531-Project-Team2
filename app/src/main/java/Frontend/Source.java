@@ -14,7 +14,7 @@ public class Source {
     String ageGroup;
     String gender;
     boolean pregnantStatus;
-    String height;
+    int height;
     String weightGroup;
     String bloodPressureHigh;
     String bloodPressureLow;
@@ -24,6 +24,8 @@ public class Source {
     boolean nicotineUse;
     boolean alcoholUse;
     String physicalActivity;
+    
+    ErrorFrame errorFrame;
         
     public Source() {
         System.out.println("Soure() Constructor called!");
@@ -31,7 +33,7 @@ public class Source {
         ageGroup = "";
         gender = "";
         pregnantStatus = false;
-        height = "";
+        height = 0;
         weightGroup = "";
         bloodPressureHigh = "";
         bloodPressureLow = "";
@@ -41,6 +43,7 @@ public class Source {
         nicotineUse = false;
         alcoholUse = false;
         physicalActivity = "";
+        
     }
     
     protected void setAgeGroup(String ageGroup) {
@@ -55,7 +58,7 @@ public class Source {
         this.pregnantStatus = pregnantStatus;
     }
     
-    protected void setHeight(String height) {
+    protected void setHeight(int height) {
         this.height = height;
     }
     
@@ -103,7 +106,7 @@ public class Source {
         return this.pregnantStatus;
     }
     
-    protected String getHeight() {
+    protected int getHeight() {
         return this.height;
     }
     

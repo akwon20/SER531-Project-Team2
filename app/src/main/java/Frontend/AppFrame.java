@@ -874,7 +874,12 @@ public class AppFrame extends javax.swing.JFrame {
             if (checkboxesLeftInfo[i].isSelected()) {
                 System.out.println("Checkbox " + i + " selected!");
                 if (i < 12) {
-                    sendInput(i);
+                    try {
+                        sendInput(i);
+                    } catch(NumberFormatException e) {
+                        System.out.println("Error: Must take integers!");
+                        return;
+                    }
                 }
             }
             else {
@@ -905,14 +910,14 @@ public class AppFrame extends javax.swing.JFrame {
         }
     }
     
-    private void sendInput(int index) {
+    private void sendInput(int index){
         System.out.println("Sending input from checkbox: " + index);
         
         switch(index) {
             case 0 -> source.setAgeGroup((String)jComboBoxAge.getSelectedItem());
             case 1 -> source.setGender((String)jComboBoxGender.getSelectedItem());
             case 2 -> source.setPregnantStatus(jCheckBoxPregnant.isSelected());
-            case 3 -> source.setHeight(jTextFieldHeight.getText());
+            case 3 -> source.setHeight(Integer.parseInt(jTextFieldHeight.getText()));
             case 4 -> source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
             case 5 -> source.setBloodPressureHigh(jTextFieldBPHigh.getText());
             case 6 -> source.setBloodPressureLow(jTextFieldBPLow.getText());
