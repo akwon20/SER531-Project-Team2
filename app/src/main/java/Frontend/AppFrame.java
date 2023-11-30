@@ -144,6 +144,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CAC Risk Analyzer");
+        setLocation(new java.awt.Point(409, 71));
 
         jlabelPhysicalInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlabelPhysicalInfo.setText("Physical Info");
