@@ -858,19 +858,44 @@ public class AppFrame extends javax.swing.JFrame {
         System.out.println("Sending input from checkbox: " + index);
 
         switch(index) {
-            case 0 -> source.setAgeGroup((String)jComboBoxAge.getSelectedItem());
-            case 1 -> source.setGender((String)jComboBoxGender.getSelectedItem());
-            case 2 -> source.setPregnantStatus(jCheckBoxPregnant.isSelected());
-            case 3 -> source.setHeight(Integer.parseInt(jTextFieldHeight.getText()));
-            case 4 -> source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
-            case 5 -> source.setBloodPressureHigh(Integer.parseInt(jTextFieldBPHigh.getText()));
-            case 6 -> source.setBloodPressureLow(Integer.parseInt(jTextFieldBPLow.getText()));
-            case 7 -> source.setCholesterol(Integer.parseInt(jTextFieldCholesterol.getText()));
-            case 8 -> source.setGlucose(Integer.parseInt(jTextFieldGlucose.getText()));
-            case 9 -> source.setNicotineUse(jCheckBoxNicotine.isSelected());
-            case 10 -> source.setAlcoholUse(jCheckBoxAlcohol.isSelected());
-            case 11 -> source.setPhysicalActivity(Integer.parseInt(jTextFieldPhysical.getText()));
-            default -> System.out.println("No input sent!");
+            case 0:
+                source.setAgeGroup((String)jComboBoxAge.getSelectedItem());
+                break;
+            case 1:
+                source.setGender((String)jComboBoxGender.getSelectedItem());
+                break;
+            case 2:
+                source.setPregnantStatus(jCheckBoxPregnant.isSelected());
+                break;
+            case 3:
+                source.setHeight(Integer.parseInt(jTextFieldHeight.getText()));
+                break;
+            case 4:
+                source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
+                break;
+            case 5:
+                source.setBloodPressureHigh(Integer.parseInt(jTextFieldBPHigh.getText()));
+                break;
+            case 6:
+                source.setBloodPressureLow(Integer.parseInt(jTextFieldBPLow.getText()));
+                break;
+            case 7:
+                source.setCholesterol(Integer.parseInt(jTextFieldCholesterol.getText()));
+                break;
+            case 8:
+                source.setGlucose(Integer.parseInt(jTextFieldGlucose.getText()));
+                break;
+            case 9:
+                source.setNicotineUse(jCheckBoxNicotine.isSelected());
+                break;
+            case 10:
+                source.setAlcoholUse(jCheckBoxAlcohol.isSelected());
+                break;
+            case 11: 
+                source.setPhysicalActivity(Integer.parseInt(jTextFieldPhysical.getText()));
+                break;
+            default:
+                System.out.println("No input sent!");
         }
     }
     
