@@ -7,9 +7,9 @@ public class App {
 
 
     public static void main(String[] args) {
-        AppFrame testFrame = new AppFrame();
+        AppFrame appFrame = new AppFrame();
         
-        testFrame.setVisible(true);
+        appFrame.setVisible(true);
 
         DatabaseConn dbConn = new DatabaseConn();
 

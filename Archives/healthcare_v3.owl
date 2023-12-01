@@ -1,0 +1,777 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/healthcare"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/healthcare">
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/healthcare/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="healthcare" IRI="http://www.semanticweb.org/ontologies/healthcare#"/>
+    <Prefix name="healthcare1" IRI="http://www.semanticweb.org/healthcare#"/>
+    <Declaration>
+        <Class IRI="#AgeGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Asthma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#COVID19"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cardiovascular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Copd"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diabetes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diseases"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gender"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hypertension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Inmsupr"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Obesity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patients"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pneumonia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PreConditions"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Question"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RenalChronic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Survey"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SurveyClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SurveyProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Topic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#YearEnd"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#YearStart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAgeGroup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAlzheimers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAsthma"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCardiovascular"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasClass"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCopd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCovid"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDataValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDiabetes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDisease"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGender"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHypertension"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInmsupr"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasObesity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPneumonia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasQuestion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRenalChronic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTopic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasYearEnd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasYearStart"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#class"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#dataValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAPHigh"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAPLow"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAge"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBehavioralTrait"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBloodWork"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCholestrol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasGender"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasGlucose"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasHeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPhysicalTrait"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTrait"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasWeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#highConfidenceLimit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isPregnant"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#locationDesc"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#lowConfidenceLimit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#physicalActivity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#question"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#smokes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#surveyInfo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#topic"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#usesAlcohol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#yearEnd"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#yearStart"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AgeGroup"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Asthma"/>
+        <Class IRI="#PreConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#COVID19"/>
+        <Class IRI="#Diseases"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cardiovascular"/>
+        <Class IRI="#Diseases"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Copd"/>
+        <Class IRI="#PreConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataValue"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diabetes"/>
+        <Class IRI="#PreConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gender"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hypertension"/>
+        <Class IRI="#PreConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Inmsupr"/>
+        <Class IRI="#PreConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Obesity"/>
+        <Class IRI="#PreConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pneumonia"/>
+        <Class IRI="#PreConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreConditions"/>
+        <Class IRI="#Diseases"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Question"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RenalChronic"/>
+        <Class IRI="#PreConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SurveyClass"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Topic"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#YearEnd"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#YearStart"/>
+        <Class IRI="#SurveyProperty"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAgeGroup"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAlzheimers"/>
+        <ObjectProperty IRI="#hasDisease"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAsthma"/>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCardiovascular"/>
+        <ObjectProperty IRI="#hasDisease"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasClass"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCopd"/>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCovid"/>
+        <ObjectProperty IRI="#hasDisease"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDataValue"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDiabetes"/>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDisease"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGender"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasHypertension"/>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasInmsupr"/>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasObesity"/>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPneumonia"/>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrecondition"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasQuestion"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRenalChronic"/>
+        <ObjectProperty IRI="#hasPrecondition"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTopic"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasYearEnd"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasYearStart"/>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAlzheimers"/>
+        <Class IRI="#Diseases"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAsthma"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCardiovascular"/>
+        <Class IRI="#Diseases"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCopd"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCovid"/>
+        <Class IRI="#Diseases"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDiabetes"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDisease"/>
+        <Class IRI="#Patients"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasHypertension"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInmsupr"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObesity"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPneumonia"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPrecondition"/>
+        <Class IRI="#Patients"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRenalChronic"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+        <Class IRI="#Survey"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAgeGroup"/>
+        <Class IRI="#AgeGroup"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAsthma"/>
+        <Class IRI="#Asthma"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCardiovascular"/>
+        <Class IRI="#Cardiovascular"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasClass"/>
+        <Class IRI="#SurveyClass"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCopd"/>
+        <Class IRI="#Copd"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCovid"/>
+        <Class IRI="#COVID19"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDataValue"/>
+        <Class IRI="#DataValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDiabetes"/>
+        <Class IRI="#Diabetes"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDisease"/>
+        <Class IRI="#Diseases"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGender"/>
+        <Class IRI="#Gender"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasHypertension"/>
+        <Class IRI="#Hypertension"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInmsupr"/>
+        <Class IRI="#Inmsupr"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLocation"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasObesity"/>
+        <Class IRI="#Diabetes"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPneumonia"/>
+        <Class IRI="#Pneumonia"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrecondition"/>
+        <Class IRI="#PreConditions"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasQuestion"/>
+        <Class IRI="#Question"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRenalChronic"/>
+        <Class IRI="#RenalChronic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSurveyProperty"/>
+        <Class IRI="#SurveyProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTopic"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasYearEnd"/>
+        <Class IRI="#YearEnd"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasYearStart"/>
+        <Class IRI="#YearStart"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#class"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#dataValue"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAPHigh"/>
+        <DataProperty IRI="#hasBloodWork"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAPLow"/>
+        <DataProperty IRI="#hasBloodWork"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAge"/>
+        <DataProperty IRI="#hasPhysicalTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBehavioralTrait"/>
+        <DataProperty IRI="#hasTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBloodWork"/>
+        <DataProperty IRI="#hasTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasCholestrol"/>
+        <DataProperty IRI="#hasBloodWork"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasGender"/>
+        <DataProperty IRI="#hasPhysicalTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasGlucose"/>
+        <DataProperty IRI="#hasBloodWork"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasHeight"/>
+        <DataProperty IRI="#hasPhysicalTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPhysicalTrait"/>
+        <DataProperty IRI="#hasTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTrait"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasWeight"/>
+        <DataProperty IRI="#hasPhysicalTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#highConfidenceLimit"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isPregnant"/>
+        <DataProperty IRI="#hasPhysicalTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#locationDesc"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#lowConfidenceLimit"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#physicalActivity"/>
+        <DataProperty IRI="#hasBehavioralTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#question"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#smokes"/>
+        <DataProperty IRI="#hasBehavioralTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#topic"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#usesAlcohol"/>
+        <DataProperty IRI="#hasBehavioralTrait"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#yearEnd"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#yearStart"/>
+        <DataProperty IRI="#surveyInfo"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#class"/>
+        <Class IRI="#SurveyClass"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#dataValue"/>
+        <Class IRI="#DataValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#highConfidenceLimit"/>
+        <Class IRI="#Survey"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#locationDesc"/>
+        <Class IRI="#Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#lowConfidenceLimit"/>
+        <Class IRI="#Survey"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#question"/>
+        <Class IRI="#Question"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#topic"/>
+        <Class IRI="#Topic"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#yearEnd"/>
+        <Class IRI="#YearEnd"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#yearStart"/>
+        <Class IRI="#YearStart"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#class"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#dataValue"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAPHigh"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAPLow"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAge"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCholestrol"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasGender"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasGlucose"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasHeight"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasWeight"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#highConfidenceLimit"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isPregnant"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#locationDesc"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#lowConfidenceLimit"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#physicalActivity"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#question"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#smokes"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#topic"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#usesAlcohol"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#yearEnd"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#yearStart"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
