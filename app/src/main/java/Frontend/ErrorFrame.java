@@ -13,9 +13,7 @@ public class ErrorFrame extends javax.swing.JFrame {
     /**
      * Creates new form ErrorFrame
      */
-    
-    String message;
-    
+        
     public ErrorFrame() {
         initComponents();
     }
