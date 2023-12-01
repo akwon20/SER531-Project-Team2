@@ -20,11 +20,14 @@ public class Source {
     int bloodPressureLow;
     int cholesterol;
     int glucose;
-    
     boolean nicotineUse;
     boolean alcoholUse;
     int physicalActivity;
     
+    double riskCovid;
+    double riskCardio;
+    double riskAlzheimers;
+    String riskDetails;
         
     public Source() {
         System.out.println("Soure() Constructor called!");
@@ -38,11 +41,15 @@ public class Source {
         bloodPressureLow = 0;
         cholesterol = 0;
         glucose = 0;
-
         nicotineUse = false;
         alcoholUse = false;
         physicalActivity = 0;
         
+        riskCovid = 0;
+        riskCardio = 0;
+        riskAlzheimers = 0;
+        
+        riskDetails = "";
     }
     
     protected void setAgeGroup(String ageGroup) {
@@ -93,6 +100,10 @@ public class Source {
         this.physicalActivity = physicalActivity;
     }
     
+    protected void setRiskDetails(String riskDetails) {
+        this.riskDetails = riskDetails;
+    }
+    
     protected String getAgeGroup() {
         return this.ageGroup;
     }
@@ -139,6 +150,55 @@ public class Source {
     
     protected int getPhysicalActivity() {
         return this.physicalActivity;
+    }
+    
+    protected String getRiskDetails() {
+        return this.riskDetails;
+    }
+    
+    protected String calculateCovidRisk() {
+        String riskCovidOutput;
+        this.riskCovid = 23.1;
+        
+        riskCovidOutput = Double.toString(this.riskCovid) + "%";
+        
+        return riskCovidOutput;
+    }
+    
+    protected String calculateCardioRisk() {
+        String riskCardioOutput;
+        this.riskCardio = 45.3;
+        
+        riskCardioOutput = Double.toString(this.riskCardio) + "%";
+        
+        return riskCardioOutput;
+    }
+    
+    protected String calculateAlzheimersRisk() {
+        String riskAlzheimersOutput;
+        this.riskAlzheimers = 52.3;
+        
+        riskAlzheimersOutput = Double.toString(this.riskAlzheimers) + "%";
+        
+        return riskAlzheimersOutput;
+    }
+    
+    protected String getTopRiskFactorCovid() {
+        String topRiskFactorCovid = "Nicotine Use";
+        
+        return topRiskFactorCovid;
+    }
+    
+    protected String getTopRiskFactorCardio() {
+        String topRiskFactorCardio = "Physical Activity";
+        
+        return topRiskFactorCardio;
+    }
+    
+    protected String getTopRiskFactorAlzheimers() {
+        String topRiskFactorCardio = "Age";
+        
+        return topRiskFactorCardio;
     }
     
     // For Debug purposes

@@ -38,7 +38,7 @@ public class ErrorFrame extends javax.swing.JFrame {
         jTextAreaErrorTrace = new javax.swing.JTextArea();
         jButtonClose = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Error");
         setLocation(new java.awt.Point(600, 400));
         setResizable(false);

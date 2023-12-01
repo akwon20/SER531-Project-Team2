@@ -836,6 +836,13 @@ public class AppFrame extends javax.swing.JFrame {
             displayErrorWindow("Error: At least one disease must be selected!");
             return;
         }
+        else if (!checkOneFactorSelected()) {
+            System.out.println("Error: At least one risk factor must be selected!");
+            displayErrorWindow("Error: At least one risk factor must be selected!");
+            return;
+        }
+        
+        updateOutput();
 
         jTabbedPane1.setSelectedIndex(1);
         source.printVariables();    // Remove once debugging is finished
@@ -868,9 +875,50 @@ public class AppFrame extends javax.swing.JFrame {
             default -> System.out.println("No input sent!");
         }
     }
+    
+    private void updateOutput() {
+        // Reset output text panes before getting results
+        jTextPaneRiskCovid.setText("");
+        jTextPaneFactorCovid.setText("");
+        
+        jTextPaneRiskCardio.setText("");
+        jTextPaneFactorCardio.setText("");
+        
+        jTextPaneRiskAlzheimers.setText("");
+        jTextPaneFactorAlzheimers.setText("");
+        
+        jTextPaneRiskDetails.setText("");
+        
+        if (checkboxesLeftInfo[12].isSelected()) {
+            jTextPaneRiskCovid.setText(source.calculateCovidRisk());
+            jTextPaneFactorCovid.setText(source.getTopRiskFactorCovid());
+        }
+        
+        if (checkboxesLeftInfo[13].isSelected()) {
+            jTextPaneRiskCardio.setText(source.calculateCardioRisk());
+            jTextPaneFactorCardio.setText(source.getTopRiskFactorCardio());
+        }
+
+        if (checkboxesLeftInfo[14].isSelected()) {
+            jTextPaneRiskAlzheimers.setText(source.calculateAlzheimersRisk());
+            jTextPaneFactorAlzheimers.setText(source.getTopRiskFactorAlzheimers());            
+        }
+        
+        jTextPaneRiskDetails.setText(source.getRiskDetails());
+    }
 
     private boolean checkOneDiseaseSelected() {
         for (int i = 12; i < 15; i++) {
+            if (checkboxesLeftInfo[i].isSelected()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
+    private boolean checkOneFactorSelected() {
+        for (int i = 0; i < 12; i++) {
             if (checkboxesLeftInfo[i].isSelected()) {
                 return true;
             }
