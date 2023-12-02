@@ -168,7 +168,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         jLabelGlucose.setText("Glucose");
 
-        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-12", "13-17", "18-25", "26-30", "31-40", "41-50", "51-60", "61-65", "65 <" }));
+        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "< 5", "5-19", "20-34", "35-49", "50-64", "65 <" }));
 
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
@@ -185,7 +185,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         jTextFieldGlucose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBoxWeight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "125 >", "125 - 150", "150 - 175", "175 - 200", "200 <" }));
+        jComboBoxWeight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "< 125", "125 - 150", "150 - 175", "175 - 200", "200 <" }));
 
         jlabelBehavioral.setText("Behavioral Info");
 
