@@ -13,15 +13,13 @@ public class AppFrame extends javax.swing.JFrame {
     /**
      * Creates new form AppFrame
      */
-    
-    private javax.swing.JCheckBox[] checkboxesLeftInfo;
-    
+
     public AppFrame() {
         System.out.println("AppFrame() Constructor called!");
         initComponents();
-        
+
         checkboxesLeftInfo = new javax.swing.JCheckBox[15];
-        
+
         checkboxesLeftInfo[0] = jCheckBoxAge;
         checkboxesLeftInfo[1] = jCheckBoxGender;
         checkboxesLeftInfo[2] = jCheckBoxPregnant;
@@ -37,9 +35,9 @@ public class AppFrame extends javax.swing.JFrame {
         checkboxesLeftInfo[12] = jCheckBoxCovid;
         checkboxesLeftInfo[13] = jCheckBoxCardio;
         checkboxesLeftInfo[14] = jCheckBoxAlzheimers;
-        
+
         this.source = new Source();
-        
+
     }
 
     /**
@@ -152,18 +150,6 @@ public class AppFrame extends javax.swing.JFrame {
         jlabelInput.setText("   Input");
         jlabelInput.setOpaque(true);
 
-        jCheckBoxAge.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxAgeActionPerformed(evt);
-            }
-        });
-
-        jCheckBoxCholesterol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxCholesterolActionPerformed(evt);
-            }
-        });
-
         jLabelAge.setText("Age");
 
         jLabelGender.setText("Gender");
@@ -194,11 +180,6 @@ public class AppFrame extends javax.swing.JFrame {
         jTextFieldBPHigh.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jTextFieldBPLow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextFieldBPLow.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBPLowActionPerformed(evt);
-            }
-        });
 
         jTextFieldCholesterol.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -209,12 +190,6 @@ public class AppFrame extends javax.swing.JFrame {
         jlabelBehavioral.setText("Behavioral Info");
 
         jlabelDisease.setText("Target Diseases");
-
-        jCheckBoxCovid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxCovidActionPerformed(evt);
-            }
-        });
 
         jLabelCovid.setText("COVID-19");
 
@@ -258,12 +233,6 @@ public class AppFrame extends javax.swing.JFrame {
                     .addComponent(jLabelAlzheimers))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jCheckBoxNicotine.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxNicotineActionPerformed(evt);
-            }
-        });
 
         jLabelNicotine.setText("Nicotine Use");
 
@@ -840,30 +809,10 @@ public class AppFrame extends javax.swing.JFrame {
             System.out.println("All checkbox deselected!");
         }
     }
-    
-    private void jCheckBoxAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxAgeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxAgeActionPerformed
-
-    private void jCheckBoxCholesterolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxCholesterolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxCholesterolActionPerformed
-
-    private void jCheckBoxNicotineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxNicotineActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxNicotineActionPerformed
-
-    private void jCheckBoxCovidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxCovidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxCovidActionPerformed
-
-    private void jTextFieldBPLowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBPLowActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBPLowActionPerformed
 
     private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
         System.out.println("Submit button clicked!");
-        
+
         for (int i = 0; i < 12; i++) {
             if (checkboxesLeftInfo[i].isSelected()) {
                 System.out.println("Checkbox " + i + " selected!");
@@ -879,89 +828,162 @@ public class AppFrame extends javax.swing.JFrame {
                 System.out.println("Checkbox " + i + " not selected!");
             }
         }
-        
+
         if (!checkOneDiseaseSelected()) {
             System.out.println("Error: At least one disease must be selected!");
             displayErrorWindow("Error: At least one disease must be selected!");
             return;
         }
+        else if (!checkOneFactorSelected()) {
+            System.out.println("Error: At least one risk factor must be selected!");
+            displayErrorWindow("Error: At least one risk factor must be selected!");
+            return;
+        }
         
+        updateOutput();
+
         jTabbedPane1.setSelectedIndex(1);
         source.printVariables();    // Remove once debugging is finished
     }//GEN-LAST:event_buttonSubmitActionPerformed
-    
+
     private void clearInfoCheckBoxes() {
         System.out.println("clearInfoCheckBoxes() called!");
-        
+
         for (int i = 0; i < 15; i++) {
             checkboxesLeftInfo[i].setSelected(false);
         }
     }
-    
+
     private void sendInput(int index){
         System.out.println("Sending input from checkbox: " + index);
-        
+
         switch(index) {
-            case 0 -> source.setAgeGroup((String)jComboBoxAge.getSelectedItem());
-            case 1 -> source.setGender((String)jComboBoxGender.getSelectedItem());
-            case 2 -> source.setPregnantStatus(jCheckBoxPregnant.isSelected());
-            case 3 -> source.setHeight(Integer.parseInt(jTextFieldHeight.getText()));
-            case 4 -> source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
-            case 5 -> source.setBloodPressureHigh(Integer.parseInt(jTextFieldBPHigh.getText()));
-            case 6 -> source.setBloodPressureLow(Integer.parseInt(jTextFieldBPLow.getText()));
-            case 7 -> source.setCholesterol(Integer.parseInt(jTextFieldCholesterol.getText()));
-            case 8 -> source.setGlucose(Integer.parseInt(jTextFieldGlucose.getText()));
-            case 9 -> source.setNicotineUse(jCheckBoxNicotine.isSelected());
-            case 10 -> source.setAlcoholUse(jCheckBoxAlcohol.isSelected());
-            case 11 -> source.setPhysicalActivity(Integer.parseInt(jTextFieldPhysical.getText()));
-            default -> System.out.println("No input sent!");
+            case 0:
+                source.setAgeGroup((String)jComboBoxAge.getSelectedItem());
+                break;
+            case 1:
+                source.setGender((String)jComboBoxGender.getSelectedItem());
+                break;
+            case 2:
+                source.setPregnantStatus(jCheckBoxPregnant.isSelected());
+                break;
+            case 3:
+                source.setHeight(Integer.parseInt(jTextFieldHeight.getText()));
+                break;
+            case 4:
+                source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
+                break;
+            case 5:
+                source.setBloodPressureHigh(Integer.parseInt(jTextFieldBPHigh.getText()));
+                break;
+            case 6:
+                source.setBloodPressureLow(Integer.parseInt(jTextFieldBPLow.getText()));
+                break;
+            case 7:
+                source.setCholesterol(Integer.parseInt(jTextFieldCholesterol.getText()));
+                break;
+            case 8:
+                source.setGlucose(Integer.parseInt(jTextFieldGlucose.getText()));
+                break;
+            case 9:
+                source.setNicotineUse(jCheckBoxNicotine.isSelected());
+                break;
+            case 10:
+                source.setAlcoholUse(jCheckBoxAlcohol.isSelected());
+                break;
+            case 11: 
+                source.setPhysicalActivity(Integer.parseInt(jTextFieldPhysical.getText()));
+                break;
+            default:
+                System.out.println("No input sent!");
         }
     }
     
+    private void updateOutput() {
+        // Reset output text panes before getting results
+        jTextPaneRiskCovid.setText("");
+        jTextPaneFactorCovid.setText("");
+        
+        jTextPaneRiskCardio.setText("");
+        jTextPaneFactorCardio.setText("");
+        
+        jTextPaneRiskAlzheimers.setText("");
+        jTextPaneFactorAlzheimers.setText("");
+        
+        jTextPaneRiskDetails.setText("");
+        
+        if (checkboxesLeftInfo[12].isSelected()) {
+            jTextPaneRiskCovid.setText(source.calculateCovidRisk());
+            jTextPaneFactorCovid.setText(source.getTopRiskFactorCovid());
+        }
+        
+        if (checkboxesLeftInfo[13].isSelected()) {
+            jTextPaneRiskCardio.setText(source.calculateCardioRisk());
+            jTextPaneFactorCardio.setText(source.getTopRiskFactorCardio());
+        }
+
+        if (checkboxesLeftInfo[14].isSelected()) {
+            jTextPaneRiskAlzheimers.setText(source.calculateAlzheimersRisk());
+            jTextPaneFactorAlzheimers.setText(source.getTopRiskFactorAlzheimers());            
+        }
+        
+        jTextPaneRiskDetails.setText(source.getRiskDetails());
+    }
+
     private boolean checkOneDiseaseSelected() {
         for (int i = 12; i < 15; i++) {
             if (checkboxesLeftInfo[i].isSelected()) {
                 return true;
             }
         }
-        
+
         return false;
     }
     
+    private boolean checkOneFactorSelected() {
+        for (int i = 0; i < 12; i++) {
+            if (checkboxesLeftInfo[i].isSelected()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void displayErrorWindow(String message) {
         ErrorFrame errorFrame = new ErrorFrame(message);
         errorFrame.setVisible(true);
     }
-    
+
     private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {
         System.out.println("Clear button clicked!");
-        
+
         jCheckBoxAll.setSelected(false);
-        
+
         clearInfoCheckBoxes();
         clearInputCheckBoxes();
         clearInputComboBoxes();
         clearInputTextFields();
     }
-    
+
     private void clearInputCheckBoxes() {
         System.out.println("clearInputCheckBoxes() called!");
-        
+
         alcoholBoolCheckbox.setSelected(false);
         nicotineBoolCheckbox.setSelected(false);
         pregnantBoolCheckbox.setSelected(false);
     }
-    
+
     private void clearInputComboBoxes() {
         System.out.println("clearInputComboBoxes() called!");
         jComboBoxAge.setSelectedItem("1-12");
         jComboBoxGender.setSelectedItem("Male");
         jComboBoxWeight.setSelectedItem("125 >");
     }
-    
+
     private void clearInputTextFields() {
         System.out.println("clearInputTextFields() called!");
-        
+
         jTextFieldBPHigh.setText("");
         jTextFieldBPLow.setText("");
         jTextFieldCholesterol.setText("");
@@ -969,7 +991,7 @@ public class AppFrame extends javax.swing.JFrame {
         jTextFieldHeight.setText("");
         jTextFieldPhysical.setText("");
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -977,10 +999,10 @@ public class AppFrame extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : 
+            for (javax.swing.UIManager.LookAndFeelInfo info :
                     javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -1097,6 +1119,7 @@ public class AppFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox pregnantBoolCheckbox;
     // End of variables declaration//GEN-END:variables
 
+    private javax.swing.JCheckBox[] checkboxesLeftInfo;
     private Source source;
-    
+
 }
