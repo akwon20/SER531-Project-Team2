@@ -238,6 +238,7 @@ public class Source {
         String riskCovidOutput;
         this.riskCovid = 23.1;
 
+        //start with generate string with if-else condition
         String queryString =
                 "SELECT DISTINCT ?subject_0 " +
                         "FROM <tag:stardog:api:context:default> " +
@@ -285,7 +286,8 @@ public class Source {
         double result = 0.0;
         this.riskAlzheimers = 52.3;
 
-        String queryString =
+        String queryString = generateAlzheimersqueryString();
+        queryString =
                 "SELECT DISTINCT ?subject_0 " +
                         "FROM <tag:stardog:api:context:default> " +
                         "WHERE { " +
@@ -306,7 +308,27 @@ public class Source {
         
         return riskAlzheimersOutput;
     }
-    
+
+    private String generateAlzheimersqueryString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT DISTINCT ?subject_0 ");
+        ageGroup = "";
+        if(ageGroup != "")
+        gender = "";
+        pregnantStatus = false;
+        height = 0;
+        weightGroup = "";
+        bloodPressureHigh = 0;
+        bloodPressureLow = 0;
+        cholesterol = 0;
+        glucose = 0;
+        nicotineUse = false;
+        alcoholUse = false;
+        physicalActivity = 0;
+
+        return sb.toString();
+    }
+
     protected String getTopRiskFactorCovid() {
         String topRiskFactorCovid = "Nicotine Use";
         
