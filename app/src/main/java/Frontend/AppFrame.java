@@ -40,6 +40,202 @@ public class AppFrame extends javax.swing.JFrame {
 
     }
 
+    private void jCheckBoxAllActionPerformed(java.awt.event.ActionEvent evt) {
+        if (jCheckBoxAll.isSelected()) {
+            System.out.println("All checkbox selected!");
+            for (int i = 0; i < 15; i++) {
+                if (!checkboxesLeftInfo[i].isSelected()) {
+                    checkboxesLeftInfo[i].setSelected(true);
+                }
+            }
+        }
+        else {
+            System.out.println("All checkbox deselected!");
+        }
+    }
+
+    private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
+        System.out.println("Submit button clicked!");
+
+        for (int i = 0; i < 12; i++) {
+            if (checkboxesLeftInfo[i].isSelected()) {
+                System.out.println("Checkbox " + i + " selected!");
+                try {
+                    sendInput(i);
+                } catch(NumberFormatException e) {
+                    System.out.println("Error: Must take integers!");
+                    displayErrorWindow("Error: Text field must take integers!");
+                    return;
+                }
+            }
+            else {
+                System.out.println("Checkbox " + i + " not selected!");
+            }
+        }
+
+        if (!checkOneDiseaseSelected()) {
+            System.out.println("Error: At least one disease must be selected!");
+            displayErrorWindow("Error: At least one disease must be selected!");
+            return;
+        }
+        else if (!checkOneFactorSelected()) {
+            System.out.println("Error: At least one risk factor must be selected!");
+            displayErrorWindow("Error: At least one risk factor must be selected!");
+            return;
+        }
+
+        updateOutput();
+
+        jTabbedPane1.setSelectedIndex(1);
+        source.printVariables();    // Remove once debugging is finished
+    }//GEN-LAST:event_buttonSubmitActionPerformed
+
+    private void clearInfoCheckBoxes() {
+        System.out.println("clearInfoCheckBoxes() called!");
+
+        for (int i = 0; i < 15; i++) {
+            checkboxesLeftInfo[i].setSelected(false);
+        }
+    }
+
+    private void sendInput(int index){
+        System.out.println("Sending input from checkbox: " + index);
+
+        switch(index) {
+            case 0:
+                source.setAgeGroup((String)jComboBoxAge.getSelectedItem());
+                break;
+            case 1:
+                source.setGender((String)jComboBoxGender.getSelectedItem());
+                break;
+            case 2:
+                source.setPregnantStatus(jCheckBoxPregnant.isSelected());
+                break;
+            case 3:
+                source.setHeight(Integer.parseInt(jTextFieldHeight.getText()));
+                break;
+            case 4:
+                source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
+                break;
+            case 5:
+                source.setBloodPressureHigh(Integer.parseInt(jTextFieldBPHigh.getText()));
+                break;
+            case 6:
+                source.setBloodPressureLow(Integer.parseInt(jTextFieldBPLow.getText()));
+                break;
+            case 7:
+                source.setCholesterol(Integer.parseInt(jTextFieldCholesterol.getText()));
+                break;
+            case 8:
+                source.setGlucose(Integer.parseInt(jTextFieldGlucose.getText()));
+                break;
+            case 9:
+                source.setNicotineUse(jCheckBoxNicotine.isSelected());
+                break;
+            case 10:
+                source.setAlcoholUse(jCheckBoxAlcohol.isSelected());
+                break;
+            case 11:
+                source.setPhysicalActivity(Integer.parseInt(jTextFieldPhysical.getText()));
+                break;
+            default:
+                System.out.println("No input sent!");
+        }
+    }
+
+    private void updateOutput() {
+        // Reset output text panes before getting results
+        jTextPaneRiskCovid.setText("");
+        jTextPaneFactorCovid.setText("");
+
+        jTextPaneRiskCardio.setText("");
+        jTextPaneFactorCardio.setText("");
+
+        jTextPaneRiskAlzheimers.setText("");
+        jTextPaneFactorAlzheimers.setText("");
+
+        jTextPaneRiskDetails.setText("");
+
+        if (checkboxesLeftInfo[12].isSelected()) {
+            jTextPaneRiskCovid.setText(source.calculateCovidRisk());
+            jTextPaneFactorCovid.setText(source.getTopRiskFactorCovid());
+        }
+
+        if (checkboxesLeftInfo[13].isSelected()) {
+            jTextPaneRiskCardio.setText(source.calculateCardioRisk());
+            jTextPaneFactorCardio.setText(source.getTopRiskFactorCardio());
+        }
+
+        if (checkboxesLeftInfo[14].isSelected()) {
+            jTextPaneRiskAlzheimers.setText(source.calculateAlzheimersRisk());
+            jTextPaneFactorAlzheimers.setText(source.getTopRiskFactorAlzheimers());
+        }
+
+        jTextPaneRiskDetails.setText(source.getRiskDetails());
+    }
+
+    private boolean checkOneDiseaseSelected() {
+        for (int i = 12; i < 15; i++) {
+            if (checkboxesLeftInfo[i].isSelected()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean checkOneFactorSelected() {
+        for (int i = 0; i < 12; i++) {
+            if (checkboxesLeftInfo[i].isSelected()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void displayErrorWindow(String message) {
+        ErrorFrame errorFrame = new ErrorFrame(message);
+        errorFrame.setVisible(true);
+    }
+
+    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println("Clear button clicked!");
+
+        jCheckBoxAll.setSelected(false);
+
+        clearInfoCheckBoxes();
+        clearInputCheckBoxes();
+        clearInputComboBoxes();
+        clearInputTextFields();
+    }
+
+    private void clearInputCheckBoxes() {
+        System.out.println("clearInputCheckBoxes() called!");
+
+        alcoholBoolCheckbox.setSelected(false);
+        nicotineBoolCheckbox.setSelected(false);
+        pregnantBoolCheckbox.setSelected(false);
+    }
+
+    private void clearInputComboBoxes() {
+        System.out.println("clearInputComboBoxes() called!");
+        jComboBoxAge.setSelectedItem("1-12");
+        jComboBoxGender.setSelectedItem("Male");
+        jComboBoxWeight.setSelectedItem("125 >");
+    }
+
+    private void clearInputTextFields() {
+        System.out.println("clearInputTextFields() called!");
+
+        jTextFieldBPHigh.setText("");
+        jTextFieldBPLow.setText("");
+        jTextFieldCholesterol.setText("");
+        jTextFieldGlucose.setText("");
+        jTextFieldHeight.setText("");
+        jTextFieldPhysical.setText("");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -168,7 +364,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         jLabelGlucose.setText("Glucose");
 
-        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-12", "13-17", "18-25", "26-30", "31-40", "41-50", "51-60", "61-65", "65 <" }));
+        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "< 5", "5 - 19", "20 - 34", "35 - 49", "50 - 64", "65 <" }));
 
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
@@ -185,7 +381,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         jTextFieldGlucose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBoxWeight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "125 >", "125 - 150", "150 - 175", "175 - 200", "200 <" }));
+        jComboBoxWeight.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "< 125", "125 - 150", "150 - 175", "175 - 200", "200 <" }));
 
         jlabelBehavioral.setText("Behavioral Info");
 
@@ -795,202 +991,6 @@ public class AppFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCheckBoxAllActionPerformed(java.awt.event.ActionEvent evt) {
-        if (jCheckBoxAll.isSelected()) {
-            System.out.println("All checkbox selected!");
-            for (int i = 0; i < 15; i++) {
-                if (!checkboxesLeftInfo[i].isSelected()) {
-                    checkboxesLeftInfo[i].setSelected(true);
-                }
-            }
-        }
-        else {
-            System.out.println("All checkbox deselected!");
-        }
-    }
-
-    private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
-        System.out.println("Submit button clicked!");
-
-        for (int i = 0; i < 12; i++) {
-            if (checkboxesLeftInfo[i].isSelected()) {
-                System.out.println("Checkbox " + i + " selected!");
-                try {
-                    sendInput(i);
-                } catch(NumberFormatException e) {
-                    System.out.println("Error: Must take integers!");
-                    displayErrorWindow("Error: Text field must take integers!");
-                    return;
-                }
-            }
-            else {
-                System.out.println("Checkbox " + i + " not selected!");
-            }
-        }
-
-        if (!checkOneDiseaseSelected()) {
-            System.out.println("Error: At least one disease must be selected!");
-            displayErrorWindow("Error: At least one disease must be selected!");
-            return;
-        }
-        else if (!checkOneFactorSelected()) {
-            System.out.println("Error: At least one risk factor must be selected!");
-            displayErrorWindow("Error: At least one risk factor must be selected!");
-            return;
-        }
-        
-        updateOutput();
-
-        jTabbedPane1.setSelectedIndex(1);
-        source.printVariables();    // Remove once debugging is finished
-    }//GEN-LAST:event_buttonSubmitActionPerformed
-
-    private void clearInfoCheckBoxes() {
-        System.out.println("clearInfoCheckBoxes() called!");
-
-        for (int i = 0; i < 15; i++) {
-            checkboxesLeftInfo[i].setSelected(false);
-        }
-    }
-
-    private void sendInput(int index){
-        System.out.println("Sending input from checkbox: " + index);
-
-        switch(index) {
-            case 0:
-                source.setAgeGroup((String)jComboBoxAge.getSelectedItem());
-                break;
-            case 1:
-                source.setGender((String)jComboBoxGender.getSelectedItem());
-                break;
-            case 2:
-                source.setPregnantStatus(jCheckBoxPregnant.isSelected());
-                break;
-            case 3:
-                source.setHeight(Integer.parseInt(jTextFieldHeight.getText()));
-                break;
-            case 4:
-                source.setWeightGroup((String)jComboBoxWeight.getSelectedItem());
-                break;
-            case 5:
-                source.setBloodPressureHigh(Integer.parseInt(jTextFieldBPHigh.getText()));
-                break;
-            case 6:
-                source.setBloodPressureLow(Integer.parseInt(jTextFieldBPLow.getText()));
-                break;
-            case 7:
-                source.setCholesterol(Integer.parseInt(jTextFieldCholesterol.getText()));
-                break;
-            case 8:
-                source.setGlucose(Integer.parseInt(jTextFieldGlucose.getText()));
-                break;
-            case 9:
-                source.setNicotineUse(jCheckBoxNicotine.isSelected());
-                break;
-            case 10:
-                source.setAlcoholUse(jCheckBoxAlcohol.isSelected());
-                break;
-            case 11: 
-                source.setPhysicalActivity(Integer.parseInt(jTextFieldPhysical.getText()));
-                break;
-            default:
-                System.out.println("No input sent!");
-        }
-    }
-    
-    private void updateOutput() {
-        // Reset output text panes before getting results
-        jTextPaneRiskCovid.setText("");
-        jTextPaneFactorCovid.setText("");
-        
-        jTextPaneRiskCardio.setText("");
-        jTextPaneFactorCardio.setText("");
-        
-        jTextPaneRiskAlzheimers.setText("");
-        jTextPaneFactorAlzheimers.setText("");
-        
-        jTextPaneRiskDetails.setText("");
-        
-        if (checkboxesLeftInfo[12].isSelected()) {
-            jTextPaneRiskCovid.setText(source.calculateCovidRisk());
-            jTextPaneFactorCovid.setText(source.getTopRiskFactorCovid());
-        }
-        
-        if (checkboxesLeftInfo[13].isSelected()) {
-            jTextPaneRiskCardio.setText(source.calculateCardioRisk());
-            jTextPaneFactorCardio.setText(source.getTopRiskFactorCardio());
-        }
-
-        if (checkboxesLeftInfo[14].isSelected()) {
-            jTextPaneRiskAlzheimers.setText(source.calculateAlzheimersRisk());
-            jTextPaneFactorAlzheimers.setText(source.getTopRiskFactorAlzheimers());            
-        }
-        
-        jTextPaneRiskDetails.setText(source.getRiskDetails());
-    }
-
-    private boolean checkOneDiseaseSelected() {
-        for (int i = 12; i < 15; i++) {
-            if (checkboxesLeftInfo[i].isSelected()) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-    
-    private boolean checkOneFactorSelected() {
-        for (int i = 0; i < 12; i++) {
-            if (checkboxesLeftInfo[i].isSelected()) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private void displayErrorWindow(String message) {
-        ErrorFrame errorFrame = new ErrorFrame(message);
-        errorFrame.setVisible(true);
-    }
-
-    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("Clear button clicked!");
-
-        jCheckBoxAll.setSelected(false);
-
-        clearInfoCheckBoxes();
-        clearInputCheckBoxes();
-        clearInputComboBoxes();
-        clearInputTextFields();
-    }
-
-    private void clearInputCheckBoxes() {
-        System.out.println("clearInputCheckBoxes() called!");
-
-        alcoholBoolCheckbox.setSelected(false);
-        nicotineBoolCheckbox.setSelected(false);
-        pregnantBoolCheckbox.setSelected(false);
-    }
-
-    private void clearInputComboBoxes() {
-        System.out.println("clearInputComboBoxes() called!");
-        jComboBoxAge.setSelectedItem("1-12");
-        jComboBoxGender.setSelectedItem("Male");
-        jComboBoxWeight.setSelectedItem("125 >");
-    }
-
-    private void clearInputTextFields() {
-        System.out.println("clearInputTextFields() called!");
-
-        jTextFieldBPHigh.setText("");
-        jTextFieldBPLow.setText("");
-        jTextFieldCholesterol.setText("");
-        jTextFieldGlucose.setText("");
-        jTextFieldHeight.setText("");
-        jTextFieldPhysical.setText("");
-    }
 
     /**
      * @param args the command line arguments
