@@ -200,7 +200,12 @@ public class Source {
             if (scanner.hasNextInt()) {
                 int value = scanner.nextInt();
                 System.out.println("Value: " + value);
-                minVal = value;
+                if (minVal <= 0) {
+                    minVal = value;
+                }
+                else {
+                    maxVal = value;
+                }
             }
             else {
                 scanner.next();
@@ -212,9 +217,15 @@ public class Source {
         System.out.println("Min val: " + minVal);
         System.out.println("Max val: " + maxVal);
 
-        median = (double)(maxVal - 2 * minVal);
+        if (maxVal <= 0) {
+            median = minVal;
+        }
+        else {
+            median = (double)(maxVal - minVal) / 2;
+        }
 
-        
+        System.out.println("Median: " + median);
+
         return median;
     }
      
