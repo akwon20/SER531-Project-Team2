@@ -5,6 +5,8 @@
 
 package Frontend;
 
+import Backend.DatabaseConn;
+
 /**
  *
  * @author austinkwon
@@ -28,6 +30,8 @@ public class Source {
     double riskCardio;
     double riskAlzheimers;
     String riskDetails;
+
+    DatabaseConn dbconn;
         
     public Source() {
         System.out.println("Soure() Constructor called!");
@@ -50,6 +54,7 @@ public class Source {
         riskAlzheimers = 0;
         
         riskDetails = "";
+        this.dbconn = new DatabaseConn();
     }
     
     protected void setAgeGroup(String ageGroup) {
@@ -159,7 +164,21 @@ public class Source {
     protected String calculateCovidRisk() {
         String riskCovidOutput;
         this.riskCovid = 23.1;
-        
+
+        String queryString =
+                "SELECT DISTINCT ?subject_0 " +
+                        "FROM <tag:stardog:api:context:default> " +
+                        "WHERE { " +
+                        "  { " +
+                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
+                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
+                        "    FILTER(STR(?dat_0) = \"55\") . " +
+                        "  } " +
+                        "}";
+
+        this.dbconn.executeQuery(queryString);
+
+
         riskCovidOutput = Double.toString(this.riskCovid) + "%";
         
         return riskCovidOutput;
@@ -168,6 +187,20 @@ public class Source {
     protected String calculateCardioRisk() {
         String riskCardioOutput;
         this.riskCardio = 45.3;
+
+        String queryString =
+                "SELECT DISTINCT ?subject_0 " +
+                        "FROM <tag:stardog:api:context:default> " +
+                        "WHERE { " +
+                        "  { " +
+                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
+                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
+                        "    FILTER(STR(?dat_0) = \"55\") . " +
+                        "  } " +
+                        "}";
+
+        this.dbconn.executeQuery(queryString);
+
         
         riskCardioOutput = Double.toString(this.riskCardio) + "%";
         
@@ -177,6 +210,19 @@ public class Source {
     protected String calculateAlzheimersRisk() {
         String riskAlzheimersOutput;
         this.riskAlzheimers = 52.3;
+
+        String queryString =
+                "SELECT DISTINCT ?subject_0 " +
+                        "FROM <tag:stardog:api:context:default> " +
+                        "WHERE { " +
+                        "  { " +
+                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
+                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
+                        "    FILTER(STR(?dat_0) = \"55\") . " +
+                        "  } " +
+                        "}";
+
+        this.dbconn.executeQuery(queryString);
         
         riskAlzheimersOutput = Double.toString(this.riskAlzheimers) + "%";
         
