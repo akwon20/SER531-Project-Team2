@@ -5,6 +5,8 @@
 
 package Frontend;
 
+import java.util.Scanner;
+
 /**
  *
  * @author austinkwon
@@ -23,6 +25,9 @@ public class Source {
     boolean nicotineUse;
     boolean alcoholUse;
     int physicalActivity;
+    boolean selectedCovid;
+    boolean selectedCardio;
+    boolean selectedAlzheimers;
     
     double riskCovid;
     double riskCardio;
@@ -44,6 +49,9 @@ public class Source {
         nicotineUse = false;
         alcoholUse = false;
         physicalActivity = 0;
+        selectedCovid = false;
+        selectedCardio = false;
+        selectedAlzheimers = false;
         
         riskCovid = 0;
         riskCardio = 0;
@@ -100,6 +108,18 @@ public class Source {
         this.physicalActivity = physicalActivity;
     }
     
+    protected void setSelectedCovid(boolean selectedCovid) {
+        this.selectedCovid = selectedCovid;
+    }
+    
+    protected void setSelectedCardio(boolean selectedCardio) {
+        this.selectedCardio = selectedCardio;
+    }
+    
+    protected void setSelectedAlzheimers(boolean selectedAlzheimers) {
+        this.selectedAlzheimers = selectedAlzheimers;
+    }
+    
     protected void setRiskDetails(String riskDetails) {
         this.riskDetails = riskDetails;
     }
@@ -152,10 +172,52 @@ public class Source {
         return this.physicalActivity;
     }
     
+    protected boolean getSelectedCovid() {
+        return this.selectedCovid;
+    }
+    
+    protected boolean getSelectedCardio() {
+        return this.selectedCardio;
+    }
+    
+    protected boolean getSelectedAlzheimers() {
+        return this.selectedAlzheimers;
+    }
+    
     protected String getRiskDetails() {
         return this.riskDetails;
     }
     
+    protected double calculateGroupMedian(String groupInput) {
+        int minVal = 0;
+        int maxVal = 0;
+        
+        double median = 0.0;
+        
+        Scanner scanner = new Scanner(groupInput);
+
+        while (scanner.hasNext()) {
+            if (scanner.hasNextInt()) {
+                int value = scanner.nextInt();
+                System.out.println("Value: " + value);
+                minVal = value;
+            }
+            else {
+                scanner.next();
+            }
+        }
+
+        scanner.close();
+
+        System.out.println("Min val: " + minVal);
+        System.out.println("Max val: " + maxVal);
+
+        median = (double)(maxVal - 2 * minVal);
+
+        
+        return median;
+    }
+     
     protected String calculateCovidRisk() {
         String riskCovidOutput;
         this.riskCovid = 23.1;
@@ -176,8 +238,12 @@ public class Source {
     
     protected String calculateAlzheimersRisk() {
         String riskAlzheimersOutput;
-        this.riskAlzheimers = 52.3;
+        double result = 0.0;
         
+        result = calculateGroupMedian(getAgeGroup());
+//        this.riskAlzheimers = 52.3;
+        this.riskAlzheimers = result;
+
         riskAlzheimersOutput = Double.toString(this.riskAlzheimers) + "%";
         
         return riskAlzheimersOutput;

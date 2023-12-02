@@ -364,7 +364,7 @@ public class AppFrame extends javax.swing.JFrame {
 
         jLabelGlucose.setText("Glucose");
 
-        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "< 5", "5-19", "20-34", "35-49", "50-64", "65 <" }));
+        jComboBoxAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "< 5", "5 - 19", "20 - 34", "35 - 49", "50 - 64", "65 <" }));
 
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
