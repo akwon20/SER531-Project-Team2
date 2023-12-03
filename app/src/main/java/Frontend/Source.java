@@ -312,19 +312,6 @@ public class Source {
     }
 
     private String generateAlzheimersqueryString() {
-//        ageGroup = "";
-//        if(ageGroup != "")
-//        gender = "";
-//        pregnantStatus = false;
-//        height = 0;
-//        weightGroup = "";
-//        bloodPressureHigh = 0;
-//        bloodPressureLow = 0;
-//        cholesterol = 0;
-//        glucose = 0;
-//        nicotineUse = false;
-//        alcoholUse = false;
-//        physicalActivity = 0;
         StringBuilder sb = new StringBuilder();
         sb.append("SELECT DISTINCT ?subject_0 ");
         sb.append("FROM <tag:stardog:api:context:default> ");
@@ -334,7 +321,6 @@ public class Source {
 
 
         System.out.print("Age Group: ");
-//        sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . ");
         switch(getAgeGroup()) {
             case("< 5"):
                 System.out.println("< 5");
