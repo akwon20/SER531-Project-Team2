@@ -5,6 +5,8 @@
 
 package Frontend;
 
+import java.util.Scanner;
+
 import Backend.DatabaseConn;
 
 /**
@@ -25,14 +27,17 @@ public class Source {
     boolean nicotineUse;
     boolean alcoholUse;
     int physicalActivity;
-    
+    boolean selectedCovid;
+    boolean selectedCardio;
+    boolean selectedAlzheimers;
+
     double riskCovid;
     double riskCardio;
     double riskAlzheimers;
     String riskDetails;
 
     DatabaseConn dbconn;
-        
+
     public Source() {
         System.out.println("Soure() Constructor called!");
         
@@ -48,7 +53,10 @@ public class Source {
         nicotineUse = false;
         alcoholUse = false;
         physicalActivity = 0;
-        
+        selectedCovid = false;
+        selectedCardio = false;
+        selectedAlzheimers = false;
+
         riskCovid = 0;
         riskCardio = 0;
         riskAlzheimers = 0;
@@ -105,6 +113,18 @@ public class Source {
         this.physicalActivity = physicalActivity;
     }
     
+    protected void setSelectedCovid(boolean selectedCovid) {
+        this.selectedCovid = selectedCovid;
+    }
+
+    protected void setSelectedCardio(boolean selectedCardio) {
+        this.selectedCardio = selectedCardio;
+    }
+
+    protected void setSelectedAlzheimers(boolean selectedAlzheimers) {
+        this.selectedAlzheimers = selectedAlzheimers;
+    }
+
     protected void setRiskDetails(String riskDetails) {
         this.riskDetails = riskDetails;
     }
@@ -157,14 +177,68 @@ public class Source {
         return this.physicalActivity;
     }
     
+    protected boolean getSelectedCovid() {
+        return this.selectedCovid;
+    }
+
+    protected boolean getSelectedCardio() {
+        return this.selectedCardio;
+    }
+
+    protected boolean getSelectedAlzheimers() {
+        return this.selectedAlzheimers;
+    }
+
     protected String getRiskDetails() {
         return this.riskDetails;
     }
     
+    protected double calculateGroupMedian(String groupInput) {
+        int minVal = 0;
+        int maxVal = 0;
+
+        double median = 0.0;
+
+        Scanner scanner = new Scanner(groupInput);
+
+        while (scanner.hasNext()) {
+            if (scanner.hasNextInt()) {
+                int value = scanner.nextInt();
+                System.out.println("Value: " + value);
+                if (minVal <= 0) {
+                    minVal = value;
+                }
+                else {
+                    maxVal = value;
+                }
+            }
+            else {
+                scanner.next();
+            }
+        }
+
+        scanner.close();
+
+        System.out.println("Min val: " + minVal);
+        System.out.println("Max val: " + maxVal);
+
+        if (maxVal <= 0) {
+            median = minVal;
+        }
+        else {
+            median = (double)(maxVal - minVal) / 2;
+        }
+
+        System.out.println("Median: " + median);
+
+        return median;
+    }
+
     protected String calculateCovidRisk() {
         String riskCovidOutput;
         this.riskCovid = 23.1;
 
+        //start with generate string with if-else condition
         String queryString =
                 "SELECT DISTINCT ?subject_0 " +
                         "FROM <tag:stardog:api:context:default> " +
@@ -201,7 +275,7 @@ public class Source {
 
         this.dbconn.executeQuery(queryString);
 
-        
+
         riskCardioOutput = Double.toString(this.riskCardio) + "%";
         
         return riskCardioOutput;
@@ -209,9 +283,11 @@ public class Source {
     
     protected String calculateAlzheimersRisk() {
         String riskAlzheimersOutput;
+        double result = 0.0;
         this.riskAlzheimers = 52.3;
 
-        String queryString =
+        String queryString = generateAlzheimersqueryString();
+        queryString =
                 "SELECT DISTINCT ?subject_0 " +
                         "FROM <tag:stardog:api:context:default> " +
                         "WHERE { " +
@@ -223,12 +299,36 @@ public class Source {
                         "}";
 
         this.dbconn.executeQuery(queryString);
-        
+
+        result = calculateGroupMedian(getAgeGroup());
+//        this.riskAlzheimers = 52.3;
+        this.riskAlzheimers = result;
+
         riskAlzheimersOutput = Double.toString(this.riskAlzheimers) + "%";
         
         return riskAlzheimersOutput;
     }
-    
+
+    private String generateAlzheimersqueryString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT DISTINCT ?subject_0 ");
+        ageGroup = "";
+        if(ageGroup != "")
+        gender = "";
+        pregnantStatus = false;
+        height = 0;
+        weightGroup = "";
+        bloodPressureHigh = 0;
+        bloodPressureLow = 0;
+        cholesterol = 0;
+        glucose = 0;
+        nicotineUse = false;
+        alcoholUse = false;
+        physicalActivity = 0;
+
+        return sb.toString();
+    }
+
     protected String getTopRiskFactorCovid() {
         String topRiskFactorCovid = "Nicotine Use";
         
