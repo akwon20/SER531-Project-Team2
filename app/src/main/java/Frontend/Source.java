@@ -313,8 +313,8 @@ public class Source {
 
     private String generateAlzheimersqueryString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("SELECT DISTINCT ?subject_0 ");
-        sb.append("FROM <tag:stardog:api:context:default> ");
+        sb.append("SELECT DISTINCT ?subject_0 "
+                + "FROM <tag:stardog:api:context:default> ");
         sb.append("WHERE { " +
                 "  { " +
                 "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . ");
@@ -370,6 +370,11 @@ public class Source {
                 System.out.println("Gender not selected!");
         }
 
+        System.out.println("Alcohol: ");
+        if (getAlcoholUse()) {
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#usesAlcohol> 1 . ");
+        }
+
         System.out.print("Weight Group: ");
         switch(getWeightGroup()) {
             case("< 125"):
@@ -394,6 +399,12 @@ public class Source {
                 break;
             default:
                 System.out.println("Weight Group not selected!");
+        }
+
+        System.out.print("Physical Activity: " + getPhysicalActivity());
+        if (getPhysicalActivity() > -1) {
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#physicalActivity> "
+                    + getPhysicalActivity() + " . ");
         }
 
         sb.append("  } " + "}");
