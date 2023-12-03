@@ -243,16 +243,17 @@ public class Source {
         System.out.println(queryString);
 
         //start with generate string with if-else condition
-        queryString =
-                "SELECT DISTINCT ?subject_0 " +
-                        "FROM <tag:stardog:api:context:default> " +
-                        "WHERE { " +
-                        "  { " +
-                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
-                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
-                        "    FILTER(STR(?dat_0) = \"55\") . " +
-                        "  } " +
-                        "}";
+//        queryString =
+//                "SELECT DISTINCT ?subject_0 " +
+//                        "FROM <tag:stardog:api:context:default> " +
+//                        "WHERE { " +
+//                        "  { " +
+//                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
+//                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
+//                        "    FILTER(STR(?dat_0) = \"55\") . " +
+//                        "  } " +
+//                        "}";
+        System.out.println(queryString);
 
         this.dbconn.executeQuery(queryString);
 
@@ -264,43 +265,43 @@ public class Source {
 
     private String generateCovidqueryString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("SELECT DISTINCT ?subject_0 \n"
-                + "FROM <tag:stardog:api:context:default> \n");
-        sb.append("WHERE { \n" +
-                "  { \n" +
-                "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . \n");
+        sb.append("SELECT DISTINCT ?subject_0 "
+                + "FROM <tag:stardog:api:context:default> ");
+        sb.append("WHERE { " +
+                "  { " +
+                "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . ");
 
         System.out.print("Age Group: ");
         switch(getAgeGroup()) {
             case("< 5"):
                 System.out.println("< 5");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 \n. "
-                        + "    FILTER(?dat_0 <= 5) . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
+                        + "    FILTER(STR(?dat_0) <= \"5\") . ");
                 break;
             case("5 - 19"):
                 System.out.println("5 - 19");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
-                        + "    FILTER(?dat_0 >= 5 && ?dat_0 <= 19) . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
+                        + "    FILTER(STR(?dat_0) >= \"5\" && STR(?dat_0) <= \"19\") . ");
                 break;
             case("20 - 34"):
                 System.out.println("20 - 34");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
-                        + "    FILTER(?dat_0 >= 20 && ?dat_0 <= 34) . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
+                        + "    FILTER(STR(?dat_0) >= \"20\" && STR(?dat_0) <= \"34\") . ");
                 break;
             case("35 - 49"):
                 System.out.println("35 - 49");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
-                        + "    FILTER(?dat_0 >= 35 && ?dat_0 <= 49) . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
+                        + "    FILTER(STR(?dat_0) >= \"35\" && ?dat_0 <= \"49\") . ");
                 break;
             case("50 - 64"):
                 System.out.println("50 - 64");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
-                        + "    FILTER(?dat_0 >= 50 && ?dat_0 <= 64) . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
+                        + "    FILTER(STR(?dat_0) >= \"50\" && ?dat_0 <= \"64\") . ");
                 break;
             case("65 <"):
                 System.out.println("65 <");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
-                        + "    FILTER(?dat_0 >= 65) . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
+                        + "    FILTER(STR(?dat_0) >= \"65\") . ");
                 break;
             default:
                 System.out.println("Age Group not selected!");
@@ -310,11 +311,11 @@ public class Source {
         switch(getGender()) {
             case("Male"):
                 System.out.println("Male");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> 1 . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> 1 . ");
                 break;
             case("Female"):
                 System.out.println("Female");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> 2 . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> 2 . ");
                 break;
             default:
                 System.out.println("Gender not selected!");
@@ -323,24 +324,24 @@ public class Source {
         System.out.print("Pregnancy: ");
         if (getPregnantStatus()) {
                 System.out.println("Male");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#isPregnant> 97 . \n");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#isPregnant> 97 . ");
         }
         else {
             System.out.println("Not pregnant");
-            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#isPregnant> 0 . \n");
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#isPregnant> 0 . ");
         }
 
         System.out.print("Smoking: ");
         if (getNicotineUse()) {
             System.out.println("Smokes");
-            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#smokes> 1 . \n");
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#smokes> 1 . ");
         }
         else {
             System.out.println("Smokes");
-            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#smokes> 0 . \n");
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#smokes> 0 . ");
         }
 
-        sb.append("  } \n" + "}\n");
+        sb.append("  } " + "}");
 
         return sb.toString();
     }
