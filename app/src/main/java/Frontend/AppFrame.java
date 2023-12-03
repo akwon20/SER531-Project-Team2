@@ -167,6 +167,7 @@ public class AppFrame extends javax.swing.JFrame {
         }
 
         if (checkboxesLeftInfo[14].isSelected()) {
+            System.out.println("Checkbox14 is selected");
             jTextPaneRiskAlzheimers.setText(source.calculateAlzheimersRisk());
             jTextPaneFactorAlzheimers.setText(source.getTopRiskFactorAlzheimers());
         }

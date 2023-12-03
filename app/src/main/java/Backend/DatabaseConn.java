@@ -14,7 +14,7 @@ public class DatabaseConn {
     private static final String url = "https://sd-f08b11ca.stardog.cloud:5820";
     private static final String username = "test";
     private static final String password = "test1234567890";
-    private static final String to = "Alzheimers";
+    private static final String to = "alzheimers";
 
     private static final int maxPool = 200;
     private static final int minPool = 10;
