@@ -918,6 +918,7 @@ public class AppFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jTextPaneRiskDetails.setEditable(false);
         jScrollPane7.setViewportView(jTextPaneRiskDetails);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
