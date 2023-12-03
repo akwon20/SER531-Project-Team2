@@ -5,9 +5,16 @@
 
 package Frontend;
 
+import java.sql.Array;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import Backend.DatabaseConn;
+import com.stardog.stark.Literal;
+import com.stardog.stark.Value;
+import com.stardog.stark.query.BindingSet;
+import com.stardog.stark.query.SelectQueryResult;
+import com.stardog.stark.query.io.QueryResultWriters;
 
 /**
  *
@@ -250,7 +257,7 @@ public class Source {
                         "  } " +
                         "}";
 
-        this.dbconn.executeQuery(queryString);
+        SelectQueryResult result = this.dbconn.executeQuery(queryString);
 
 
         riskCovidOutput = Double.toString(this.riskCovid) + "%";
@@ -273,7 +280,7 @@ public class Source {
                         "  } " +
                         "}";
 
-        this.dbconn.executeQuery(queryString);
+        SelectQueryResult result = this.dbconn.executeQuery(queryString);
 
 
         riskCardioOutput = Double.toString(this.riskCardio) + "%";
@@ -282,59 +289,62 @@ public class Source {
     }
     
     protected String calculateAlzheimersRisk() {
-        Map<String , String > mapAgeField = new HashMap<>();
-        mapAgeField.put("50 - 64","50-64_years");
+        Map<String, String> mapAgeField = new HashMap<>();
+        mapAgeField.put("50 - 64", "50-64_years");
         String riskAlzheimerOutput;
         double result = 0.0;
         this.riskAlzheimers = 52.3;
 
         System.out.println("calculating Alzheimers Risk ... ");
-        Map<String , String > factors = new HashMap<>();
-        if(!Objects.equals(getAgeGroup(), "")) {
+        Map<String, String> factors = new HashMap<>();
+        if (!Objects.equals(getAgeGroup(), "")) {
             System.out.println("Setting age group in map");
 
             factors.put("healthcare:ageGroup", "\"" + mapAgeField.get(getAgeGroup()) + "\"");
         }
-        if(!Objects.equals(getGender(), "")){
-            if(getGender().equals("Male")){
-                factors.put("healthcare:gender" , "\"1\"^^<http://www.w3.org/2001/XMLSchema#decimal>");
-            }
-            else{
-                factors.put("healthcare:gender" , "\"0\"^^<http://www.w3.org/2001/XMLSchema#decimal>");
+        if (!Objects.equals(getGender(), "")) {
+            if (getGender().equals("Male")) {
+                factors.put("healthcare:gender", "\"1\"^^<http://www.w3.org/2001/XMLSchema#decimal>");
+            } else {
+                factors.put("healthcare:gender", "\"0\"^^<http://www.w3.org/2001/XMLSchema#decimal>");
             }
         }
 
         System.out.println("Checking for obesity");
         //check for obesity
         boolean obesity = false;
-        if(getHeight() != 0 &&  !Objects.equals(getWeightGroup() , "")){
+        if (getHeight() != 0 && !Objects.equals(getWeightGroup(), "")) {
             // calculate bmi
-            double bmi = calculateBmi(calculateGroupMedian(getWeightGroup()) , getHeight());
+            double bmi = calculateBmi(calculateGroupMedian(getWeightGroup()), getHeight());
             // person is obese if BMI is above 30
             obesity = bmi > 30.00;
         }
 
         //add obesity to the query if the value is true
-        if(obesity){
-            factors.put("healthcare:topic" , "\"obesity\"");
+        double averageValue;
+        if (obesity) {
+            factors.put("healthcare:topic", "\"obesity\"");
             // get value for obesity
             StringBuilder sb = new StringBuilder();
             sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n");
             sb.append("SELECT (AVG(?dataValue) as ?averageDataValue)\n");
 
-            String obesityQueryforAlzheimer = generateAlzheimersqueryString(factors , sb);
-            dbconn.executeQuery(obesityQueryforAlzheimer);
+            String obesityQueryAlzheimer = generateAlzheimersqueryString(factors, sb);
+            SelectQueryResult queryResult = dbconn.executeQuery(obesityQueryAlzheimer);
+
+        } else {
+            averageValue = 0;
         }
 
-        if(!getNicotineUse())
-            factors.put("nicotine" , "True");
-        if(getPhysicalActivity() != -1)
-            factors.put("physicalActivity" , String.valueOf(getPhysicalActivity()));
+        if (!getNicotineUse())
+            factors.put("nicotine", "True");
+        if (getPhysicalActivity() != -1)
+            factors.put("physicalActivity", String.valueOf(getPhysicalActivity()));
 
-        this.riskAlzheimers = result;
+        this.riskAlzheimers = 0.4 ;
 
         riskAlzheimerOutput = Double.toString(this.riskAlzheimers) + "%";
-        
+
         return riskAlzheimerOutput;
     }
 
