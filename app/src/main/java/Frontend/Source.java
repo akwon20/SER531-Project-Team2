@@ -5,16 +5,27 @@
 
 package Frontend;
 
-import java.util.Scanner;
+import java.sql.Array;
+import java.text.DecimalFormat;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import Backend.DatabaseConn;
+import com.stardog.stark.Literal;
+import com.stardog.stark.Value;
+import com.stardog.stark.query.BindingSet;
+import com.stardog.stark.query.SelectQueryResult;
+import com.stardog.stark.query.io.QueryResultWriters;
 
 /**
  *
  * @author austinkwon
  */
 public class Source {
-    
+
+    private enum inputTraits{AGE, GENDER, PREG_STAT, H, W, BP_H, BP_L, CHOL, GLUC, NIC_USE, ALC_USE, PHY_ACT}
+    private enum inputDiseases{COVID, CVD, AD}
+
     String ageGroup;
     String gender;
     boolean pregnantStatus;
@@ -36,6 +47,20 @@ public class Source {
     double riskAlzheimers;
     String riskDetails;
 
+    public String getTopRiskAlzheimers() {
+        return topRiskAlzheimers;
+    }
+
+    public void setTopRiskAlzheimers(String topRiskAlzheimers) {
+        this.topRiskAlzheimers = topRiskAlzheimers;
+    }
+
+    String topRiskAlzheimers;
+
+    List<inputTraits> receivedTraits = new ArrayList<>();
+    List<inputTraits> receivedDiseases = new ArrayList<>();
+
+
     DatabaseConn dbconn;
 
     public Source() {
@@ -52,7 +77,7 @@ public class Source {
         glucose = 0;
         nicotineUse = false;
         alcoholUse = false;
-        physicalActivity = 0;
+        physicalActivity = -1;
         selectedCovid = false;
         selectedCardio = false;
         selectedAlzheimers = false;
@@ -67,66 +92,82 @@ public class Source {
     
     protected void setAgeGroup(String ageGroup) {
         this.ageGroup = ageGroup;
+        receivedTraits.add(inputTraits.AGE);
     }
     
     protected void setGender(String gender) {
         this.gender = gender;
+        receivedTraits.add(inputTraits.GENDER);
     }
     
     protected void setPregnantStatus(boolean pregnantStatus) {
         this.pregnantStatus = pregnantStatus;
+        receivedTraits.add(inputTraits.PREG_STAT);
     }
     
     protected void setHeight(int height) {
         this.height = height;
+        receivedTraits.add(inputTraits.H);
     }
     
     protected void setWeightGroup(String weightGroup) {
         this.weightGroup = weightGroup;
+        receivedTraits.add(inputTraits.W);
     }
     
     protected void setBloodPressureHigh(int bloodPressureHigh) {
         this.bloodPressureHigh = bloodPressureHigh;
+        receivedTraits.add(inputTraits.BP_H);
     }
     
     protected void setBloodPressureLow(int bloodPressureLow) {
         this.bloodPressureLow = bloodPressureLow;
+        receivedTraits.add(inputTraits.BP_L);
     }
     
     protected void setCholesterol(int cholesterol) {
         this.cholesterol = cholesterol;
+        receivedTraits.add(inputTraits.CHOL);
     }
     
     protected void setGlucose(int glucose) {
         this.glucose = glucose;
+        receivedTraits.add(inputTraits.GLUC);
     }
     
     protected void setNicotineUse(boolean nicotineUse) {
         this.nicotineUse = nicotineUse;
+        receivedTraits.add(inputTraits.NIC_USE);
     }
     
     protected void setAlcoholUse(boolean alcoholUse) {
         this.alcoholUse = alcoholUse;
+        receivedTraits.add(inputTraits.ALC_USE);
     }
     
     protected void setPhysicalActivity(int physicalActivity) {
         this.physicalActivity = physicalActivity;
+        receivedTraits.add(inputTraits.PHY_ACT);
     }
     
     protected void setSelectedCovid(boolean selectedCovid) {
         this.selectedCovid = selectedCovid;
+        receivedTraits.add(inputTraits.AGE);
     }
 
     protected void setSelectedCardio(boolean selectedCardio) {
         this.selectedCardio = selectedCardio;
+        receivedTraits.add(inputTraits.AGE);
     }
 
     protected void setSelectedAlzheimers(boolean selectedAlzheimers) {
         this.selectedAlzheimers = selectedAlzheimers;
+        receivedTraits.add(inputTraits.AGE);
     }
 
     protected void setRiskDetails(String riskDetails) {
         this.riskDetails = riskDetails;
+        receivedTraits.add(inputTraits.AGE);
     }
     
     protected String getAgeGroup() {
@@ -226,7 +267,7 @@ public class Source {
             median = minVal;
         }
         else {
-            median = (double)(maxVal - minVal) / 2;
+            median = (double)(maxVal + minVal) / 2;
         }
 
         System.out.println("Median: " + median);
@@ -238,112 +279,24 @@ public class Source {
         String riskCovidOutput;
         this.riskCovid = 23.1;
 
-        String queryString = generateCovidqueryString();
-        System.out.println("Query String: ");
-        System.out.println(queryString);
-
         //start with generate string with if-else condition
-//        queryString =
-//                "SELECT DISTINCT ?subject_0 " +
-//                        "FROM <tag:stardog:api:context:default> " +
-//                        "WHERE { " +
-//                        "  { " +
-//                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
-//                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
-//                        "    FILTER(STR(?dat_0) = \"55\") . " +
-//                        "  } " +
-//                        "}";
-        System.out.println(queryString);
+        String queryString =
+                "SELECT DISTINCT ?subject_0 " +
+                        "FROM <tag:stardog:api:context:default> " +
+                        "WHERE { " +
+                        "  { " +
+                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
+                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
+                        "    FILTER(STR(?dat_0) = \"55\") . " +
+                        "  } " +
+                        "}";
 
-        this.dbconn.executeQuery(queryString);
+        SelectQueryResult result = this.dbconn.executeQuery(queryString);
 
 
         riskCovidOutput = Double.toString(this.riskCovid) + "%";
         
         return riskCovidOutput;
-    }
-
-    private String generateCovidqueryString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("SELECT DISTINCT ?subject_0 "
-                + "FROM <tag:stardog:api:context:default> ");
-        sb.append("WHERE { " +
-                "  { " +
-                "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . ");
-
-        System.out.print("Age Group: ");
-        switch(getAgeGroup()) {
-            case("< 5"):
-                System.out.println("< 5");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(STR(?dat_0) <= \"5\") . ");
-                break;
-            case("5 - 19"):
-                System.out.println("5 - 19");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(STR(?dat_0) >= \"5\" && STR(?dat_0) <= \"19\") . ");
-                break;
-            case("20 - 34"):
-                System.out.println("20 - 34");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(STR(?dat_0) >= \"20\" && STR(?dat_0) <= \"34\") . ");
-                break;
-            case("35 - 49"):
-                System.out.println("35 - 49");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(STR(?dat_0) >= \"35\" && ?dat_0 <= \"49\") . ");
-                break;
-            case("50 - 64"):
-                System.out.println("50 - 64");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(STR(?dat_0) >= \"50\" && ?dat_0 <= \"64\") . ");
-                break;
-            case("65 <"):
-                System.out.println("65 <");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(STR(?dat_0) >= \"65\") . ");
-                break;
-            default:
-                System.out.println("Age Group not selected!");
-        }
-
-        System.out.print("Gender: ");
-        switch(getGender()) {
-            case("Male"):
-                System.out.println("Male");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> 1 . ");
-                break;
-            case("Female"):
-                System.out.println("Female");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> 2 . ");
-                break;
-            default:
-                System.out.println("Gender not selected!");
-        }
-
-        System.out.print("Pregnancy: ");
-        if (getPregnantStatus()) {
-                System.out.println("Male");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#isPregnant> 97 . ");
-        }
-        else {
-            System.out.println("Not pregnant");
-            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#isPregnant> 0 . ");
-        }
-
-        System.out.print("Smoking: ");
-        if (getNicotineUse()) {
-            System.out.println("Smokes");
-            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#smokes> 1 . ");
-        }
-        else {
-            System.out.println("Smokes");
-            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#smokes> 0 . ");
-        }
-
-        sb.append("  } " + "}");
-
-        return sb.toString();
     }
     
     protected String calculateCardioRisk() {
@@ -361,7 +314,7 @@ public class Source {
                         "  } " +
                         "}";
 
-        this.dbconn.executeQuery(queryString);
+        SelectQueryResult result = this.dbconn.executeQuery(queryString);
 
 
         riskCardioOutput = Double.toString(this.riskCardio) + "%";
@@ -370,134 +323,159 @@ public class Source {
     }
     
     protected String calculateAlzheimersRisk() {
-        String riskAlzheimersOutput;
+        Map<String, String> mapAgeField = new HashMap<>();
+        mapAgeField.put("50 - 64", "50-64_years");
+        String riskAlzheimerOutput;
         double result = 0.0;
         this.riskAlzheimers = 52.3;
 
-        String queryString = generateAlzheimersqueryString();
-        System.out.println("Query String: ");
-        System.out.println(queryString);
-        queryString =
-                "SELECT DISTINCT ?subject_0 " +
-                        "FROM <tag:stardog:api:context:default> " +
-                        "WHERE { " +
-                        "  { " +
-                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
-                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
-                        "    FILTER(STR(?dat_0) = \"55\") . " +
-                        "  } " +
-                        "}";
+        System.out.println("calculating Alzheimers Risk ... ");
+        Map<String, String> factors = new HashMap<>();
+        if (!Objects.equals(getAgeGroup(), "")) {
+            System.out.println("Setting age group in map");
 
-        this.dbconn.executeQuery(queryString);
+            factors.put("healthcare:ageGroup", "\"" + mapAgeField.get(getAgeGroup()) + "\"");
+        }
+        if (!Objects.equals(getGender(), "")) {
+            if (getGender().equals("Male")) {
+                factors.put("healthcare:gender", "\"1\"^^<http://www.w3.org/2001/XMLSchema#decimal>");
+            } else {
+                factors.put("healthcare:gender", "\"0\"^^<http://www.w3.org/2001/XMLSchema#decimal>");
+            }
+        }
 
-        result = calculateGroupMedian(getAgeGroup());
-//        this.riskAlzheimers = 52.3;
-        this.riskAlzheimers = result;
+        System.out.println("Checking for obesity");
+        //check for obesity
+        boolean obesity = false;
+        if (getHeight() != 0 && !Objects.equals(getWeightGroup(), "")) {
+            // calculate bmi
+            double bmi = calculateBmi(calculateGroupMedian(getWeightGroup()), getHeight());
+            // person is obese if BMI is above 30
+            obesity = bmi > 30.00;
+        }
 
-        riskAlzheimersOutput = Double.toString(this.riskAlzheimers) + "%";
-        
-        return riskAlzheimersOutput;
+        //add obesity to the query if the value is true
+        double obesityRisk = 0.0;
+        if (obesity) {
+            factors.put("healthcare:topic", "\"obesity\"");
+            // get value for obesity
+            StringBuilder sb = new StringBuilder();
+            sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n");
+            sb.append("SELECT (AVG(?dataValue) as ?averageDataValue)\n");
+
+            String obesityQueryAlzheimer = generateAlzheimersqueryString(factors, sb);
+            try (SelectQueryResult queryResult = dbconn.executeQuery(obesityQueryAlzheimer)) {
+
+                while (queryResult.hasNext()) {
+                    BindingSet tuple = queryResult.next();
+                    obesityRisk = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                    System.out.println("obesity avg Value percentage:" + obesityRisk);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                factors.remove("healthcare:topic");
+            }
+
+        }
+
+        //set avg for nicotine as 0 by default
+        double nicotineRisk = 0.0;
+        if (getNicotineUse()) {
+            factors.put("healthcare:topic", "\"smoking\"");
+            // get value for nicotine
+            StringBuilder sb = new StringBuilder();
+            sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n");
+            sb.append("SELECT (AVG(?dataValue) as ?averageDataValue)\n");
+
+            String obesityQueryAlzheimer = generateAlzheimersqueryString(factors, sb);
+            try (SelectQueryResult queryResult = dbconn.executeQuery(obesityQueryAlzheimer)) {
+
+                while (queryResult.hasNext()) {
+                    BindingSet tuple = queryResult.next();
+                    nicotineRisk = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                    System.out.println("nicotine avg Value percentage:" + nicotineRisk);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally {
+                factors.remove("healthcare:topic");
+            }
+
+        }
+
+        double noPhysicalActivityRisk = 0.0;
+        if (getPhysicalActivity() < 1) {
+            factors.put("healthcare:topic", "\"no_physical_activity\"");
+            //get noPhysicalActivityRisk
+            StringBuilder sb = new StringBuilder();
+            sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n");
+            sb.append("SELECT (AVG(?dataValue) as ?averageDataValue)\n");
+
+            String obesityQueryAlzheimer = generateAlzheimersqueryString(factors, sb);
+            try (SelectQueryResult queryResult = dbconn.executeQuery(obesityQueryAlzheimer)) {
+
+                while (queryResult.hasNext()) {
+                    BindingSet tuple = queryResult.next();
+                    noPhysicalActivityRisk = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                    System.out.println("no physical activity avg Value percentage:" + noPhysicalActivityRisk);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally {
+                factors.remove("healthcare:topic");
+            }
+        }
+
+        // 34% are obese and have AD
+        this.riskAlzheimers = 0.3 * obesityRisk + 0.3 * nicotineRisk + 0.3 * noPhysicalActivityRisk;
+
+        //Calculating the top risk factor
+        double maxValue = Double.MIN_VALUE;
+        if (obesityRisk > maxValue) {
+            maxValue = obesityRisk;
+            setTopRiskAlzheimers("Obesity");
+        }
+        if (nicotineRisk > maxValue) {
+            maxValue = nicotineRisk;
+            setTopRiskAlzheimers("Nicotine");
+        }
+        if (noPhysicalActivityRisk > maxValue) {
+            maxValue = noPhysicalActivityRisk;
+            setTopRiskAlzheimers("No Physical Activity");
+        }
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        riskAlzheimerOutput = decimalFormat.format(this.riskAlzheimers)  + "%";
+
+        return riskAlzheimerOutput;
     }
 
-    private String generateAlzheimersqueryString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("SELECT DISTINCT ?subject_0 "
-                + "FROM <tag:stardog:api:context:default> ");
-        sb.append("WHERE { " +
-                "  { " +
-                "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . ");
+    private double calculateBmi(double weightInPounds, int heightInCm) {
 
+        // Convert weight from pounds to kilograms
+        double weightInKg = weightInPounds / 2.20462;
 
-        System.out.print("Age Group: ");
-        switch(getAgeGroup()) {
-            case("< 5"):
-                System.out.println("< 5");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(?dat_0 <= 5) . ");
-                break;
-            case("5 - 19"):
-                System.out.println("5 - 19");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(?dat_0 >= 5 && ?dat_0 <= 19) . ");
-                break;
-            case("20 - 34"):
-                System.out.println("20 - 34");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(?dat_0 >= 20 && ?dat_0 <= 34) . ");
-                break;
-            case("35 - 49"):
-                System.out.println("35 - 49");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(?dat_0 >= 35 && ?dat_0 <= 49) . ");
-                break;
-            case("50 - 64"):
-                System.out.println("50 - 64");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(?dat_0 >= 50 && ?dat_0 <= 64) . ");
-                break;
-            case("65 <"):
-                System.out.println("65 <");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . "
-                        + "    FILTER(?dat_0 >= 65) . ");
-                break;
-            default:
-                System.out.println("Age Group not selected!");
+        // Convert height from centimeters to meters
+        double heightInMeters = heightInCm / 100.0;
+
+        // Calculate BMI
+        double bmi = weightInKg / (heightInMeters * heightInMeters);
+
+        System.out.println("BMI: " + bmi);
+        return bmi;
+    }
+
+    private String generateAlzheimersqueryString(Map<String , String> factors , StringBuilder stringBuilder) {
+        stringBuilder.append(" FROM <tag:stardog:api:context:default>\n");
+        stringBuilder.append("WHERE {\n");
+        stringBuilder.append(" ?survey a healthcare:Survey ;\n");
+        for ( Map.Entry<String  , String> factor: factors.entrySet() ) {
+            stringBuilder.append(factor.getKey()).append(" ").append(factor.getValue()).append(";\n");
         }
-
-        System.out.print("Gender: ");
-        switch(getGender()) {
-            case("Male"):
-                System.out.println("Male");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> 1 . ");
-                break;
-            case("Female"):
-                System.out.println("Female");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> 2 . ");
-                break;
-            default:
-                System.out.println("Gender not selected!");
-        }
-
-        System.out.println("Alcohol: ");
-        if (getAlcoholUse()) {
-            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#usesAlcohol> 1 . ");
-        }
-
-        System.out.print("Weight Group: ");
-        switch(getWeightGroup()) {
-            case("< 125"):
-                System.out.println("< 125");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasWeight> ?dat_0 . "
-                        + "    FILTER(?dat_0 <= 125) . ");
-                break;
-            case("125 - 150"):
-                System.out.println("125 - 150");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasWeight> ?dat_0 . "
-                        + "    FILTER(?dat_0 >= 125 && ?dat_0 <= 150. ");
-                break;
-            case("150 - 175"):
-                System.out.println("150 - 175");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasWeight> ?dat_0 . "
-                        + "    FILTER(?dat_0 >= 150 && ?dat_0 <= 175. ");
-                break;
-            case("175 - 200"):
-                System.out.println("175 - 200");
-                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasWeight> ?dat_0 . "
-                        + "    FILTER(?dat_0 >= 175 && ?dat_0 <= 200. ");
-                break;
-            default:
-                System.out.println("Weight Group not selected!");
-        }
-
-        System.out.print("Physical Activity: " + getPhysicalActivity());
-        if (getPhysicalActivity() > -1) {
-            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#physicalActivity> "
-                    + getPhysicalActivity() + " . ");
-        }
-
-        sb.append("  } " + "}");
-
-        return sb.toString();
+        stringBuilder.append(" healthcare:dataValue ?dataValue .\n");
+        stringBuilder.append(" }");
+        System.out.println(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 
     protected String getTopRiskFactorCovid() {
@@ -513,35 +491,7 @@ public class Source {
     }
     
     protected String getTopRiskFactorAlzheimers() {
-        String topRiskFactorCardio = "Age";
-        
-        return topRiskFactorCardio;
-    }
-
-    protected void clearSource() {
-        ageGroup = "";
-        gender = "";
-        pregnantStatus = false;
-        height = 0;
-        weightGroup = "";
-        bloodPressureHigh = 0;
-        bloodPressureLow = 0;
-        cholesterol = 0;
-        glucose = 0;
-        nicotineUse = false;
-        alcoholUse = false;
-        physicalActivity = 0;
-        selectedCovid = false;
-        selectedCardio = false;
-        selectedAlzheimers = false;
-
-        riskCovid = 0;
-        riskCardio = 0;
-        riskAlzheimers = 0;
-
-        riskDetails = "";
-
-        System.out.println("Source cleared!");
+        return getTopRiskAlzheimers();
     }
     
     // For Debug purposes
