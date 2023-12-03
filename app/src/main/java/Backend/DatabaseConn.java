@@ -41,9 +41,10 @@ public class DatabaseConn {
 
     }
 
-    public void executeQuery(String queryString) {
+    public SelectQueryResult executeQuery(String queryString) {
 
         Connection connection = getConnection(connectionPool);
+        SelectQueryResult tupleQueryResult = null;
 
         try (connection) {
             // start the connection to the database
@@ -51,14 +52,16 @@ public class DatabaseConn {
 
             // Query the database to get our list patients with Age 55  and print the results to the console
             SelectQuery query = connection.select(queryString);
-            SelectQueryResult tupleQueryResult = query.execute();
+            tupleQueryResult = query.execute();
             QueryResultWriters.write(tupleQueryResult, System.out, TextTableQueryResultWriter.FORMAT);
+            return tupleQueryResult;
 
         } catch (StardogException | IOException e) {
             e.printStackTrace();
         } finally {
             releaseConnection(connectionPool, connection);
         }
+        return tupleQueryResult;
     }
 
     /**
