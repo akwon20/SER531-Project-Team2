@@ -6,6 +6,7 @@
 package Frontend;
 
 import java.sql.Array;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -45,6 +46,16 @@ public class Source {
     double riskCardio;
     double riskAlzheimers;
     String riskDetails;
+
+    public String getTopRiskAlzheimers() {
+        return topRiskAlzheimers;
+    }
+
+    public void setTopRiskAlzheimers(String topRiskAlzheimers) {
+        this.topRiskAlzheimers = topRiskAlzheimers;
+    }
+
+    String topRiskAlzheimers;
 
     List<inputTraits> receivedTraits = new ArrayList<>();
     List<inputTraits> receivedDiseases = new ArrayList<>();
@@ -344,7 +355,7 @@ public class Source {
         }
 
         //add obesity to the query if the value is true
-        double averageValue;
+        double obesityRisk = 0.0;
         if (obesity) {
             factors.put("healthcare:topic", "\"obesity\"");
             // get value for obesity
@@ -357,25 +368,84 @@ public class Source {
 
                 while (queryResult.hasNext()) {
                     BindingSet tuple = queryResult.next();
-                    String medianPrct = Value.lex(Objects.requireNonNull(tuple.get("averageDataValue")));
-                    System.out.println("BindingSet out" + medianPrct);
+                    obesityRisk = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                    System.out.println("obesity avg Value percentage:" + obesityRisk);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+            } finally {
+                factors.remove("healthcare:topic");
             }
 
-        } else {
-            averageValue = 0;
         }
 
-        if (!getNicotineUse())
-            factors.put("nicotine", "True");
-        if (getPhysicalActivity() != -1)
-            factors.put("physicalActivity", String.valueOf(getPhysicalActivity()));
+        //set avg for nicotine as 0 by default
+        double nicotineRisk = 0.0;
+        if (getNicotineUse()) {
+            factors.put("healthcare:topic", "\"smoking\"");
+            // get value for nicotine
+            StringBuilder sb = new StringBuilder();
+            sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n");
+            sb.append("SELECT (AVG(?dataValue) as ?averageDataValue)\n");
+
+            String obesityQueryAlzheimer = generateAlzheimersqueryString(factors, sb);
+            try (SelectQueryResult queryResult = dbconn.executeQuery(obesityQueryAlzheimer)) {
+
+                while (queryResult.hasNext()) {
+                    BindingSet tuple = queryResult.next();
+                    nicotineRisk = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                    System.out.println("nicotine avg Value percentage:" + nicotineRisk);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally {
+                factors.remove("healthcare:topic");
+            }
+
+        }
+
+        double noPhysicalActivityRisk = 0.0;
+        if (getPhysicalActivity() < 1) {
+            factors.put("healthcare:topic", "\"no_physical_activity\"");
+            //get noPhysicalActivityRisk
+            StringBuilder sb = new StringBuilder();
+            sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n");
+            sb.append("SELECT (AVG(?dataValue) as ?averageDataValue)\n");
+
+            String obesityQueryAlzheimer = generateAlzheimersqueryString(factors, sb);
+            try (SelectQueryResult queryResult = dbconn.executeQuery(obesityQueryAlzheimer)) {
+
+                while (queryResult.hasNext()) {
+                    BindingSet tuple = queryResult.next();
+                    noPhysicalActivityRisk = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                    System.out.println("no physical activity avg Value percentage:" + noPhysicalActivityRisk);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally {
+                factors.remove("healthcare:topic");
+            }
+        }
 
         // 34% are obese and have AD
+        this.riskAlzheimers = 0.3 * obesityRisk + 0.3 * nicotineRisk + 0.3 * noPhysicalActivityRisk;
 
-        riskAlzheimerOutput = Double.toString(this.riskAlzheimers) + "%";
+        //Calculating the top risk factor
+        double maxValue = Double.MIN_VALUE;
+        if (obesityRisk > maxValue) {
+            maxValue = obesityRisk;
+            setTopRiskAlzheimers("Obesity");
+        }
+        if (nicotineRisk > maxValue) {
+            maxValue = nicotineRisk;
+            setTopRiskAlzheimers("Nicotine");
+        }
+        if (noPhysicalActivityRisk > maxValue) {
+            maxValue = noPhysicalActivityRisk;
+            setTopRiskAlzheimers("No Physical Activity");
+        }
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        riskAlzheimerOutput = decimalFormat.format(this.riskAlzheimers)  + "%";
 
         return riskAlzheimerOutput;
     }
@@ -421,9 +491,7 @@ public class Source {
     }
     
     protected String getTopRiskFactorAlzheimers() {
-        String topRiskFactorCardio = "Age";
-        
-        return topRiskFactorCardio;
+        return getTopRiskAlzheimers();
     }
     
     // For Debug purposes
