@@ -1,12 +1,19 @@
 package Backend;
 
+import com.complexible.common.io.StringIO;
 import com.complexible.common.rdf.query.resultio.TextTableQueryResultWriter;
 import com.complexible.stardog.StardogException;
 import com.complexible.stardog.api.*;
+import com.stardog.stark.Value;
+import com.stardog.stark.query.BindingSet;
 import com.stardog.stark.query.SelectQueryResult;
 import com.stardog.stark.query.io.QueryResultWriters;
+import org.apache.commons.lang3.ObjectUtils;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.Buffer;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public class DatabaseConn {
@@ -53,10 +60,9 @@ public class DatabaseConn {
             // Query the database to get our list patients with Age 55  and print the results to the console
             SelectQuery query = connection.select(queryString);
             tupleQueryResult = query.execute();
-            QueryResultWriters.write(tupleQueryResult, System.out, TextTableQueryResultWriter.FORMAT);
             return tupleQueryResult;
 
-        } catch (StardogException | IOException e) {
+        } catch (StardogException e) {
             e.printStackTrace();
         } finally {
             releaseConnection(connectionPool, connection);

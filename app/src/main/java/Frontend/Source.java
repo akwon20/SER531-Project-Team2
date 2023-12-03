@@ -21,7 +21,10 @@ import com.stardog.stark.query.io.QueryResultWriters;
  * @author austinkwon
  */
 public class Source {
-    
+
+    private enum inputTraits{AGE, GENDER, PREG_STAT, H, W, BP_H, BP_L, CHOL, GLUC, NIC_USE, ALC_USE, PHY_ACT}
+    private enum inputDiseases{COVID, CVD, AD}
+
     String ageGroup;
     String gender;
     boolean pregnantStatus;
@@ -42,6 +45,10 @@ public class Source {
     double riskCardio;
     double riskAlzheimers;
     String riskDetails;
+
+    List<inputTraits> receivedTraits = new ArrayList<>();
+    List<inputTraits> receivedDiseases = new ArrayList<>();
+
 
     DatabaseConn dbconn;
 
@@ -74,66 +81,82 @@ public class Source {
     
     protected void setAgeGroup(String ageGroup) {
         this.ageGroup = ageGroup;
+        receivedTraits.add(inputTraits.AGE);
     }
     
     protected void setGender(String gender) {
         this.gender = gender;
+        receivedTraits.add(inputTraits.GENDER);
     }
     
     protected void setPregnantStatus(boolean pregnantStatus) {
         this.pregnantStatus = pregnantStatus;
+        receivedTraits.add(inputTraits.PREG_STAT);
     }
     
     protected void setHeight(int height) {
         this.height = height;
+        receivedTraits.add(inputTraits.H);
     }
     
     protected void setWeightGroup(String weightGroup) {
         this.weightGroup = weightGroup;
+        receivedTraits.add(inputTraits.W);
     }
     
     protected void setBloodPressureHigh(int bloodPressureHigh) {
         this.bloodPressureHigh = bloodPressureHigh;
+        receivedTraits.add(inputTraits.BP_H);
     }
     
     protected void setBloodPressureLow(int bloodPressureLow) {
         this.bloodPressureLow = bloodPressureLow;
+        receivedTraits.add(inputTraits.BP_L);
     }
     
     protected void setCholesterol(int cholesterol) {
         this.cholesterol = cholesterol;
+        receivedTraits.add(inputTraits.CHOL);
     }
     
     protected void setGlucose(int glucose) {
         this.glucose = glucose;
+        receivedTraits.add(inputTraits.GLUC);
     }
     
     protected void setNicotineUse(boolean nicotineUse) {
         this.nicotineUse = nicotineUse;
+        receivedTraits.add(inputTraits.NIC_USE);
     }
     
     protected void setAlcoholUse(boolean alcoholUse) {
         this.alcoholUse = alcoholUse;
+        receivedTraits.add(inputTraits.ALC_USE);
     }
     
     protected void setPhysicalActivity(int physicalActivity) {
         this.physicalActivity = physicalActivity;
+        receivedTraits.add(inputTraits.PHY_ACT);
     }
     
     protected void setSelectedCovid(boolean selectedCovid) {
         this.selectedCovid = selectedCovid;
+        receivedTraits.add(inputTraits.AGE);
     }
 
     protected void setSelectedCardio(boolean selectedCardio) {
         this.selectedCardio = selectedCardio;
+        receivedTraits.add(inputTraits.AGE);
     }
 
     protected void setSelectedAlzheimers(boolean selectedAlzheimers) {
         this.selectedAlzheimers = selectedAlzheimers;
+        receivedTraits.add(inputTraits.AGE);
     }
 
     protected void setRiskDetails(String riskDetails) {
         this.riskDetails = riskDetails;
+        receivedTraits.add(inputTraits.AGE);
     }
     
     protected String getAgeGroup() {
@@ -330,7 +353,16 @@ public class Source {
             sb.append("SELECT (AVG(?dataValue) as ?averageDataValue)\n");
 
             String obesityQueryAlzheimer = generateAlzheimersqueryString(factors, sb);
-            SelectQueryResult queryResult = dbconn.executeQuery(obesityQueryAlzheimer);
+            try (SelectQueryResult queryResult = dbconn.executeQuery(obesityQueryAlzheimer)) {
+
+                while (queryResult.hasNext()) {
+                    BindingSet tuple = queryResult.next();
+                    String medianPrct = Value.lex(Objects.requireNonNull(tuple.get("averageDataValue")));
+                    System.out.println("BindingSet out" + medianPrct);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         } else {
             averageValue = 0;
@@ -341,7 +373,7 @@ public class Source {
         if (getPhysicalActivity() != -1)
             factors.put("physicalActivity", String.valueOf(getPhysicalActivity()));
 
-        this.riskAlzheimers = 0.4 ;
+        // 34% are obese and have AD
 
         riskAlzheimerOutput = Double.toString(this.riskAlzheimers) + "%";
 
