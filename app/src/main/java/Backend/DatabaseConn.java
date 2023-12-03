@@ -6,9 +6,12 @@ import com.complexible.stardog.StardogException;
 import com.complexible.stardog.api.*;
 import com.stardog.stark.Value;
 import com.stardog.stark.query.BindingSet;
+import com.stardog.stark.query.QueryResults;
 import com.stardog.stark.query.SelectQueryResult;
+import com.stardog.stark.query.io.QueryResultWriter;
 import com.stardog.stark.query.io.QueryResultWriters;
 import org.apache.commons.lang3.ObjectUtils;
+import org.w3c.dom.Text;
 
 import java.io.*;
 import java.nio.Buffer;
@@ -21,7 +24,7 @@ public class DatabaseConn {
     private static final String url = "https://sd-f08b11ca.stardog.cloud:5820";
     private static final String username = "test";
     private static final String password = "test1234567890";
-    private static final String to = "alzheimers";
+    private static final String to = "covidAlz";
 
     private static final int maxPool = 200;
     private static final int minPool = 10;
@@ -60,15 +63,36 @@ public class DatabaseConn {
             // Query the database to get our list patients with Age 55  and print the results to the console
             SelectQuery query = connection.select(queryString);
             tupleQueryResult = query.execute();
+            QueryResultWriters.write(tupleQueryResult, System.out, TextTableQueryResultWriter.FORMAT);
             return tupleQueryResult;
 
-        } catch (StardogException e) {
+        } catch (StardogException | IOException e) {
             e.printStackTrace();
         } finally {
             releaseConnection(connectionPool, connection);
         }
         return tupleQueryResult;
     }
+
+//    public void executeQuery(String queryString) {
+//
+//        Connection connection = getConnection(connectionPool);
+//
+//        try (connection) {
+//            // start the connection to the database
+//            connection.begin();
+//
+//            // Query the database to get our list patients with Age 55  and print the results to the console
+//            SelectQuery query = connection.select(queryString);
+//            SelectQueryResult tupleQueryResult = query.execute();
+//            QueryResultWriters.write(tupleQueryResult, System.out, TextTableQueryResultWriter.FORMAT);
+//
+//        } catch (StardogException | IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            releaseConnection(connectionPool, connection);
+//        }
+//    }
 
     /**
      *  Now we want to create the configuration for our pool.

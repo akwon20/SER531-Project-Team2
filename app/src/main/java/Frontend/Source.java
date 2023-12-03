@@ -276,34 +276,87 @@ public class Source {
     }
 
     protected String calculateCovidRisk() {
+        Map<String, String> mapAgeField = new HashMap<>();
+        mapAgeField.put("50 - 64", "50-64_years");
         String riskCovidOutput;
         this.riskCovid = 23.1;
 
         //start with generate string with if-else condition
         String queryString =
-                "SELECT DISTINCT ?subject_0 " +
-                        "FROM <tag:stardog:api:context:default> " +
-                        "WHERE { " +
-                        "  { " +
-                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
-                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
-                        "    FILTER(STR(?dat_0) = \"55\") . " +
-                        "  } " +
-                        "}";
+                "SELECT DISTINCT ?subject_0 \n" +
+                        "FROM <tag:stardog:api:context:default> \n" +
+                        "WHERE { \n" +
+                        "  { \n" +
+                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . \n" +
+                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n" +
+                        "    FILTER(STR(?dat_0) >= \"50\" && STR(?dat_0) <= \"64\") . \n" +
+                        "  } \n" +
+                        "}\n";
 
-        SelectQueryResult result = this.dbconn.executeQuery(queryString);
+        queryString = generateCovidqueryString();
+        System.out.println(queryString);
+        this.dbconn.executeQuery(queryString);
 
 
         riskCovidOutput = Double.toString(this.riskCovid) + "%";
         
         return riskCovidOutput;
     }
+
+    private String generateCovidqueryString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT DISTINCT ?subject_0 \n"
+                + "FROM <tag:stardog:api:context:default> \n");
+        sb.append("WHERE { \n" +
+                "  { \n" +
+                "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . \n");
+
+        System.out.print("Age Group: ");
+        switch(getAgeGroup()) {
+            case("< 5"):
+                System.out.println("< 5");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 \n. "
+                        + "    FILTER(STR(?dat_0) < \"5\") . \n");
+                break;
+            case("5 - 19"):
+                System.out.println("5 - 19");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
+                        + "    FILTER(STR(?dat_0) >= \"5\" && STR(?dat_0) <= \"19\") . \n");
+                break;
+            case("20 - 34"):
+                System.out.println("20 - 34");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
+                        + "    FILTER(STR(?dat_0) >= \"20\" && STR(?dat_0) <= \"34\") . \n");
+                break;
+            case("35 - 49"):
+                System.out.println("35 - 49");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
+                        + "    FILTER(STR(?dat_0) >= \"35\" && STR(?dat_0) <= \"49\") . \n");
+                break;
+            case("50 - 64"):
+                System.out.println("50 - 64");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
+                        + "    FILTER(STR(?dat_0) >= \"50\" && STR(?dat_0) <= \"64\") . \n");
+                break;
+            case("65 <"):
+                System.out.println("65 <");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n"
+                        + "    FILTER(STR(?dat_0) >= \"65\") . \n");
+                break;
+            default:
+                System.out.println("Age Group not selected!");
+        }
+
+        sb.append("  } \n" + "}\n");
+
+        return sb.toString();
+    }
     
     protected String calculateCardioRisk() {
         String riskCardioOutput;
         this.riskCardio = 45.3;
-
-        String queryString =
+        String queryString;
+        queryString =
                 "SELECT DISTINCT ?subject_0 " +
                         "FROM <tag:stardog:api:context:default> " +
                         "WHERE { " +
@@ -314,8 +367,8 @@ public class Source {
                         "  } " +
                         "}";
 
-        SelectQueryResult result = this.dbconn.executeQuery(queryString);
-
+//        SelectQueryResult result = this.dbconn.executeQuery(queryString);
+        this.dbconn.executeQuery(queryString);
 
         riskCardioOutput = Double.toString(this.riskCardio) + "%";
         

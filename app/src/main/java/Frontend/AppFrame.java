@@ -57,7 +57,7 @@ public class AppFrame extends javax.swing.JFrame {
     private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
         System.out.println("Submit button clicked!");
 
-        source.clearSource();
+//        source.clearSource();
 
         for (int i = 0; i < 12; i++) {
             if (checkboxesLeftInfo[i].isSelected()) {
