@@ -57,6 +57,8 @@ public class AppFrame extends javax.swing.JFrame {
     private void buttonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSubmitActionPerformed
         System.out.println("Submit button clicked!");
 
+//        source.clearSource();
+
         for (int i = 0; i < 12; i++) {
             if (checkboxesLeftInfo[i].isSelected()) {
                 System.out.println("Checkbox " + i + " selected!");
@@ -167,6 +169,7 @@ public class AppFrame extends javax.swing.JFrame {
         }
 
         if (checkboxesLeftInfo[14].isSelected()) {
+            System.out.println("Checkbox14 is selected");
             jTextPaneRiskAlzheimers.setText(source.calculateAlzheimersRisk());
             jTextPaneFactorAlzheimers.setText(source.getTopRiskFactorAlzheimers());
         }
@@ -916,6 +919,7 @@ public class AppFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jTextPaneRiskDetails.setEditable(false);
         jScrollPane7.setViewportView(jTextPaneRiskDetails);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
