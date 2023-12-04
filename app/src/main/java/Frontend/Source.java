@@ -347,6 +347,41 @@ public class Source {
                 System.out.println("Age Group not selected!");
         }
 
+        System.out.print("Age Group: ");
+        switch(getGender()) {
+            case("Male"):
+                System.out.println("Male");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> \"1\" \n. ");
+                break;
+            case("Female"):
+                System.out.println("Female");
+                sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#hasGender> \"2\" . \n");
+                break;
+            default:
+                System.out.println("Gender not selected!");
+        }
+
+        // FIXME: Pregnant still = true even after deselected (where singleton comes in?)
+        System.out.println("Pregnancy: ");
+        if (getPregnantStatus()) {
+            System.out.println("Pregnant");
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#isPregnant> \"97\" \n. ");
+        }
+        else {
+            System.out.println("Not Pregnant");
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#isPregnant> \"0\" \n. ");
+        }
+
+        System.out.println("Smoking: ");
+        if (getNicotineUse()) {
+            System.out.println("Smokes");
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#smokes> \"1\" \n. ");
+        }
+        else {
+            System.out.println("Does not smoke");
+            sb.append("    ?subject_0 <http://www.semanticweb.org/healthcare#smokes> \"0\" \n. ");
+        }
+
         sb.append("  } \n" + "}\n");
 
         return sb.toString();
