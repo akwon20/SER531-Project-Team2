@@ -74,7 +74,7 @@ public class Source {
     String topRiskCardiovascular;
 
     List<inputTraits> receivedTraits = new ArrayList<>();
-    List<inputTraits> receivedDiseases = new ArrayList<>();
+    List<inputDiseases> receivedDiseases = new ArrayList<>();
 
 
     DatabaseConn dbconn;
@@ -168,22 +168,21 @@ public class Source {
 
     protected void setSelectedCovid(boolean selectedCovid) {
         this.selectedCovid = selectedCovid;
-        receivedTraits.add(inputTraits.AGE);
+        receivedDiseases.add(inputDiseases.COVID);
     }
 
     protected void setSelectedCardio(boolean selectedCardio) {
         this.selectedCardio = selectedCardio;
-        receivedTraits.add(inputTraits.AGE);
+        receivedDiseases.add(inputDiseases.CVD);
     }
 
     protected void setSelectedAlzheimers(boolean selectedAlzheimers) {
         this.selectedAlzheimers = selectedAlzheimers;
-        receivedTraits.add(inputTraits.AGE);
+        receivedDiseases.add(inputDiseases.AD);
     }
 
     protected void setRiskDetails(String riskDetails) {
         this.riskDetails = riskDetails;
-        receivedTraits.add(inputTraits.AGE);
     }
 
     protected String getAgeGroup() {
@@ -756,26 +755,292 @@ public class Source {
         return sb.toString();
     }
 
+    private Double getCVDPatientsWhoSmoke(String number) {
+
+        System.out.println("Calculating CVD patients by smoking :" + number);
+        StringBuilder sb = new StringBuilder();
+        sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n" +
+                  "\n" +
+                  "SELECT (COUNT(?patient) AS ?CVDCount)\n" +
+                  "FROM <tag:stardog:api:context:default>\n" +
+                  "WHERE {\n" +
+                  "    ?patient a healthcare:Patients ;\n" +
+                  "            healthcare:hasCardiovascular ?cardio ;");
+        //append 0 or 1 according to 0 or 1
+        sb.append("             healthcare:smokes \"").append(number).append("\"  .");
+        sb.append("    ?cardio a healthcare:Cardiovascular .\n" +
+                  "    FILTER (STR(?cardio) = \"http://www.semanticweb.org/healthcare#1\")\n" +
+                  "}");
+
+
+        System.out.println(sb);
+        double totalPatientsWhoSmoke = 0.0;
+        try (SelectQueryResult queryResult = dbconn.executeQuery(sb.toString())) {
+
+            while (queryResult.hasNext()) {
+                BindingSet tuple = queryResult.next();
+                totalPatientsWhoSmoke = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("CVDCount"))));
+                System.out.println("Total number of patients :" + totalPatientsWhoSmoke);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return totalPatientsWhoSmoke;
+
+    }
+
+    private double getCVDPatientsByObesity(String number) {
+
+        System.out.println("Calculating Cardio patients by Gender" + number);
+        StringBuilder sb = new StringBuilder();
+        sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n" +
+                  "\n" +
+                  "SELECT (COUNT(?patient) AS ?CVDCount)\n" +
+                  "FROM <tag:stardog:api:context:default>\n" +
+                  "WHERE {\n" +
+                  "    ?patient a healthcare:Patients ;\n" +
+                  "            healthcare:hasCardiovascular ?cardio ;");
+        //append 1 or 2 according to male or female
+        sb.append("             healthcare:hasGender \"").append(number).append("\"  .");
+        sb.append("    ?cardio a healthcare:Cardiovascular .\n" +
+                  "    FILTER (STR(?cardio) = \"http://www.semanticweb.org/healthcare#1\")\n" +
+                  "}");
+
+
+        System.out.println(sb.toString());
+        double totalPatientsWithGender = 0.0;
+        try (SelectQueryResult queryResult = dbconn.executeQuery(sb.toString())) {
+
+            while (queryResult.hasNext()) {
+                BindingSet tuple = queryResult.next();
+                totalPatientsWithGender = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("CVDCount"))));
+                System.out.println("Total number of patients :" + totalPatientsWithGender);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return totalPatientsWithGender;
+    }
+
+    private double getTotalCVDPatientsWithGivenAge(String ageGroup) {
+
+        System.out.print("Calculating total number of patients with a given age:");
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n" +
+                  "\n" +
+                  "SELECT (COUNT(?patient) AS ?cvdCount)\n" +
+                  "FROM <tag:stardog:api:context:default>\n" +
+                  "WHERE {\n" +
+                  "    ?patient a healthcare:Patients ;\n" +
+                  "            healthcare:hasCardiovascular ?cardio .\n" +
+                  "    ?cardio a healthcare:Cardiovascular .\n");
+
+        switch (ageGroup) {
+        case ("< 5"):
+            System.out.println(" < 5");
+            sb.append("  ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n "
+                      + " FILTER(STR(?age) < \"5\") .");
+            break;
+        case ("5 - 19"):
+            System.out.println("5 - 19");
+            sb.append("    ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age  . \n"
+                      + "    FILTER(STR(?age) >= \"5\" && STR(?age) <= \"19\") . \n");
+            break;
+        case ("20 - 34"):
+            System.out.println("20 - 34");
+            sb.append("    ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n"
+                      + "    FILTER(STR(?age) >= \"20\" && STR(?age) <= \"34\") . \n");
+            break;
+        case ("35 - 49"):
+            System.out.println("35 - 49");
+            sb.append("    ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n"
+                      + "    FILTER(STR(?age) >= \"35\" && STR(?age) <= \"49\") . \n");
+            break;
+        case ("50 - 64"):
+            System.out.println("50 - 64");
+            sb.append("    ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n"
+                      + "    FILTER(STR(?age) >= \"50\" && STR(?age) <= \"64\") . \n");
+            break;
+        case ("65 <"):
+            System.out.println("65 <");
+            sb.append("   ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n"
+                      + "    FILTER(STR(?age) >= \"65\") . \n");
+            break;
+        default:
+            System.out.println("Age Group not selected!");
+        }
+        sb.append("   FILTER (STR(?cardio) = \"http://www.semanticweb.org/healthcare#1\")");
+        sb.append("}");
+
+        double totalPatientsWithAge = 0.0;
+        try (SelectQueryResult queryResult = dbconn.executeQuery(sb.toString())) {
+
+            while (queryResult.hasNext()) {
+                BindingSet tuple = queryResult.next();
+                totalPatientsWithAge = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("cvdCount"))));
+                System.out.println("Total number of patients :" + totalPatientsWithAge);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return totalPatientsWithAge;
+
+    }
+
+
     protected String calculateCardioRisk() {
+        System.out.println("Calculating CVD Risk");
         String riskCardioOutput;
-        this.riskCardio = 45.3;
-        String queryString;
-        queryString =
-                "SELECT DISTINCT ?subject_0 " +
-                        "FROM <tag:stardog:api:context:default> " +
-                        "WHERE { " +
-                        "  { " +
-                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . " +
-                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . " +
-                        "    FILTER(STR(?dat_0) = \"55\") . " +
-                        "  } " +
-                        "}";
+        this.riskCardio = 23.1;
+        List<Tuple<String, Double>> frequency = new ArrayList<>();
+        int agePosition = 1;
+        int obesityPosition = 1;
+        int pregnancyPosition = 1;
+        int genderPostion = 1;
+        int nicotinePosition = 1;
 
-//        SelectQueryResult result = this.dbconn.executeQuery(queryString);
-        this.dbconn.executeQuery(queryString);
 
-        riskCardioOutput = Double.toString(this.riskCardio) + "%";
 
+        //if age is selected, get total number of patients with that age who have covid
+        if (!Objects.equals(getAgeGroup(), "")) {
+            // Add patient counts for different age groups to the frequency list
+            frequency.add(new Tuple<>("< 5", getTotalCVDPatientsWithGivenAge("< 5")));
+            frequency.add(new Tuple<>("5 - 19", getTotalCVDPatientsWithGivenAge("5 - 19")));
+            frequency.add(new Tuple<>("20 - 34", getTotalCVDPatientsWithGivenAge("20 - 34")));
+            frequency.add(new Tuple<>("35 - 49", getTotalCVDPatientsWithGivenAge("35 - 49")));
+            frequency.add(new Tuple<>("50 - 64", getTotalCVDPatientsWithGivenAge("50 - 64")));
+            frequency.add(new Tuple<>("65 <", getTotalCVDPatientsWithGivenAge("65 <")));
+
+            // Sort the frequency list by patient count in ascending order
+            frequency.sort(Comparator.comparingDouble(Tuple::getSecond));
+
+            // Find the position of ageGroup in the sorted list
+            for (int i = 0; i < frequency.size(); i++) {
+                if (frequency.get(i).getFirst().equals(getAgeGroup())) {
+                    agePosition = i;
+                    break;
+                }
+            }
+
+            this.riskCardio = agePosition;
+        }
+
+        //if gender is selected , calculate rank and risk for the gender
+        if (!Objects.equals(getGender(), "")) {
+
+            //calculate male and female patients and sort them by gender
+            frequency.clear();
+            frequency.add(new Tuple<>("Male", getCovidPatientsByGender("2")));
+            frequency.add(new Tuple<>("Female", getCovidPatientsByGender("1")));
+
+            // Sort the frequency list by patient count in ascending order
+            frequency.sort(Comparator.comparingDouble(Tuple::getSecond));
+
+            // Find the position of choosen gender in the sorted list
+            for (int i = 0; i < frequency.size(); i++) {
+                if (frequency.get(i).getFirst().equals(getGender())) {
+                    genderPostion = i;
+                    break;
+                }
+            }
+
+            //calculate rank of the given value
+            this.riskCardio += genderPostion;
+        }
+
+        if (getPregnantStatus()) {
+            //calculate patients for covid with pregnency
+            frequency.clear();
+            frequency.add(new Tuple<>("Male", getCovidPatientsByPregnancy("0")));
+            frequency.add(new Tuple<>("Female", getCovidPatientsByPregnancy("1")));
+
+            //calculate patients for covid without pregnency
+            // Sort the frequency list by patient count in ascending order
+            frequency.sort(Comparator.comparingDouble(Tuple::getSecond));
+
+            // Find the position of choosen pregnencyValue in the sorted list
+            for (int i = 0; i < frequency.size(); i++) {
+                if (frequency.get(i).getFirst().equals(getGender())) {
+                    pregnancyPosition = i;
+                    break;
+                }
+            }
+            this.riskCardio += pregnancyPosition;
+
+        }
+
+        System.out.println("Checking for obesity in CVD");
+        //check for obesity
+        boolean obesity = false;
+        if (getHeight() != 0 && !Objects.equals(getWeightGroup(), "")) {
+            // calculate bmi
+            double bmi = calculateBmi(calculateGroupMedian(getWeightGroup()), getHeight());
+            // person is obese if BMI is above 30
+            obesity = bmi > 30.00;
+            if(obesity){
+
+                //get patients who are obese , and not obese and have COVID
+                frequency.clear();
+                frequency.add(new Tuple<>("False", getCVDPatientsByObesity("0")));
+                frequency.add(new Tuple<>("True", getCVDPatientsByObesity("1")));
+
+                //calculate patients for covid with obesity
+                // Sort the frequency list by patient count in ascending order
+                frequency.sort(Comparator.comparingDouble(Tuple::getSecond));
+
+                // Find the position of obesity in the sorted list
+                for (int i = 0; i < frequency.size(); i++) {
+                    if (frequency.get(i).getFirst().equals(getGender())) {
+                        nicotinePosition = i;
+                        break;
+                    }
+                }
+                this.riskCardio += nicotinePosition;
+            }
+        }
+
+        if(getNicotineUse()){
+
+            //get patients who smoke and have COVID
+            frequency.clear();
+            frequency.add(new Tuple<>("False", getCVDPatientsWhoSmoke("0")));
+            frequency.add(new Tuple<>("True", getCVDPatientsWhoSmoke("1")));
+
+            //calculate patients for covid with obesity
+            // Sort the frequency list by patient count in ascending order
+            frequency.sort(Comparator.comparingDouble(Tuple::getSecond));
+
+            // Find the position of obesity in the sorted list
+            for (int i = 0; i < frequency.size(); i++) {
+                if (frequency.get(i).getFirst().equals(getGender())) {
+                    obesityPosition = i;
+                    break;
+                }
+            }
+            this.riskCardio += obesityPosition;
+        }
+
+        //Calculating the top risk factor
+        double maxValue = Double.MIN_VALUE;
+        if (obesityPosition > maxValue) {
+            maxValue = obesityPosition;
+            setTopRiskCardiovascular("Obesity");
+        }
+        if (agePosition > maxValue) {
+            maxValue = agePosition;
+            setTopRiskCardiovascular("Age");
+        }
+        if (genderPostion > maxValue) {
+            maxValue = genderPostion;
+            setTopRiskCardiovascular("Gender");
+        }
+        if (pregnancyPosition > maxValue){
+            maxValue = pregnancyPosition;
+            setTopRiskCardiovascular("Pregnency");
+        }
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        riskCardioOutput = decimalFormat.format((this.riskCardio/14) * 100) + "%";
         return riskCardioOutput;
     }
 
@@ -942,9 +1207,8 @@ public class Source {
     }
 
     protected String getTopRiskFactorCardio() {
-        String topRiskFactorCardio = "Physical Activity";
 
-        return topRiskFactorCardio;
+        return topRiskCardiovascular;
     }
 
     protected String getTopRiskFactorAlzheimers() {
