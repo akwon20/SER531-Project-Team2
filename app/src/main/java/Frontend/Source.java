@@ -276,27 +276,13 @@ public class Source {
     }
 
     protected String calculateCovidRisk() {
-        Map<String, String> mapAgeField = new HashMap<>();
-        mapAgeField.put("50 - 64", "50-64_years");
+        String queryString;
         String riskCovidOutput;
         this.riskCovid = 23.1;
-
-        //start with generate string with if-else condition
-        String queryString =
-                "SELECT DISTINCT ?subject_0 \n" +
-                        "FROM <tag:stardog:api:context:default> \n" +
-                        "WHERE { \n" +
-                        "  { \n" +
-                        "    ?subject_0 a <http://www.semanticweb.org/healthcare#Patients> . \n" +
-                        "    ?subject_0 <http://www.semanticweb.org/healthcare#hasAge> ?dat_0 . \n" +
-                        "    FILTER(STR(?dat_0) >= \"50\" && STR(?dat_0) <= \"64\") . \n" +
-                        "  } \n" +
-                        "}\n";
 
         queryString = generateCovidqueryString();
         System.out.println(queryString);
         this.dbconn.executeQuery(queryString);
-
 
         riskCovidOutput = Double.toString(this.riskCovid) + "%";
         
