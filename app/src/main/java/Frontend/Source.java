@@ -5,17 +5,15 @@
 
 package Frontend;
 
-import java.sql.Array;
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 import Backend.DatabaseConn;
-import com.stardog.stark.Literal;
+import Backend.Tuple;
 import com.stardog.stark.Value;
 import com.stardog.stark.query.BindingSet;
 import com.stardog.stark.query.SelectQueryResult;
-import com.stardog.stark.query.io.QueryResultWriters;
 
 /**
  *
@@ -280,13 +278,192 @@ public class Source {
         String riskCovidOutput;
         this.riskCovid = 23.1;
 
-        queryString = generateCovidqueryString();
-        System.out.println(queryString);
-        this.dbconn.executeQuery(queryString);
+
+        //Take the total number of patients that have the covid;
+        double totalPatients = getTotalPatientsinCovid();
+
+        List<Tuple<String , Double>> frequency = new ArrayList<>();
+        //if age is selected, get total number of patients with that age who have covid
+        if(!Objects.equals(getAgeGroup(), "")){
+            // Add patient counts for different age groups to the frequency list
+            frequency.add(new Tuple<>("< 5", getTotalPatientsWithGivenAge("< 5")));
+            frequency.add(new Tuple<>("5 - 19", getTotalPatientsWithGivenAge("5 - 19")));
+            frequency.add(new Tuple<>("20 - 34", getTotalPatientsWithGivenAge("20 - 34")));
+            frequency.add(new Tuple<>("35 - 49", getTotalPatientsWithGivenAge("35 - 49")));
+            frequency.add(new Tuple<>("50 - 64", getTotalPatientsWithGivenAge("50 - 64")));
+            frequency.add(new Tuple<>("65 <", getTotalPatientsWithGivenAge("65 <")));
+
+            // Sort the frequency list by patient count in ascending order
+            frequency.sort(Comparator.comparingDouble(Tuple::getSecond));
+
+            // Find the position of Frequency49 in the sorted list
+            int position = -1;
+            for (int i = 0; i < frequency.size(); i++) {
+                if (frequency.get(i).getFirst().equals(getAgeGroup())) {
+                    position = i;
+                    break;
+                }
+            }
+
+            this.riskCovid = position;
+        }
+
+        //if gender is selected , calculate rank and risk for the gender
+        if(!Objects.equals(getGender(), "")) {
+
+            //calculate male and female patients and sort them by gender
+            frequency.clear();
+            frequency.add(new Tuple<>("Male", getCovidPatientsByGender("2")));
+            frequency.add(new Tuple<>("Female", getCovidPatientsByGender("1")));
+
+            // Sort the frequency list by patient count in ascending order
+            frequency.sort(Comparator.comparingDouble(Tuple::getSecond));
+
+            // Find the position of Frequency49 in the sorted list
+            int position = -1;
+            for (int i = 0; i < frequency.size(); i++) {
+                if (frequency.get(i).getFirst().equals(getGender())) {
+                    position = i;
+                    break;
+                }
+            }
+
+            //calculate rank of the given value
+            this.riskCovid += position;
+        }
+
+
+
 
         riskCovidOutput = Double.toString(this.riskCovid) + "%";
+
         
         return riskCovidOutput;
+    }
+
+    private double getCovidPatientsByGender(String number) {
+
+        System.out.println("Calculating Covid patients by Gender" + number);
+        StringBuilder sb = new StringBuilder();
+        sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n" +
+                "\n" +
+                "SELECT (COUNT(?patient) AS ?patientCount)\n" +
+                "FROM <tag:stardog:api:context:default>\n" +
+                "WHERE {\n" +
+                "    ?patient a healthcare:Patients ;\n" +
+                "            healthcare:hasCovid ?Covid ;");
+        //append 1 or 2 according to male or female
+        sb.append("             healthcare:hasGender \"").append(number).append("\"  .");
+        sb.append("    ?Covid a healthcare:COVID19 .\n" +
+                "    FILTER (STR(?Covid) = \"http://www.semanticweb.org/healthcare#1\")\n" +
+                "}");
+
+
+        System.out.println(sb.toString());
+        double totalPatientsWithGender = 0.0;
+        try (SelectQueryResult queryResult = dbconn.executeQuery(sb.toString())) {
+
+            while (queryResult.hasNext()) {
+                BindingSet tuple = queryResult.next();
+                totalPatientsWithGender = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                System.out.println("Total number of patients :" + totalPatientsWithGender);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return totalPatientsWithGender;
+    }
+
+    private double getTotalPatientsWithGivenAge(String ageGroup) {
+
+        System.out.print("Calculating total number of patients with a given age" + ageGroup);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n" +
+                "\n" +
+                "SELECT (COUNT(?patient) AS ?patientCount)\n" +
+                "FROM <tag:stardog:api:context:default>\n" +
+                "WHERE {\n" +
+                "    ?patient a healthcare:Patients ;\n" +
+                "            healthcare:hasCovid ?Covid .\n" +
+                "    ?Covid a healthcare:COVID19 .");
+
+        switch (ageGroup) {
+            case ("< 5"):
+                System.out.println("Selected < 5 for Covid ");
+                sb.append("  ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n "
+                        + " FILTER(STR(?age) < \"5\") .");
+                break;
+            case ("5 - 19"):
+                System.out.println("5 - 19");
+                sb.append("    ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age  . \n"
+                        + "    FILTER(STR(?age) >= \"5\" && STR(?age) <= \"19\") . \n");
+                break;
+            case ("20 - 34"):
+                System.out.println("20 - 34");
+                sb.append("    ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n"
+                        + "    FILTER(STR(?age) >= \"20\" && STR(?age) <= \"34\") . \n");
+                break;
+            case ("35 - 49"):
+                System.out.println("35 - 49");
+                sb.append("    ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n"
+                        + "    FILTER(STR(?age) >= \"35\" && STR(?age) <= \"49\") . \n");
+                break;
+            case ("50 - 64"):
+                System.out.println("50 - 64");
+                sb.append("    ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n"
+                        + "    FILTER(STR(?age) >= \"50\" && STR(?age) <= \"64\") . \n");
+                break;
+            case ("65 <"):
+                System.out.println("65 <");
+                sb.append("   ?patient <http://www.semanticweb.org/healthcare#hasAge> ?age . \n"
+                        + "    FILTER(STR(?age) >= \"65\") . \n");
+                break;
+            default:
+                System.out.println("Age Group not selected!");
+        }
+        sb.append("   FILTER (STR(?Covid) = \"http://www.semanticweb.org/healthcare#1\")");
+        sb.append("}");
+
+        System.out.println(sb.toString());
+        double totalPatientsWithAge = 0.0;
+        try (SelectQueryResult queryResult = dbconn.executeQuery(sb.toString())) {
+
+            while (queryResult.hasNext()) {
+                BindingSet tuple = queryResult.next();
+                totalPatientsWithAge = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                System.out.println("Total number of patients :" + totalPatientsWithAge);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return totalPatientsWithAge;
+
+    }
+
+    private Double getTotalPatientsinCovid() {
+        String query = "PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n" +
+                "\n" +
+                "SELECT (COUNT(?patient) AS ?patientCount)\n" +
+                "FROM <tag:stardog:api:context:default>\n" +
+                "WHERE {\n" +
+                "    ?patient a healthcare:Patients ;\n" +
+                "            healthcare:hasCovid ?Covid .\n" +
+                "    ?Covid a healthcare:COVID19 .\n" +
+                "    FILTER (STR(?Covid) = \"http://www.semanticweb.org/healthcare#1\")\n" +
+                "}";
+        double patientCount = 0.0;
+        try (SelectQueryResult queryResult = dbconn.executeQuery(query)) {
+
+            while (queryResult.hasNext()) {
+                BindingSet tuple = queryResult.next();
+                patientCount = Double.parseDouble(Value.lex(Objects.requireNonNull(tuple.get("averageDataValue"))));
+                System.out.println("Total number of patients :" + patientCount);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return patientCount;
     }
 
     private String generateCovidqueryString() {
