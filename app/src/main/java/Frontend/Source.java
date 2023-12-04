@@ -437,6 +437,10 @@ public class Source {
             maxValue = pregnancyPosition;
             setTopRiskCovid("Pregnency");
         }
+        if (nicotinePosition > maxValue){
+            maxValue = nicotinePosition;
+            setTopRiskCovid("Nicotine");
+        }
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
         riskCovidOutput = decimalFormat.format((this.riskCovid/14) * 100) + "%";
         return riskCovidOutput;
@@ -777,9 +781,11 @@ public class Source {
 
     protected String calculateAlzheimersRisk() {
         Map<String, String> mapAgeField = new HashMap<>();
-        mapAgeField.put("50 - 64", "50-64_years");
+        mapAgeField.put("50 - 64", "50-64 years");
+        mapAgeField.put("5 - 19" , "5-19 years");
+        mapAgeField.put("20 - 34" , "20-34 years");
+        mapAgeField.put("35 - 49" , "35-49 years");
         String riskAlzheimerOutput;
-        double result = 0.0;
         this.riskAlzheimers = 52.3;
 
         System.out.println("calculating Alzheimers Risk ... ");
@@ -791,9 +797,9 @@ public class Source {
         }
         if (!Objects.equals(getGender(), "")) {
             if (getGender().equals("Male")) {
-                factors.put("healthcare:gender", "\"1\"^^<http://www.w3.org/2001/XMLSchema#decimal>");
+                factors.put("healthcare:gender", "\"Male\"");
             } else {
-                factors.put("healthcare:gender", "\"0\"^^<http://www.w3.org/2001/XMLSchema#decimal>");
+                factors.put("healthcare:gender", "\"Female\"");
             }
         }
 
@@ -808,7 +814,7 @@ public class Source {
         }
 
         //add obesity to the query if the value is true
-        double obesityRisk = 0.0;
+        double obesityRisk = 1.0;
         if (obesity) {
             factors.put("healthcare:topic", "\"obesity\"");
             // get value for obesity
@@ -833,7 +839,7 @@ public class Source {
         }
 
         //set avg for nicotine as 0 by default
-        double nicotineRisk = 0.0;
+        double nicotineRisk = 1.0;
         if (getNicotineUse()) {
             factors.put("healthcare:topic", "\"smoking\"");
             // get value for nicotine
@@ -857,9 +863,9 @@ public class Source {
 
         }
 
-        double noPhysicalActivityRisk = 0.0;
+        double noPhysicalActivityRisk = 1.0;
         if (getPhysicalActivity() < 1) {
-            factors.put("healthcare:topic", "\"no_physical_activity\"");
+            factors.put("healthcare:topic", "\"no physical activity\"");
             //get noPhysicalActivityRisk
             StringBuilder sb = new StringBuilder();
             sb.append("PREFIX healthcare: <http://www.semanticweb.org/healthcare#>\n");
@@ -881,7 +887,7 @@ public class Source {
         }
 
         // 34% are obese and have AD
-        this.riskAlzheimers = 0.3 * obesityRisk + 0.3 * nicotineRisk + 0.3 * noPhysicalActivityRisk;
+        this.riskAlzheimers = obesityRisk + nicotineRisk + noPhysicalActivityRisk / 3;
 
         //Calculating the top risk factor
         double maxValue = Double.MIN_VALUE;
